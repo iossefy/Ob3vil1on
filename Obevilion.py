@@ -2,7 +2,7 @@
 
 # Coded By Digital Gangstars
 # Follow Our WebSite: http://www.digitalgangstar.ga
-# BL4CKvGHOST - MAHMOUDLOFTER - DIAX - T0Xic
+# BL4CKvGHOST - D3S7R0Y3R - DIAX - T0Xic
 # MADE IN EGYPT  :)
 # Kali Linux Support
 # Parrot OS sec support
@@ -19,7 +19,7 @@ import time,os,sys,shutil,itertools
 
 name=os.path.basename(__file__)
 
-#checking if the user's operating system is compatible with ArchiveMaster
+#checking if the user's operating system is compatible with OBIVELION
 if os.name!="posix":
  print("ERROR:",name,"isn't compatible with your system.")
  sys.exit(-1)
@@ -31,7 +31,7 @@ for which in ["unrar","p7zip"]:
 
 # defining the functions
 def rc(rf):
- alphabet="aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890!@#*+-*"
+ alphabet="aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890!@#*+-*?؟;:"
  start=time.time()
  tryn=0
  for a in range(1,len(alphabet)+1):
@@ -83,8 +83,8 @@ else:
  print("Obevilion its the Re Writed of the old project (ArchiveMaster)")
  print("OBEVILION")
  print("Now Support Sympols")
- print("Usage:",name,"[rar file]")
- print("Example:",name,"example.rar")
  print("Coded By Digital Gangstars (Leader:BL4CKvGHOST)")
  print("GitHub:https://github.com/BL4CKvGHOST")
  print("Blog:http://www.digitalgangstar.ga")
+ print("Usage:",name,"[rar file]")
+ print("Example:",name,"example.rar")
