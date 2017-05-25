@@ -8,6 +8,7 @@
 # Parrot OS sec support
 # Debian systems Support
 # Ubuntu Systems Support
+# Linux Mint Support
 # Archive FIles Files Bruiteforcer
 ##it cracks zip and 7z too
 ###Python3 file
