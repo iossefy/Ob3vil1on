@@ -73,10 +73,11 @@ else:
       ███   ▀███▀    █  █   ▐     ▀ ▐       █  █ █
                       █▐                    █   ██
                       ▐
+                           Welcome To Beta Version!
 ''')
  print("Obevilion its the Re Writed of the old project (ArchiveMaster)")
  print("OBEVILION")
- print("Now Support Sympols")
+ print("Updates: Beta Version Released!")
  print("Coded By Digital Gangstars (Leader:BL4CKvGHOST)")
  print("GitHub:https://github.com/BL4CKvGHOST")
  print("Blog:http://www.digitalgangstar.ga")
