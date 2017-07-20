@@ -21,7 +21,7 @@ for which in ["unrar","p7zip"]:
 
 # defining the functions
 def rc(rf):
- alphabet="aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890!@#*+-*?><"
+ alphabet="aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890!@#*+-*?><!"
  start=time.time()
  tryn=0
  for a in range(1,len(alphabet)+1):
