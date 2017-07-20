@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 
 # MADE IN EGYPT  :)
-# Kali Linux Support
-# Parrot OS sec support
-# Debian systems Support
-# Ubuntu Systems Support
-# Linux Mint Support
+# Full Linux Support
+# Work On All Linux Distros
 
 # Import The Needed Lib
 import time,os,sys,shutil,itertools
@@ -24,7 +21,7 @@ for which in ["unrar","p7zip"]:
 
 # defining the functions
 def rc(rf):
- alphabet="aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890!@#*+-*"
+ alphabet="aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890!@#*+-*?><"
  start=time.time()
  tryn=0
  for a in range(1,len(alphabet)+1):
@@ -78,7 +75,7 @@ else:
  print("Obevilion its the Re Writed of the old project (ArchiveMaster)")
  print("OBEVILION")
  print("Updates: Beta Version Released!")
- print("Coded By Digital Gangstars (Leader:BL4CKvGHOST)")
+ print("Coded By BL4CKvGHOST")
  print("GitHub:https://github.com/BL4CKvGHOST")
  print("Blog:http://www.digitalgangstar.ga")
  print("Usage:",name,"[rar file]")
