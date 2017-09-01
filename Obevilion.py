@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 
-# MADE IN EGYPT  :)
 # Full Linux Support
 # Work On All Linux Distros
 
 # Import The Needed Lib
-import time,os,sys,shutil,itertools
+import time
+import os
+import sys
+import shutil
+import itertools
 
 name=os.path.basename(__file__)
 
 #checking if the user's operating system is compatible with OBIVELION
 if os.name!="posix":
- print("ERROR:",name,"isn't compatible with your systemyet! - Send Us The Information On This Email < youssefheshamhassan@gmail.com >")
+ print("ERROR:",name,"isn't compatible with your system yet! - We will notify you about the new releases")
  sys.exit(-1)
 #checking if the user Have Unrar And Unzip
 for which in ["unrar","p7zip"]:
