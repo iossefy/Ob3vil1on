@@ -55,7 +55,7 @@ def rc(rf):
       time.sleep(2)
       sys.exit(1)
    else:
-    print("We Are Cracking (rar , zip , 7z) only - Send Us The Information On This Email < youssefheshamhassan@gmail.com > \nExiting...")
+    print("We Are Cracking (rar , zip , 7z) only  \nExiting...")
 
 # Check That The File Already Exists . Then Run The File
 if len(sys.argv)==2:
@@ -77,7 +77,7 @@ else:
 ''')
  print("Obevilion its the Re Writed of the old project (ArchiveMaster)")
  print("OBEVILION")
- print("Updates: Beta Version Released!")
+ print("Updates: Now There Is More Symbols To Bruteforce")
  print("Coded By BL4CKvGHOST")
  print("GitHub:https://github.com/BL4CKvGHOST")
  print("Blog:http://www.digitalgangstar.ga")
