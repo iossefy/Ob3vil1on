@@ -3,6 +3,11 @@
 # Full Linux Support
 # Work On All Linux Distros
 
+
+'''
+Copyrights (C) 2017 Youssef Hesham
+'''
+
 # Import The Needed Lib
 import time
 import os
@@ -73,13 +78,14 @@ else:
       ███   ▀███▀    █  █   ▐     ▀ ▐       █  █ █
                       █▐                    █   ██
                       ▐
-                           Welcome To Beta Version!
+                           NO ONE WILL GIVE YOU FREEDOM
+                           YOU TAKE IT!
 ''')
  print("Obevilion its the Re Writed of the old project (ArchiveMaster)")
  print("OBEVILION")
- print("Updates: Now There Is More Symbols To Bruteforce")
+ print("Updates: now officialy obevilion is the strongest Cracking Script")
  print("Coded By BL4CKvGHOST")
- print("GitHub:https://github.com/BL4CKvGHOST")
- print("Blog:http://www.digitalgangstar.ga")
- print("Usage:",name,"[rar file]")
+ print("GitHub: https://github.com/BL4CKvGHOST")
+ print("Twitter: https://twitter.com/BL4CKvGHOST")
+ print("Usage:",name,"[path to rar file]")
  print("Example:","Python3 ",name,"example.zip")
