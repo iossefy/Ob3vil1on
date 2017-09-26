@@ -17,7 +17,7 @@ import itertools
 
 name=os.path.basename(__file__)
 
-#checking if the user's operating system is compatible with OBIVELION
+#checking if the user's operating system is compatible with Obevilion
 if os.name!="posix":
  print("ERROR:",name,"isn't compatible with your system yet! - We will notify you about the new releases")
  sys.exit(-1)
@@ -27,7 +27,7 @@ for which in ["unrar","p7zip"]:
   print("ERROR:",which,"isn't installed.\nExiting...")
   sys.exit(-1)
 
-# defining the functions
+#defining the functions
 def rc(rf):
  alphabet="aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890!@#"
  start=time.time()
