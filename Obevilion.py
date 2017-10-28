@@ -3,9 +3,9 @@
 # Full Linux Support
 # Work On All Linux Distros
 
-
 '''
 Copyrights (C) 2017 Youssef Hesham
+Obevilion is licenced under GPL 3
 '''
 
 # Import The Needed Lib
@@ -89,3 +89,4 @@ else:
  print("Twitter: https://twitter.com/BL4CKvGHOST")
  print("Usage:",name,"[path to rar file]")
  print("Example:","Python3 ",name,"example.zip")
+
