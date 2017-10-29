@@ -1,10 +1,5 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'Obevilion.ui'
-#
-# Created by: PyQt4 UI code generator 4.12.1
-#
-# WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
 
@@ -105,4 +100,3 @@ if __name__ == "__main__":
     ui.setupUi(ObevilionGUI)
     ObevilionGUI.show()
     sys.exit(app.exec_())
-
