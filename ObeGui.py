@@ -32,6 +32,7 @@ class Ui_ObevilionGUI(object):
         self.Choose = QtGui.QPushButton(ObevilionGUI)
         self.Choose.setGeometry(QtCore.QRect(530, 10, 161, 32))
         self.Choose.setObjectName(_fromUtf8("Choose"))
+        self.Choose.clicked.connect(self.open_chooser)
         self.gridLayoutWidget = QtGui.QWidget(ObevilionGUI)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(0, 230, 701, 171))
         self.gridLayoutWidget.setObjectName(_fromUtf8("gridLayoutWidget"))
@@ -90,6 +91,9 @@ class Ui_ObevilionGUI(object):
         self.label_5.setText(_translate("ObevilionGUI", "Cracks zip / rar / 7z", None))
         self.inputText.setAccessibleName(_translate("ObevilionGUI", "inputText", None))
         self.pushButton.setText(_translate("ObevilionGUI", "Crack", None))
+
+    def open_chooser(self):
+        self.inputText.setText(QtGui.QFileDialog.getOpenFileName())
 
 
 if __name__ == "__main__":
