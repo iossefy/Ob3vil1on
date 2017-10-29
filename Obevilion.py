@@ -19,7 +19,7 @@ name=os.path.basename(__file__)
 
 #checking if the user's operating system is compatible with Obevilion
 if os.name!="posix":
- print("ERROR:",name,"isn't compatible with your system yet! - We will notify you about the new releases")
+ print("ERROR:",name,"isn't compatible with your system yet!")
  sys.exit(-1)
 #checking if the user Have Unrar And Unzip
 for which in ["unrar","p7zip"]:
@@ -29,7 +29,7 @@ for which in ["unrar","p7zip"]:
 
 #defining the functions
 def rc(rf):
- alphabet="aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890!@#"
+ alphabet="aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890!@#<>/"
  start=time.time()
  tryn=0
  for a in range(1,len(alphabet)+1):
