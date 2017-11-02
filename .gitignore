@@ -82,6 +82,15 @@ celerybeat-schedule
 venv/
 ENV/
 
+# Folders to ignore
+/build/
+__pycatch__/
+
+# Archive Files
+*.zip
+*.rar
+*.7z
+
 # Spyder project settings
 .spyderproject
 
