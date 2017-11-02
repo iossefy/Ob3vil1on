@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
-'''
-Copyrights (C) 2017 Youssef Hesham
-Obevilion is licenced under GPL 3
-'''
+# @author bl4ckvghost
+#
+# Copyright (C) 2017 Youssef Hesham
+#
+# License <http://www.gnu.org/licenses/gpl-3.0.html>
 
 # Import The Needed Lib
 import time
@@ -95,6 +96,7 @@ def script(path=None, limit=3):
                             time.sleep(2)
                             sys.exit(1)
                         else:
+                            # If the user inputs a wrong type of archive
                             print("We Are Cracking (rar , zip , 7z) only")
                             print('Exiting...')
                             time.sleep(2)
