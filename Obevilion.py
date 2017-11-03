@@ -12,20 +12,23 @@ import platform
 from core import Banner, gui, Obevilion
 
 printer = Banner.Printer()
-action = sys.argv[1]
+try:
+    action = sys.argv[1]
+except Exception as e:
+    printer.main_banner()
 
-# def runCLI(arg):
-#     if arg is not None:
-#         Obevilion.script(path=arg, limit=3)
-#     else:
-#         printer.main_banner()
+def runCLI(arg1, arg2):
+    Obevilion.script(path=arg1, limit=arg2)
 
 def main():
-    assert action in ['--gui', '--cli'], "Action is not one of [ --gui or --cli]"
-    if action == '--gui':
-        gui.main()
-    elif action == '--cli':
-        Obevilion.script(path=sys.argv[2], limit=3)
+    try:
+        assert action in ['--gui', '--cli'], "Action is not one of [ --gui or --cli]"
+        if action == '--gui':
+            gui.main()
+        elif action == '--cli':
+            runCLI(sys.argv[2], limit=3)
+    except Exception as e:
+        pass
 
 if __name__ == '__main__':
     main()
