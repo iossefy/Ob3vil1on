@@ -28,4 +28,21 @@ class Printer:
          print("Coded By BL4CKvGHOST")
          print("GitHub: https://github.com/BL4CKvGHOST")
          print("Twitter: https://twitter.com/BL4CKvGHOST")
-         print("Usage: Python3 %s [display_mode] [archive path]" % Obevilion.get_name())
+         print("Usage: Python %s [display_mode] [archive path]" % Obevilion.get_name())
+         print("Help!: python %s --help")
+
+    def help_banner(self):
+        print('''
+                       ▄█    █▄       ▄████████  ▄█          ▄███████▄
+                      ███    ███     ███    ███ ███         ███    ███
+                      ███    ███     ███    █▀  ███         ███    ███
+                     ▄███▄▄▄▄███▄▄  ▄███▄▄▄     ███         ███    ███
+                    ▀▀███▀▀▀▀███▀  ▀▀███▀▀▀     ███       ▀█████████▀
+                      ███    ███     ███    █▄  ███         ███
+                      ███    ███     ███    ███ ███▌    ▄   ███
+                      ███    █▀      ██████████ █████▄▄██  ▄████▀
+                                                ▀
+
+                                      Need Help?
+              ============================================================
+        ''')
