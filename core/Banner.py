@@ -29,7 +29,7 @@ class Printer:
          print("GitHub: https://github.com/BL4CKvGHOST")
          print("Twitter: https://twitter.com/BL4CKvGHOST")
          print("Usage: Python %s [display_mode] [archive path]" % Obevilion.get_name())
-         print("Help!: python %s --help")
+         print("Help!: python %s --help" % Obevilion.get_name())
 
     def help_banner(self):
         print('''
@@ -46,3 +46,8 @@ class Printer:
                                       Need Help?
               ============================================================
         ''')
+
+        print('--gui\t-g\t\t\tStart Graphical User Interface')
+        print('--cli\t-c\t\t\tStart Command Line Interface')
+        print("CLI Example: python %s --cli [Archive Path]" % Obevilion.get_name())
+        print("GUI Example: python %s --gui" % Obevilion.get_name())
