@@ -23,75 +23,137 @@ except AttributeError:
         return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_MainWindow(object):
+    '''
+    Implementing the window in this class
+    in this class Implementing the whole window
+    like setting up the window theme manager,
+    setting up the buttons and the text fields
+    to use it in cracking process, setting up
+    the labels and the size of the window and more!.
+
+
+              Creating a Window Like this
+    |-----------------------------------------------|
+    |                   Obevilion                   |
+    |-----------------------------------------------|
+    |                                               |
+    |   ---------------   =                         |
+    |   ---------------   =                         |
+    |     .. .. .. ..           ====    ==          |
+    |-----------------------------------------------|
+    |                    OUTPUT                     |
+    |-----------------------------------------------|
+
+    '''
     def setupUi(self, MainWindow):
+        # Setting up the window name
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
+        # Window size
         MainWindow.resize(800, 516)
+        # Setting up the central widget
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.frame = QtGui.QFrame(self.centralwidget)
+        # Setting up the Frame size
         self.frame.setGeometry(QtCore.QRect(0, 0, 16777215, 16777214))
         self.frame.setMinimumSize(QtCore.QSize(16777214, 16777214))
         self.frame.setFrameShape(QtGui.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtGui.QFrame.Raised)
         self.frame.setObjectName(_fromUtf8("frame"))
+        # Adding a label (Title Label)
         self.label = QtGui.QLabel(self.frame)
         self.label.setGeometry(QtCore.QRect(310, 10, 161, 51))
         font = QtGui.QFont()
+        # Setting the font
         font.setFamily(_fromUtf8("Impact"))
         font.setPointSize(28)
         font.setItalic(True)
         self.label.setFont(font)
         self.label.setObjectName(_fromUtf8("label"))
-        self.scriptPath = QtGui.QTextEdit(self.frame)
-        self.scriptPath.setGeometry(QtCore.QRect(100, 80, 501, 31))
-        self.scriptPath.setObjectName(_fromUtf8("scriptPath"))
+        # Adding a text field to the user to input
+        # the Archive path
+        self.archivePath = QtGui.QTextEdit(self.frame)
+        self.archivePath.setGeometry(QtCore.QRect(100, 80, 501, 31))
+        self.archivePath.setObjectName(_fromUtf8("archivePath"))
+        # Setting up the second label
         self.label_2 = QtGui.QLabel(self.frame)
         self.label_2.setGeometry(QtCore.QRect(10, 80, 81, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_2.setFont(font)
         self.label_2.setObjectName(_fromUtf8("label_2"))
+        # Adding a PushButton to launch a filechooser
+        # for the dumb user who do not know the how to
+        # type the path of the encrypted archive.
         self.choose_archive = QtGui.QPushButton(self.frame)
         self.choose_archive.setGeometry(QtCore.QRect(610, 80, 94, 32))
         self.choose_archive.setObjectName(_fromUtf8("choose_archive"))
+        # Setting up the third label
         self.label_3 = QtGui.QLabel(self.frame)
         self.label_3.setGeometry(QtCore.QRect(10, 170, 131, 51))
+        # Setting up the font
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Impact"))
         font.setPointSize(18)
         font.setItalic(True)
         self.label_3.setFont(font)
         self.label_3.setObjectName(_fromUtf8("label_3"))
+        # Adding a checkbox to check if the user want
+        # to use the bruteforce attack method.
         self.check_Bruteforce = QtGui.QCheckBox(self.frame)
         self.check_Bruteforce.setGeometry(QtCore.QRect(40, 230, 101, 25))
         self.check_Bruteforce.setObjectName(_fromUtf8("check_Bruteforce"))
+        # Adding a checkbox to check if the user want to
+        # user want to choose the dictionary attack method.
         self.check_dict = QtGui.QCheckBox(self.frame)
         self.check_dict.setGeometry(QtCore.QRect(40, 270, 93, 25))
         self.check_dict.setObjectName(_fromUtf8("check_dict"))
+        # Setting up the fourth label
         self.label_4 = QtGui.QLabel(self.frame)
         self.label_4.setGeometry(QtCore.QRect(10, 120, 81, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_4.setFont(font)
         self.label_4.setObjectName(_fromUtf8("label_4"))
+        # Setting up second text field for the user to
+        # input the path of the password list
         self.DictPath = QtGui.QTextEdit(self.frame)
         self.DictPath.setGeometry(QtCore.QRect(100, 120, 501, 31))
         self.DictPath.setObjectName(_fromUtf8("DictPath"))
+        # Setting up the PushButton for the dumb user who
+        # do not know how to type the path of the shity
+        # password list he use.
         self.choose_dict = QtGui.QPushButton(self.frame)
         self.choose_dict.setGeometry(QtCore.QRect(610, 120, 94, 32))
         self.choose_dict.setObjectName(_fromUtf8("choose_dict"))
+        # Adding a checkbox to check if the user want to use
+        # symboles in the cracking process.
         self.check_Symboles = QtGui.QCheckBox(self.frame)
         self.check_Symboles.setGeometry(QtCore.QRect(200, 230, 121, 25))
         self.check_Symboles.setObjectName(_fromUtf8("check_Symboles"))
+        # Check if the user is noob or not
+        # Note: not all kali linux user noobs but the most of
+        # them is script kiddies do not know what is the real cracking is.
         self.check_Kali = QtGui.QCheckBox(self.frame)
         self.check_Kali.setGeometry(QtCore.QRect(200, 270, 161, 25))
         self.check_Kali.setObjectName(_fromUtf8("check_Kali"))
+        # Adding a PushButton to check if the noob user want to start
+        # the cracking process
         self.start_cracking = QtGui.QPushButton(self.frame)
         self.start_cracking.setGeometry(QtCore.QRect(623, 280, 161, 32))
         self.start_cracking.setObjectName(_fromUtf8("start_cracking"))
+        # Setting up the theme Changer for the fucken users who use
+        # the fucken GUI and do not know how to use the CLI
+        # and for the motherf*ckers who want to style the GUI window
         self.themeChanger = QtGui.QComboBox(self.frame)
         self.themeChanger.setGeometry(QtCore.QRect(445, 280, 161, 31))
         self.themeChanger.setObjectName(_fromUtf8("themeChanger"))
+        '''
+             *** Setting up the OutPut widget ***
+        in the output widget there is a textbox where
+             the output (Cracked Password) appear.
+        '''
+        # Setting up the widget
         self.widget = QtGui.QWidget(self.centralwidget)
         self.widget.setGeometry(QtCore.QRect(-1, 319, 801, 181))
         self.widget.setObjectName(_fromUtf8("widget"))
@@ -99,14 +161,17 @@ class Ui_MainWindow(object):
         self.output.setGeometry(QtCore.QRect(0, 10, 801, 131))
         self.output.setObjectName(_fromUtf8("output"))
         MainWindow.setCentralWidget(self.centralwidget)
+        # Setting up the menu bar
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         self.menuWelcome = QtGui.QMenu(self.menubar)
         self.menuWelcome.setObjectName(_fromUtf8("menuWelcome"))
         MainWindow.setMenuBar(self.menubar)
+        # Setting up the status bar
         self.statusbar = QtGui.QStatusBar(MainWindow)
         self.statusbar.setObjectName(_fromUtf8("statusbar"))
+        # Setting up the menu bar components
         MainWindow.setStatusBar(self.statusbar)
         self.actionAbout = QtGui.QAction(MainWindow)
         self.actionAbout.setObjectName(_fromUtf8("actionAbout"))
@@ -123,9 +188,13 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
+        '''
+        showing a text at the status bar and
+        setting a shortcuts for the menu bar items
+        '''
         MainWindow.setWindowTitle(_translate("MainWindow", "Obevilion", None))
         self.label.setText(_translate("MainWindow", "Obevilion", None))
-        self.scriptPath.setStatusTip(_translate("MainWindow", "Enter the archive path to crack", None))
+        self.archivePath.setStatusTip(_translate("MainWindow", "Enter the archive path to crack", None))
         self.label_2.setText(_translate("MainWindow", "Arhive Path", None))
         self.choose_archive.setStatusTip(_translate("MainWindow", "Choose archive from file system", None))
         self.choose_archive.setText(_translate("MainWindow", "Choose", None))
@@ -159,6 +228,7 @@ class Ui_MainWindow(object):
 
 
 def main():
+    '''Main Method'''
     import sys
     app = QtGui.QApplication(sys.argv)
     MainWindow = QtGui.QMainWindow()
