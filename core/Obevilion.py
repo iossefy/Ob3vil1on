@@ -29,6 +29,55 @@ def get_name():
         return "Obevilion.py"
     return None
 
+def rc(rf):
+    # The Keywords that will be used in cracking
+    alphabet="aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890!@<>"
+    start=time.time()
+    tryn=0
+    '''
+    in this function the 'alphabet' will repeat itself
+    until the script find the password
+    this Operation called bruteforce attack
+    '''
+    for a in range(1,len(alphabet)+1):
+        for b in itertools.product(alphabet,repeat=a):
+            k="".join(b)
+            # If the user input a rar file,
+            # Execute this.
+            if rf[-4:]==".rar":
+                print("Trying:",k)
+                # Checking The Valid Password.
+                kf=os.popen("unrar t -y -p%s %s 2>&1|grep 'All OK'"%(k,rf))
+                tryn+=1
+                for rkf in kf.readlines():
+                    if rkf=="All OK\n": # Checking if all is ok.
+                        print("Password Cracked!:",repr(k))
+                        print("Tried combination count:",tryn)
+                        print("It took",round(time.time()-start,3),"seconds")
+                        print("Exiting...")
+                        time.sleep(2)
+                        sys.exit(1)
+                # If the user input a zip or 7z file
+                # Execute this.
+            elif rf[-4:]==".zip" or rf[-3:]==".7z":
+                print("Trying:",k)
+                kf=os.popen("7za t -p%s %s 2>&1|grep 'Everything is Ok'"%(k,rf))
+                tryn+=1
+                for rkf in kf.readlines():
+                    if rkf=="Everything is Ok\n":
+                        print("Password Cracked:",repr(k))
+                        print("Tried combination count:",tryn)
+                        print("It took",round(time.time()-start,3),"seconds")
+                        print("Exiting...")
+                        time.sleep(2)
+                        sys.exit(1)
+                    else:
+                        # If the user inputs a wrong type of archive
+                        print("We Are Cracking (rar , zip , 7z) only")
+                        print('Exiting...')
+                        time.sleep(2)
+                        sys.exit(1)
+
 def script(path=None, limit=3):
     '''
     This is the main script that all the program About.
@@ -51,56 +100,6 @@ def script(path=None, limit=3):
                 print("Exiting...")
                 time.sleep(2)
                 sys.exit(-1)
-
-    # defining the functions
-    def rc(rf):
-        # The Keywords that will be used in cracking
-        alphabet="aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890!@<>"
-        start=time.time()
-        tryn=0
-        '''
-        in this function the 'alphabet' will repeat itself
-        until the script find the password
-        this Operation called bruteforce attack
-        '''
-        for a in range(1,len(alphabet)+1):
-            for b in itertools.product(alphabet,repeat=a):
-                k="".join(b)
-                # If the user input a rar file,
-                # Execute this.
-                if rf[-4:]==".rar":
-                    print("Trying:",k)
-                    # Checking The Valid Password.
-                    kf=os.popen("unrar t -y -p%s %s 2>&1|grep 'All OK'"%(k,rf))
-                    tryn+=1
-                    for rkf in kf.readlines():
-                        if rkf=="All OK\n": # Checking if all is ok.
-                            print("Password Cracked!:",repr(k))
-                            print("Tried combination count:",tryn)
-                            print("It took",round(time.time()-start,3),"seconds")
-                            print("Exiting...")
-                            time.sleep(2)
-                            sys.exit(1)
-                    # If the user input a zip or 7z file
-                    # Execute this.
-                elif rf[-4:]==".zip" or rf[-3:]==".7z":
-                    print("Trying:",k)
-                    kf=os.popen("7za t -p%s %s 2>&1|grep 'Everything is Ok'"%(k,rf))
-                    tryn+=1
-                    for rkf in kf.readlines():
-                        if rkf=="Everything is Ok\n":
-                            print("Password Cracked:",repr(k))
-                            print("Tried combination count:",tryn)
-                            print("It took",round(time.time()-start,3),"seconds")
-                            print("Exiting...")
-                            time.sleep(2)
-                            sys.exit(1)
-                        else:
-                            # If the user inputs a wrong type of archive
-                            print("We Are Cracking (rar , zip , 7z) only")
-                            print('Exiting...')
-                            time.sleep(2)
-                            sys.exit(1)
 
     # Check That The File Already Exists . Then Run The File
         if len(sys.argv)==limit:
