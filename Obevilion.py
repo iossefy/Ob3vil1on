@@ -22,13 +22,23 @@ def runCLI(arg1, arg2):
 
 def main():
     try:
-        assert action in ['--gui', '--cli'], "Action is not one of [ --gui or --cli]"
+        assert action in ['--gui', '--cli', '--help'], "Action is not one of [ --gui, --cli, --help, -g, -c, -h]"
         if action == '--gui':
             gui.main()
         elif action == '--cli':
             runCLI(sys.argv[2], limit=3)
+        elif action == '--help':
+            printer.help_banner()
+        else:
+            printer.main_banner() # Just For Now
     except Exception as e:
-        pass
+        try:
+            if sys.argv[1] is not '--gui' or '--cli' or '--help':
+                printer.invalid_input()
+            else:
+                pass
+        except Exception as e:
+            pass
 
 if __name__ == '__main__':
     main()
