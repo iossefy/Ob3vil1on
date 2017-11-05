@@ -11,6 +11,8 @@ import sys
 import platform
 from core import Banner, gui, Obevilion
 
+arg = ['--gui', '--cli', '--help']
+
 printer = Banner.Printer()
 try:
     action = sys.argv[1]
@@ -22,18 +24,18 @@ def runCLI(arg1, arg2):
 
 def main():
     try:
-        assert action in ['--gui', '--cli', '--help'], "Action is not one of [ --gui, --cli, --help, -g, -c, -h]"
-        if action == '--gui':
+        assert action in arg, "Action is not one of [ --gui, --cli, --help, -g, -c, -h]"
+        if action is '--gui':
             gui.main()
-        elif action == '--cli':
+        elif action is '--cli':
             runCLI(sys.argv[2], limit=3)
-        elif action == '--help':
+        elif action is '--help':
             printer.help_banner()
         else:
             printer.main_banner() # Just For Now
     except Exception as e:
         try:
-            if sys.argv[1] is not '--gui' or '--cli' or '--help':
+            if sys.argv[1] is not arg:
                 printer.invalid_input()
             else:
                 pass
