@@ -23,6 +23,7 @@ class Printer:
                                    NO ONE WILL GIVE YOU FREEDOM
                                    YOU TAKE IT!
         ''')
+
          print("OBEVILION")
          print("Updates: now officialy obevilion is the strongest Cracking Script")
          print("Coded By BL4CKvGHOST")
@@ -33,21 +34,40 @@ class Printer:
 
     def help_banner(self):
         print('''
-                       ▄█    █▄       ▄████████  ▄█          ▄███████▄
-                      ███    ███     ███    ███ ███         ███    ███
-                      ███    ███     ███    █▀  ███         ███    ███
-                     ▄███▄▄▄▄███▄▄  ▄███▄▄▄     ███         ███    ███
-                    ▀▀███▀▀▀▀███▀  ▀▀███▀▀▀     ███       ▀█████████▀
-                      ███    ███     ███    █▄  ███         ███
-                      ███    ███     ███    ███ ███▌    ▄   ███
-                      ███    █▀      ██████████ █████▄▄██  ▄████▀
-                                                ▀
+           ▄█    █▄       ▄████████  ▄█          ▄███████▄
+          ███    ███     ███    ███ ███         ███    ███
+          ███    ███     ███    █▀  ███         ███    ███
+         ▄███▄▄▄▄███▄▄  ▄███▄▄▄     ███         ███    ███
+        ▀▀███▀▀▀▀███▀  ▀▀███▀▀▀     ███       ▀█████████▀
+          ███    ███     ███    █▄  ███         ███
+          ███    ███     ███    ███ ███▌    ▄   ███
+          ███    █▀      ██████████ █████▄▄██  ▄████▀
+                                    ▀
 
-                                      Need Help?
-              ============================================================
+                          Need Help?
+  ============================================================
         ''')
 
-        print('--gui\t-g\t\t\tStart Graphical User Interface')
-        print('--cli\t-c\t\t\tStart Command Line Interface')
-        print("CLI Example: python %s --cli [Archive Path]" % Obevilion.get_name())
-        print("GUI Example: python %s --gui" % Obevilion.get_name())
+        print('--gui, -g\tStart Graphical User Interface')
+        print('--cli, -c\tStart Command Line Interface')
+        print("CLI Example:    python %s --cli [Archive Path]" % Obevilion.get_name())
+        print("GUI Example:    python %s --gui" % Obevilion.get_name())
+
+    def invalid_input(self):
+        print('''
+
+       ████▄ ███   ▄███▄      ▄   ▄█ █    ▄█ ████▄    ▄
+       █   █ █  █  █▀   ▀      █  ██ █    ██ █   █     █
+       █   █ █ ▀ ▄ ██▄▄   █     █ ██ █    ██ █   █ ██   █
+       ▀████ █  ▄▀ █▄   ▄▀ █    █ ▐█ ███▄ ▐█ ▀████ █ █  █
+             ███   ▀███▀    █  █   ▐     ▀ ▐       █  █ █
+                             █▐                    █   ██
+                             ▐
+                                  NO ONE WILL GIVE YOU FREEDOM
+                                  YOU TAKE IT!
+       ''')
+
+        print("OBEVILION")
+        print("INVALID INPUT")
+        print("Usage: Python %s [display_mode] [archive path]" % Obevilion.get_name())
+        print("Help!: python %s --help" % Obevilion.get_name())
