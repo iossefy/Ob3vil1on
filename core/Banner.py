@@ -48,10 +48,12 @@ class Printer:
   ============================================================
         ''')
 
-        print('--gui, -g\tStart Graphical User Interface')
-        print('--cli, -c\tStart Command Line Interface')
-        print("CLI Example:    python %s --cli [Archive Path]" % Obevilion.get_name())
-        print("GUI Example:    python %s --gui" % Obevilion.get_name())
+        print('--gui:\t\tStart Graphical User Interface')
+        print('--cli:\t\tStart Command Line Interface')
+        print('--help:\t\tShow This Message\n')
+        print("CLI Example:\tpython %s --cli [Archive Path]" % Obevilion.get_name())
+        print("GUI Example:\tpython %s --gui" % Obevilion.get_name())
+        print("HELP EXAMPLE:\tpython %s --help" % Obevilion.get_name())
 
     def invalid_input(self):
         print('''
