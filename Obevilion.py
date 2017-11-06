@@ -11,6 +11,27 @@ import sys
 import platform
 from core import Banner, gui, Obevilion
 
+def checK_py_version():
+    '''checking if the python version valid'''
+    req_version = '2.7.14'
+    not_valid_version = '3.0.0'
+    if platform.python_version()>=req_version:
+        pass
+    elif platform.python_version()>=not_valid_version:
+        print("python %s is not supported yet\nTry the latest version of python2" % platform.python_version())
+        print('Exiting...')
+        time.sleep(2)
+        sys.exit(1)
+
+def check_os():
+    '''Checking if the os is not linux'''
+    req_os = 'posix'
+    if os.name!=req_os:
+        print("%s %s is not supported yet" % (platform.system(), platform.release()))
+        print('Exiting...')
+        time.sleep(2)
+        sys.exit(1)
+
 printer = Banner.Printer()
 try:
     action = sys.argv[1]
@@ -21,6 +42,11 @@ def runCLI(arg1, arg2):
     Obevilion.script(path=arg1, limit=arg2)
 
 def main():
+
+    # Checking the required python and platform version
+    check_os()
+    checK_py_version()
+
     try:
         assert action in ['--gui', '--cli', '--help', '--about'], "Action is not one of [ --gui, --cli, --help, --about]"
         if action == '--gui':
