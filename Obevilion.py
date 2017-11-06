@@ -11,7 +11,7 @@ import sys
 import platform
 from core import Banner, gui, Obevilion
 
-def checK_py_version():
+def check_py_version():
     '''checking if the python version valid'''
     req_version = '2.7.14'
     not_valid_version = '3.0.0'
@@ -45,7 +45,7 @@ def main():
 
     # Checking the required python and platform version
     check_os()
-    checK_py_version()
+    check_py_version()
 
     try:
         assert action in ['--gui', '--cli', '--help', '--about'], "Action is not one of [ --gui, --cli, --help, --about]"
