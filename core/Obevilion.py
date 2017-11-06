@@ -14,20 +14,19 @@ import shutil
 import itertools
 import Banner
 
-def get_name():
+def get_name(arg=''):
     '''
-    in this method we are getting the name of the current file
-    if the user running the main file out the core folder it must
-    be running from a .pyc file
-    i have changed the name of the .pyc file to .py file temporary only
-    it will be changed soon, this is just a small bug
+    Managing the file name
     '''
     name = os.path.basename(__file__)
-    if "pyc" not in name:
-        return name
-    else:
-        return "Obevilion.py"
-    return None
+    if arg=='noPy':
+        return name.replace('.py', '')
+    elif arg=='':
+        if "pyc" not in name:
+            return name
+        else:
+            return name.replace('pyc','py')
+        return None
 
 def rc(rf):
     # The Keywords that will be used in cracking
