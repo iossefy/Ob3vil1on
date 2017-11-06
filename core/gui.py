@@ -189,8 +189,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         '''
-        showing a text at the status bar and
-        setting a shortcuts for the menu bar items
+        setting up the status tip and
+        setting a shortcuts for the menu bar items.
         '''
         MainWindow.setWindowTitle(_translate("MainWindow", "Obevilion", None))
         self.label.setText(_translate("MainWindow", "Obevilion", None))
