@@ -24,9 +24,9 @@ class Printer:
                                    YOU TAKE IT!
         ''')
 
+         print("Coded By BL4CKvGHOST")
          print("OBEVILION")
          print("Updates: now officialy obevilion is the strongest Cracking Script")
-         print("Coded By BL4CKvGHOST")
          print("GitHub: https://github.com/BL4CKvGHOST")
          print("Twitter: https://twitter.com/BL4CKvGHOST")
          print("Usage: Python %s [display_mode] [archive path]" % Obevilion.get_name())
@@ -73,3 +73,22 @@ class Printer:
         print("INVALID INPUT")
         print("Usage: Python %s [display_mode] [archive path]" % Obevilion.get_name())
         print("Help!: python %s --help" % Obevilion.get_name())
+
+    def about(self):
+        print('''
+         █████╗ ██████╗  ██████╗ ██╗   ██╗████████╗
+        ██╔══██╗██╔══██╗██╔═══██╗██║   ██║╚══██╔══╝
+        ███████║██████╔╝██║   ██║██║   ██║   ██║
+        ██╔══██║██╔══██╗██║   ██║██║   ██║   ██║
+        ██║  ██║██████╔╝╚██████╔╝╚██████╔╝   ██║
+        ╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚═════╝    ╚═╝
+                                About Obevilion
+        ''')
+        print('''
+{name} is archive cracker tool, created in pure python.
+{name} will be recreated in C soon for more experience while cracking,
+{name} is supporting the latest version in python2 (Python 2.7.14).
+{name} Have a gui interface for the user who cant deal with the cli.
+{name} is designed for all Linux distributions.
+with {name} you can crack [7z/zip/rar] files.
+        '''.format(name=Obevilion.get_name('noPy')))
