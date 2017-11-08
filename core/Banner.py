@@ -25,12 +25,13 @@ class Printer:
         ''')
 
          print("Coded By BL4CKvGHOST")
-         print("OBEVILION")
-         print("Updates: now officialy obevilion is the strongest Cracking Script")
+         print("%s" % Obevilion.get_name('all').upper())
+         print("Updates: now officialy %s is the strongest Cracking Script" % Obevilion.get_name('all'))
          print("GitHub: https://github.com/BL4CKvGHOST")
          print("Twitter: https://twitter.com/BL4CKvGHOST")
          print("Usage: Python %s [display_mode] [archive path]" % Obevilion.get_name())
-         print("Help!: python %s --help" % Obevilion.get_name())
+         print("Help!: python %s --help\n" % Obevilion.get_name())
+
 
     def help_banner(self):
         print('''
@@ -69,7 +70,7 @@ class Printer:
                                   YOU TAKE IT!
        ''')
 
-        print("OBEVILION")
+        print("%s" % Obevilion.get_name('all').upper())
         print("INVALID INPUT")
         print("Usage: Python %s [display_mode] [archive path]" % Obevilion.get_name())
         print("Help!: python %s --help" % Obevilion.get_name())
@@ -82,8 +83,8 @@ class Printer:
         ██╔══██║██╔══██╗██║   ██║██║   ██║   ██║
         ██║  ██║██████╔╝╚██████╔╝╚██████╔╝   ██║
         ╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚═════╝    ╚═╝
-                                About Obevilion
-        ''')
+                                About {name}
+        '''.format(name=Obevilion.get_name('all')))
         print('''
 {name} is archive cracker tool, created in pure python.
 {name} will be recreated in C soon for more experience while cracking,
@@ -91,4 +92,4 @@ class Printer:
 {name} Have a gui interface for the user who cant deal with the cli.
 {name} is designed for all Linux distributions.
 with {name} you can crack [7z/zip/rar] files.
-        '''.format(name=Obevilion.get_name('noPy')))
+        '''.format(name=Obevilion.get_name('all')))
