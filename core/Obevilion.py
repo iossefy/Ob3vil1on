@@ -21,6 +21,15 @@ def get_name(arg=''):
     name = os.path.basename(__file__)
     if arg=='noPy':
         return name.replace('.py', '')
+    elif arg=='all':
+        if 'pyc' not in name:
+            return name
+        elif 'pyc' in name:
+            return name.replace('.pyc', '')
+        elif 'py' in name:
+            return name.replace('.py', '')
+        else:
+            return None
     elif arg=='':
         if "pyc" not in name:
             return name
