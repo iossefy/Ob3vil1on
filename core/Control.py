@@ -37,7 +37,7 @@ class LoopControl:
                 else:
                     print("Invalid Input")
         except KeyboardInterrupt as ki:
-            print('\nCTRL+C detected!')
+            print('\nCtrl+C detected!')
             time.sleep(1)
             print("Exiting...")
             time.sleep(2)
