@@ -27,7 +27,7 @@ def runCLI(arg1, arg2):
 
 def run():
     try:
-        assert action in ['--gui', '--cli', '--help', '--about', 'easy_mode'], "Action is not one of [ --gui, --cli, --help, --about, --easy_mode ]"
+        assert action in ['--gui', '--cli', '--help', '--about'], "Action is not one of [ --gui, --cli, --help, --about ]"
         if action == '--gui':
             gui.main()
         elif action == '--cli':
