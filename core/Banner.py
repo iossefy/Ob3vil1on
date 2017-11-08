@@ -48,13 +48,21 @@ class Printer:
                           Need Help?
   ============================================================
         ''')
-
+        print("Inputing From Outside Obevilion Shell")
         print('--gui:\t\tStart Graphical User Interface')
         print('--cli:\t\tStart Command Line Interface')
+        print("--about\t\tAbout the app")
         print('--help:\t\tShow This Message\n')
+        print("Inputing From Inside Obevilion Shell")
+        print("+=> BL4CKvGHOST\t\tShow Information About Me")
+        print("+=> help\t\tShow This Message")
+        print("+=> ifconfig\t\tShow You Local IP")
+        print('+=> IP\t\t\tShow Your External IP')
+        print("+=> License\t\tShow The License\n")
+        print("Examples Outside Obevilion Shell")
         print("CLI Example:\tpython %s --cli [Archive Path]" % Obevilion.get_name())
         print("GUI Example:\tpython %s --gui" % Obevilion.get_name())
-        print("HELP EXAMPLE:\tpython %s --help" % Obevilion.get_name())
+        print("HELP EXAMPLE:\tpython %s --help\n" % Obevilion.get_name())
 
     def invalid_input(self):
         print('''
