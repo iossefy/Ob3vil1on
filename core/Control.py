@@ -35,3 +35,9 @@ class LoopControl:
                 sys.exit(1)
             else:
                 print("Invalid Input")
+
+class Attacks:
+    """Managing the attacks from this class."""
+    def __init__(self, arg):
+        super(Attacks, self).__init__()
+        self.arg = arg
