@@ -13,20 +13,19 @@ check_req  = Check.Check_req()
 printer    = Banner.Printer()
 looprocess = Control.LoopControl()
 
+action = ''
+
 try:
     action = sys.argv[1]
 except Exception as e:
     printer.main_banner()
+    looprocess.loop()
 
 def runCLI(arg1, arg2):
     # Obevilion.script(path=arg1, limit=arg2)
     pass
 
-def main():
-
-    check_req.check_os() # Checking the required operation system
-    check_req.check_py_version() # Check valid python version
-
+def run():
     try:
         assert action in ['--gui', '--cli', '--help', '--about', 'easy_mode'], "Action is not one of [ --gui, --cli, --help, --about, --easy_mode ]"
         if action == '--gui':
@@ -46,6 +45,12 @@ def main():
                 pass
         except Exception as e:
             pass
+
+def main():
+
+    check_req.check_os() # Checking the required operation system
+    check_req.check_py_version() # Check valid python version
+    run() # Run
 
 if __name__ == '__main__':
     main()
