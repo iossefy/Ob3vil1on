@@ -18,6 +18,7 @@ class LoopControl:
     """Looping In the terminal to let the user input
        without breaking the application."""
     def loop(self):
+        self.attacks = Attacks()
         choice = ""
         try:
             while choice != "exit":
@@ -25,7 +26,7 @@ class LoopControl:
                 if choice == 'gui':
                     gui.main()
                 elif choice == 'cli':
-                    print("DEBUGING") # Not Ready To Use Yet!, Just Debuging For Now
+                    self.attacks.cli_bruteforce_attack()
                 elif choice == 'help':
                     printer.help_banner()
                 elif choice == 'about':
@@ -64,9 +65,19 @@ class Attacks:
     dictionary attack. this class will manage both
     [Command Line Interface / Graphical User Interface] Attacks.
     """
-    def __init__(self, arg):
-        super(Attacks, self).__init__()
-        self.arg = arg
+    def cli_bruteforce_attack(self):
+        try:
+            path = raw_input('path:')
+            if path != '':
+                subprocess.call('python3 core/model.py {file}'.format(file=path), shell=True)
+            else:
+                print("Try Again!")
+        except Exception as e:
+            print("Something went wrong!")
+            print("StackTrace")
+            print(e)
+            print("You can report the error at https://github.com/BL4CKvGHOST/Obevilion/issues/")
+
 
 class ConsoleColor:
     """Initializing Colors For The Text On The Console."""
