@@ -43,8 +43,8 @@ class LoopControl:
                     subprocess.call('curl ifconfig.co')
                 elif choice == 'license':
                     printer.License()
-                elif choice == 'show attacks':
-                    print("CRACKING ZIP, 7Z, RAR FILES")
+                elif choice == 'attacks':
+                    print("CRACKING [ZIP, 7Z, RAR] FILES, AND MORE SOON...")
                 elif choice == 'BL4CKvGHOST':
                     printer.about_me()
                 else:
