@@ -14,6 +14,7 @@ printer    = Banner.Printer()
 looprocess = Control.LoopControl()
 
 action = ''
+commands = ['--gui', '--cli', '--help', '--about']
 
 try:
     action = sys.argv[1]
@@ -21,17 +22,12 @@ except Exception as e:
     printer.main_banner()
     looprocess.loop()
 
-def runCLI(arg1, arg2):
-    # Obevilion.script(path=arg1, limit=arg2)
-    pass
-
 def run():
     try:
-        assert action in ['--gui', '--cli', '--help', '--about'], "Action is not one of [ --gui, --cli, --help, --about ]"
+        assert action in commands, "Action is not one of %s" % ', '.join(map(str, commands))
         if action == '--gui':
             gui.main()
         elif action == '--cli':
-            # runCLI(sys.argv[2], limit=3)
             print("Not Working Right Now")
         elif action == '--help':
             printer.help_banner()
@@ -39,7 +35,7 @@ def run():
             printer.about()
     except Exception as e:
         try:
-            if sys.argv[1] is not '--gui' or '--cli' or '--help':
+            if sys.argv[1] is not commands:
                 printer.invalid_input()
             else:
                 pass
