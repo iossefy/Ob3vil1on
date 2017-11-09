@@ -56,7 +56,13 @@ class LoopControl:
             time.sleep(2)
 
 class Attacks:
-    """Managing the attacks from this class."""
+    """
+    Managing the attacks from this class.
+    This class will manage all kinds of
+    attacks including bruteforce attack and
+    dictionary attack. this class will manage both
+    [Command Line Interface / Graphical User Interface] Attacks.
+    """
     def __init__(self, arg):
         super(Attacks, self).__init__()
         self.arg = arg
