@@ -57,6 +57,40 @@ class LoopControl:
             print("Exiting...")
             time.sleep(2)
 
+    def main_loop(self, action=None, commands=None):
+        try:
+            assert action in commands, "Action is not one of %s" % ', '.join(map(str, commands))
+            try:
+                if action == '--easy_mode':
+                    subprocess.call('clear', shell=True)
+                    printer.main_banner()
+                    self.loop()
+                else:
+                    pass
+            except Exception as e:
+                pass
+            if action == '--gui':
+                gui.main()
+            elif action == '--cli':
+                print("Not Working Right Now")
+            elif action == '--help':
+                printer.help_banner()
+            elif action == '--about':
+                printer.about()
+            elif action == '--about_me':
+                printer.about_me()
+            elif action == '--license':
+                printer.License()
+        except Exception as e:
+            try:
+                if sys.argv[1] is not commands:
+                    printer.invalid_input()
+                else:
+                    pass
+            except Exception as e:
+                pass
+
+
 class Attacks:
     """
     Managing the attacks from this class.
