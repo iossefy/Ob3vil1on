@@ -60,7 +60,7 @@ class Printer:
         print('+=> IP\t\t\tShow Your External IP')
         print("+=> License\t\tShow The License\n")
         print("How To Use?")
-        print("EASY MODE:\t python %s --easy_mode" % Obevilion.get_name())
+        print("EASY MODE:\tpython %s --easy_mode" % Obevilion.get_name())
         print("CLI Example:\tpython %s --cli [Archive Path]" % Obevilion.get_name())
         print("GUI Example:\tpython %s --gui" % Obevilion.get_name())
         print("HELP EXAMPLE:\tpython %s --help\n" % Obevilion.get_name())
