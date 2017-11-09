@@ -112,7 +112,6 @@ class Attacks:
             print(e)
             print("You can report the error at https://github.com/BL4CKvGHOST/Obevilion/issues/")
 
-
 class ConsoleColor:
     """Initializing Colors For The Text On The Console."""
     HEADER = '\033[95m'
