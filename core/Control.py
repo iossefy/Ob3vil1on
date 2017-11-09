@@ -8,7 +8,8 @@
 
 import time
 import sys
-import Banner, gui, Obevilion
+import Banner, Obevilion
+from UI import gui
 import subprocess
 
 printer = Banner.Printer()

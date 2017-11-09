@@ -8,7 +8,8 @@
 
 import sys
 import subprocess
-from core import Banner, gui, Obevilion, Check, Control
+from core import Banner, Obevilion, Check, Control
+from core.UI import gui
 
 check_req  = Check.Check_req()
 printer    = Banner.Printer()
