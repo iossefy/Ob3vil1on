@@ -58,6 +58,7 @@ class LoopControl:
             time.sleep(2)
 
     def main_loop(self, action=None, commands=None):
+        self.attacks = Attacks()
         try:
             assert action in commands, "Action is not one of %s" % ', '.join(map(str, commands))
             try:
@@ -72,7 +73,7 @@ class LoopControl:
             if action == '--gui':
                 gui.main()
             elif action == '--cli':
-                print("Not Working Right Now")
+                self.attacks.cli_bruteforce_attack_outshell()
             elif action == '--help':
                 printer.help_banner()
             elif action == '--about':
@@ -107,10 +108,21 @@ class Attacks:
             else:
                 print("Try Again!")
         except Exception as e:
-            print("Something went wrong!")
-            print("StackTrace")
-            print(e)
-            print("You can report the error at https://github.com/BL4CKvGHOST/Obevilion/issues/")
+            printer.unknowen_error(exception=e)
+            time.sleep(2)
+            sys.exit(1)
+
+    def cli_bruteforce_attack_outshell(self):
+        try:
+            path = sys.argv[2]
+            if path == '' or path == None:
+                print("Try Again!")
+            else:
+                subprocess.call('python3 core/model.py {file}'.format(file=path), shell=True)
+        except Exception as e:
+            printer.unknowen_error(exception=e)
+            time.sleep(2)
+            sys.exit(1)
 
 class ConsoleColor:
     """Initializing Colors For The Text On The Console."""
