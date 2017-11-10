@@ -6,6 +6,9 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
+import os
+import sys
+sys.path.append('{path}'.format(path=os.getcwd()).replace('core/', ''))
 import Obevilion
 
 class Printer:
