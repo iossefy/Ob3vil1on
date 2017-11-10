@@ -131,3 +131,10 @@ Reddit : https://reddit.com/u/BL4CKvGHOST
 Website: https://bl4ckvghost.github.io
 
         ''')
+
+    def unknowen_error(self, exception):
+        print("Something went wrong!")
+        print("\nStackTrace")
+        print('{}\n'.format(exception))
+        print("You can report the error at https://github.com/BL4CKvGHOST/Obevilion/issues/")
+        print('Exiting...')
