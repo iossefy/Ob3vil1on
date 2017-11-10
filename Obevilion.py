@@ -37,4 +37,4 @@ def main():
     looprocess.main_loop(action=action, commands=commands) # Run
 
 if __name__ == '__main__':
-main()
+    main()
