@@ -12,11 +12,12 @@ import subprocess
 from core import Banner, Obevilion, Check, Control
 from core.UI import gui
 
-check_req  = Check.Check_req()
-printer    = Banner.Printer()
+check_req = Check.Check_req()
+printer = Banner.Printer()
 looprocess = Control.LoopControl()
-action     = ''
-commands   = ['--gui', '--cli', '--help', '--about', '--easy_mode', '--about_me', '--license']
+action = ''
+commands = ['--gui', '--cli', '--help', '--about',
+            '--easy_mode', '--about_me', '--license']
 
 
 def get_name(arg=''):
@@ -24,9 +25,9 @@ def get_name(arg=''):
     Managing the file name
     '''
     name = os.path.basename(__file__)
-    if arg=='noPy':
+    if arg == 'noPy':
         return name.replace('.py', '')
-    elif arg=='all':
+    elif arg == 'all':
         if 'pyc' not in name:
             return name
         elif 'pyc' in name:
@@ -35,31 +36,35 @@ def get_name(arg=''):
             return name.replace('.py', '')
         else:
             return None
-    elif arg=='':
+    elif arg == '':
         if "pyc" not in name:
             return name
         else:
-            return name.replace('pyc','py')
+            return name.replace('pyc', 'py')
         return None
+
 
 try:
     action = sys.argv[1]
 except Exception as e:
     printer.main_banner()
 
-def loop_action(action): # Using the easy loop system
+
+def loop_action(action):  # Using the easy loop system
     if action == '--easy_mode':
         printer.main_banner
         looprocess.loop()
     else:
         pass
 
+
 def main():
 
-    check_req.check_os() # Checking the required operation system
-    check_req.check_py_version() # Check valid python version
+    check_req.check_os()  # Checking the required operation system
+    check_req.check_py_version()  # Check valid python version
 #    check_req.check_softwares() # Checking if the user have the required softwares
-    looprocess.main_loop(action=action, commands=commands) # Run
+    looprocess.main_loop(action=action, commands=commands)  # Run
+
 
 if __name__ == '__main__':
     main()

@@ -11,10 +11,12 @@ import sys
 sys.path.append('{path}'.format(path=os.getcwd()).replace('core/', ''))
 import Obevilion
 
+
 class Printer:
     """Just Printing Banners in this class."""
+
     def main_banner(self):
-         print('''
+        print('''
 
         ████▄ ███   ▄███▄      ▄   ▄█ █    ▄█ ████▄    ▄
         █   █ █  █  █▀   ▀      █  ██ █    ██ █   █     █
@@ -27,14 +29,15 @@ class Printer:
                                    YOU TAKE IT!
         ''')
 
-         print("Coded By BL4CKvGHOST")
-         print("%s" % Obevilion.get_name('all').upper())
-         print("Updates: now officialy %s is the strongest Cracking Script" % Obevilion.get_name('all'))
-         print("GitHub: https://github.com/BL4CKvGHOST")
-         print("Twitter: https://twitter.com/BL4CKvGHOST")
-         print("Usage: Python %s [display_mode] [archive path]" % Obevilion.get_name())
-         print("Help!: python %s --help\n" % Obevilion.get_name())
-
+        print("Coded By BL4CKvGHOST")
+        print("%s" % Obevilion.get_name('all').upper())
+        print("Updates: now officialy %s is the strongest Cracking Script" %
+              Obevilion.get_name('all'))
+        print("GitHub: https://github.com/BL4CKvGHOST")
+        print("Twitter: https://twitter.com/BL4CKvGHOST")
+        print("Usage: Python %s [display_mode] [archive path]" %
+              Obevilion.get_name())
+        print("Help!: python %s --help\n" % Obevilion.get_name())
 
     def help_banner(self):
         print('''
@@ -64,7 +67,8 @@ class Printer:
         print("+=> License\t\tShow The License\n")
         print("How To Use?")
         print("EASY MODE:\tpython %s --easy_mode" % Obevilion.get_name())
-        print("CLI Example:\tpython %s --cli [Archive Path]" % Obevilion.get_name())
+        print(
+            "CLI Example:\tpython %s --cli [Archive Path]" % Obevilion.get_name())
         print("GUI Example:\tpython %s --gui" % Obevilion.get_name())
         print("HELP EXAMPLE:\tpython %s --help\n" % Obevilion.get_name())
 
@@ -84,7 +88,8 @@ class Printer:
 
         print("%s" % Obevilion.get_name('all').upper())
         print("INVALID INPUT")
-        print("Usage: Python %s [display_mode] [archive path]" % Obevilion.get_name())
+        print("Usage: Python %s [display_mode] [archive path]" %
+              Obevilion.get_name())
         print("Help!: python %s --help" % Obevilion.get_name())
 
     def about(self):
@@ -139,5 +144,6 @@ Website: https://bl4ckvghost.github.io
         print("Something went wrong!")
         print("\nStackTrace")
         print('{}\n'.format(exception))
-        print("You can report the error at https://github.com/BL4CKvGHOST/Obevilion/issues/")
+        print(
+            "You can report the error at https://github.com/BL4CKvGHOST/Obevilion/issues/")
         print('Exiting...')

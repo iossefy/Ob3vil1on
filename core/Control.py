@@ -8,15 +8,18 @@
 
 import time
 import sys
-import Banner, Obevilion
+import Banner
+import Obevilion
 from UI import gui
 import subprocess
 
 printer = Banner.Printer()
 
+
 class LoopControl:
     """Looping In the terminal to let the user input
        without breaking the application."""
+
     def loop(self):
         self.attacks = Attacks()
         choice = ""
@@ -60,7 +63,8 @@ class LoopControl:
     def main_loop(self, action=None, commands=None):
         self.attacks = Attacks()
         try:
-            assert action in commands, "Action is not one of %s" % ', '.join(map(str, commands))
+            assert action in commands, "Action is not one of %s" % ', '.join(
+                map(str, commands))
             try:
                 if action == '--easy_mode':
                     subprocess.call('clear', shell=True)
@@ -100,11 +104,13 @@ class Attacks:
     dictionary attack. this class will manage both
     [Command Line Interface / Graphical User Interface] Attacks.
     """
+
     def cli_bruteforce_attack(self):
         try:
             path = raw_input('path:')
             if path != '':
-                subprocess.call('python3 core/model.py {file}'.format(file=path), shell=True)
+                subprocess.call(
+                    'python3 core/model.py {file}'.format(file=path), shell=True)
             else:
                 print("Try Again!")
         except Exception as e:
@@ -118,11 +124,13 @@ class Attacks:
             if path == '' or path == None:
                 print("Try Again!")
             else:
-                subprocess.call('python3 core/model.py {file}'.format(file=path), shell=True)
+                subprocess.call(
+                    'python3 core/model.py {file}'.format(file=path), shell=True)
         except Exception as e:
             printer.unknowen_error(exception=e)
             time.sleep(2)
             sys.exit(1)
+
 
 class ConsoleColor:
     """Initializing Colors For The Text On The Console."""
