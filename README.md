@@ -1,25 +1,40 @@
-# Obevilion
-A Re Writed Version Of ArchiveMaster Tool
+# *** Welcome To Obevilion ***
 
-## Install
-`git clone https://github.com/BL4CKvGHOST/Obevilion.git`
+### What is Obevilion?
+Obevilion is archive cracker created in python.
+### What Obevilion Crack
 
-`cd Obevilion`
+|  ZIP Files  |  7Z Files  |  RAR Files  |
+|:-------------|:-------------|:-------------|
+|  Accuracy 99%  |  Accuracy 99%  |  Accuracy 99%  |
+***Using BruteForce Attack Method To Crack Archive Files***
 
-### Run
-Run This Commands In Your Terminal
+if you are not familiar with Brute-force attack, try dictionary attacks
 
-`sudo python3 Obevilion.py`
+## Run
+```shell
+python Obevilion.py
 
-#### To Test The Tool Type In Your Terminal
-`python3 Obevilion.py example.zip`
+# If you want to enter the easy mode type the following command
 
-Then Wait Until The File Cracked
+python Obevilion.py --easy_mode
 
-Then Copy The Password From The Terminal
+# Start Cracking
+# To Crack Archive Enter The Following Commands
 
-Then Open Your Archive Manager
+python Obevilion.py --cli [archive path]
 
-Then Paste The Password In Your Archive Manager
+# While in easy mode
+# +=> cli
+# Enter The Path: [enter the archive path here]
 
-Baam You Have Cracked The Archive File!
+# Enter the Graphical User Interface Mode
+python Obevilion.py --gui
+# while in easy mode
+# +=> gui
+
+# Explore the script by typing this command
+python Obevilion.py --help
+# while in easy mode
+# +=> help
+```
