@@ -1,20 +1,14 @@
 
 Note! GPL below is copyrighted by the Free Software Foundation,
 but the instance of code that it refers to (Obevilion)
-<<<<<<< HEAD
 is copyrighted by me and other contributers who actually wrote it.
 GPL-compatible doesn't mean that we're distributing Obevilion under
 the GPL.  All Obevilion licenses, unlike the GPL, let you distribute
-=======
-is copyrighted by me and other contributors who actually wrote it.
-GPL-compatible doesn't mean that we're distributing Obevilion under
-the GPL. All Obevilion licenses, unlike the GPL, let you distribute
->>>>>>> master
 a modified version without making your changes open source.
 
         Youssef Hesham
--------------------------------------------
-
+-------------------------------------------                      
+                      
                       GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
