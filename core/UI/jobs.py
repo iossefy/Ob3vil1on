@@ -6,6 +6,8 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
+import sys
+
 class DO(object):
     """Just call me and i will do
        what you want me to 'DO'."""
@@ -23,7 +25,7 @@ class DO(object):
         pass
 
     def quit(self):
-        pass
+        sys.exit(0) # For now
 
     def clear_output(self):
         pass
@@ -34,8 +36,14 @@ class DO(object):
     def start_cracking(self):
         pass
 
-    def choose_archive(self):
+    def attack_method(self):
         pass
 
-    def choose_dict(self):
+    def change_theme(self):
+        pass
+
+    def set_themes(self):
+        pass
+
+    def checks(self):
         pass
