@@ -18,11 +18,13 @@ except AttributeError:
 
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
+
 
 class Ui_AboutQT(object):
     def setupUi(self, AboutQT):
@@ -92,22 +94,35 @@ class Ui_AboutQT(object):
     def retranslateUi(self, AboutQT):
         AboutQT.setWindowTitle(_translate("AboutQT", "About Qt", None))
         self.label.setText(_translate("AboutQT", "About Qt", None))
-        self.label_2.setText(_translate("AboutQT", "This program uses Qt version 4", None))
+        self.label_2.setText(_translate(
+            "AboutQT", "This program uses Qt version 4", None))
         self.label_3.setText(_translate("AboutQT", "Qt is a C++, Python toolkit for cross-platform application development.\n"
-"", None))
-        self.label_4.setText(_translate("AboutQT", "Qt provides single-source portability across all major desktop operating systems. It is also", None))
-        self.label_5.setText(_translate("AboutQT", "available for embedded Linux and other embedded and mobile operating systems.", None))
-        self.label_6.setText(_translate("AboutQT", "Qt is available under three different licensing options designed to accommodate the needs", None))
-        self.label_7.setText(_translate("AboutQT", "of our various users.", None))
-        self.label_8.setText(_translate("AboutQT", "Qt licensed under our commercial license agreement is appropriate for development of", None))
-        self.label_9.setText(_translate("AboutQT", "proprietary/commercial software where you do not want to share any source code with third", None))
-        self.label_10.setText(_translate("AboutQT", "parties or otherwise cannot comply with the terms of the GNU LGPL version 3.", None))
-        self.label_11.setText(_translate("AboutQT", "Qt licensed under the GNU LGPL version 3 is appropriate for the development of", None))
-        self.label_12.setText(_translate("AboutQT", "Qt applications provided you can comply with the terms and conditions of the GNU LGPL", None))
+                                        "", None))
+        self.label_4.setText(_translate(
+            "AboutQT", "Qt provides single-source portability across all major desktop operating systems. It is also", None))
+        self.label_5.setText(_translate(
+            "AboutQT", "available for embedded Linux and other embedded and mobile operating systems.", None))
+        self.label_6.setText(_translate(
+            "AboutQT", "Qt is available under three different licensing options designed to accommodate the needs", None))
+        self.label_7.setText(_translate(
+            "AboutQT", "of our various users.", None))
+        self.label_8.setText(_translate(
+            "AboutQT", "Qt licensed under our commercial license agreement is appropriate for development of", None))
+        self.label_9.setText(_translate(
+            "AboutQT", "proprietary/commercial software where you do not want to share any source code with third", None))
+        self.label_10.setText(_translate(
+            "AboutQT", "parties or otherwise cannot comply with the terms of the GNU LGPL version 3.", None))
+        self.label_11.setText(_translate(
+            "AboutQT", "Qt licensed under the GNU LGPL version 3 is appropriate for the development of", None))
+        self.label_12.setText(_translate(
+            "AboutQT", "Qt applications provided you can comply with the terms and conditions of the GNU LGPL", None))
         self.label_13.setText(_translate("AboutQT", "version 3.", None))
-        self.label_14.setText(_translate("AboutQT", "Copyright (C) 2016 The Qt Company Ltd and other contributors", None))
-        self.label_15.setText(_translate("AboutQT", "Qt and the Qt logo are trademarks of The Qt Company Ltd.", None))
-        self.label_16.setText(_translate("AboutQT", "Qt is The Qt Company Ltd product developed as an open source project. See qt.io for more", None))
+        self.label_14.setText(_translate(
+            "AboutQT", "Copyright (C) 2016 The Qt Company Ltd and other contributors", None))
+        self.label_15.setText(_translate(
+            "AboutQT", "Qt and the Qt logo are trademarks of The Qt Company Ltd.", None))
+        self.label_16.setText(_translate(
+            "AboutQT", "Qt is The Qt Company Ltd product developed as an open source project. See qt.io for more", None))
         self.label_17.setText(_translate("AboutQT", "information.", None))
 
 
