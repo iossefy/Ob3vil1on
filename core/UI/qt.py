@@ -8,6 +8,7 @@
 
 from PyQt4 import QtCore, QtGui
 from PyQt4.QtGui import *
+import sys
 import os
 
 try:
@@ -126,11 +127,13 @@ class Ui_AboutQT(object):
         self.label_17.setText(_translate("AboutQT", "information.", None))
 
 
-if __name__ == "__main__":
-    import sys
+def main():
     app = QtGui.QApplication(sys.argv)
     AboutQT = QtGui.QFrame()
     ui = Ui_AboutQT()
     ui.setupUi(AboutQT)
     AboutQT.show()
     sys.exit(app.exec_())
+
+if __name__ == "__main__":
+    main()
