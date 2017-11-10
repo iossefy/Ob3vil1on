@@ -49,14 +49,6 @@ coverage.xml
 *.mo
 *.pot
 
-# Django stuff:
-*.log
-local_settings.py
-
-# Flask stuff:
-instance/
-.webassets-cache
-
 # Scrapy stuff:
 .scrapy
 
@@ -81,6 +73,15 @@ celerybeat-schedule
 # virtualenv
 venv/
 ENV/
+
+# Folders to ignore
+/build/
+__pycatch__/
+
+# Archive Files
+*.zip
+*.rar
+*.7z
 
 # Spyder project settings
 .spyderproject
