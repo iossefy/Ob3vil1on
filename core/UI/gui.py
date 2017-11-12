@@ -8,7 +8,8 @@
 
 import sys
 from PyQt4 import QtCore, QtGui
-import jobs
+from PyQt4.QtGui import *
+from jobs import DO
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -28,6 +29,7 @@ except AttributeError:
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        self.do = DO()
         '''
         Implementing the window in this class
         in this class Implementing the whole window
@@ -226,6 +228,7 @@ class Ui_MainWindow(object):
 
         self.actionQuit = QtGui.QAction(MainWindow)
         self.actionQuit.setObjectName(_fromUtf8("actionQuit"))
+        self.actionQuit.triggered.connect(self.do.quit)
 
         self.about_me = QtGui.QAction(MainWindow)
         self.about_me.setObjectName(_fromUtf8("about_me"))
@@ -235,6 +238,7 @@ class Ui_MainWindow(object):
 
         self.about_qt = QtGui.QAction(MainWindow)
         self.about_qt.setObjectName(_fromUtf8("about_qt"))
+        self.about_qt.triggered.connect(self.do.about_qt)
 
         self.about.addAction(self.about_me)
         self.about.addAction(self.about_obevilion)
