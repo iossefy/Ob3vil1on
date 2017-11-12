@@ -7,16 +7,17 @@
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
 import sys
+from PyQt4 import QtCore, QtGui
+import qt
+import subprocess
+import os
 
 class DO(object):
     """Just call me and i will do
        what you want me to 'DO'."""
-    def __init__(self, arg):
-        super(DO, self).__init__()
-        self.arg = arg
 
     def about_qt(self):
-        pass
+        subprocess.call('python {}/core/UI/qt.py'.format(os.getcwd()), shell=True)
 
     def about_me(self):
         pass
@@ -25,7 +26,7 @@ class DO(object):
         pass
 
     def quit(self):
-        sys.exit(0) # For now
+        sys.exit()
 
     def clear_output(self):
         pass
