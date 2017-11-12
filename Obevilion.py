@@ -9,7 +9,7 @@
 import sys
 import os
 import subprocess
-from core import Banner, Obevilion, Check, Control
+from core import Banner, Check, Control
 from core.UI import gui
 
 check_req = Check.Check_req()
@@ -47,8 +47,7 @@ def get_name(arg=''):
 try:
     action = sys.argv[1]
 except Exception as e:
-    printer.main_banner()
-
+    pass
 
 def loop_action(action):  # Using the easy loop system
     if action == '--easy_mode':
@@ -59,7 +58,8 @@ def loop_action(action):  # Using the easy loop system
 
 
 def main():
-
+    if action == '':
+        printer.main_banner()
     check_req.check_os()  # Checking the required operation system
     check_req.check_py_version()  # Check valid python version
 #    check_req.check_softwares() # Checking if the user have the required softwares
