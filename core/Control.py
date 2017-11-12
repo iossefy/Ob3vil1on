@@ -9,7 +9,6 @@
 import time
 import sys
 import Banner
-import Obevilion
 from UI import gui
 import subprocess
 

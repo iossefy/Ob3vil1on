@@ -8,9 +8,7 @@
 
 import os
 import sys
-sys.path.append('{path}'.format(path=os.getcwd()).replace('core/', ''))
-import Obevilion
-
+from name import get_name
 
 class Printer:
     """Just Printing Banners in this class."""
@@ -30,14 +28,14 @@ class Printer:
         ''')
 
         print("Coded By BL4CKvGHOST")
-        print("%s" % Obevilion.get_name('all').upper())
+        print("%s" % get_name(o='all').upper())
         print("Updates: now officialy %s is the strongest Cracking Script" %
-              Obevilion.get_name('all'))
+              get_name(o='all'))
         print("GitHub: https://github.com/BL4CKvGHOST")
         print("Twitter: https://twitter.com/BL4CKvGHOST")
         print("Usage: Python %s [display_mode] [archive path]" %
-              Obevilion.get_name())
-        print("Help!: python %s --help\n" % Obevilion.get_name())
+              get_name())
+        print("Help!: python %s --help\n" % get_name())
 
     def help_banner(self):
         print('''
@@ -54,23 +52,23 @@ class Printer:
                           Need Help?
   ============================================================
         ''')
-        print("Inputing From Outside %s Shell" % Obevilion.get_name('all'))
+        print("Inputing From Outside %s Shell" % get_name(o='all'))
         print('--gui:\t\tStart Graphical User Interface')
         print('--cli:\t\tStart Command Line Interface')
         print("--about\t\tAbout the app")
         print('--help:\t\tShow This Message\n')
-        print("Inputing From Inside %s Shell" % Obevilion.get_name('all'))
+        print("Inputing From Inside %s Shell" % get_name(o='all'))
         print("+=> BL4CKvGHOST\t\tShow Information About Me")
         print("+=> help\t\tShow This Message")
         print("+=> ifconfig\t\tShow You Local IP")
         print('+=> IP\t\t\tShow Your External IP')
         print("+=> License\t\tShow The License\n")
         print("How To Use?")
-        print("EASY MODE:\tpython %s --easy_mode" % Obevilion.get_name())
+        print("EASY MODE:\tpython %s --easy_mode" % get_name())
         print(
-            "CLI Example:\tpython %s --cli [Archive Path]" % Obevilion.get_name())
-        print("GUI Example:\tpython %s --gui" % Obevilion.get_name())
-        print("HELP EXAMPLE:\tpython %s --help\n" % Obevilion.get_name())
+            "CLI Example:\tpython %s --cli [Archive Path]" % get_name())
+        print("GUI Example:\tpython %s --gui" % get_name())
+        print("HELP EXAMPLE:\tpython %s --help\n" % get_name())
 
     def invalid_input(self):
         print('''
@@ -86,11 +84,11 @@ class Printer:
                                   YOU TAKE IT!
        ''')
 
-        print("%s" % Obevilion.get_name('all').upper())
+        print("%s" % get_name(o='all').upper())
         print("INVALID INPUT")
         print("Usage: Python %s [display_mode] [archive path]" %
-              Obevilion.get_name())
-        print("Help!: python %s --help" % Obevilion.get_name())
+              get_name())
+        print("Help!: python %s --help" % get_name())
 
     def about(self):
         print('''
@@ -101,7 +99,7 @@ class Printer:
         ██║  ██║██████╔╝╚██████╔╝╚██████╔╝   ██║
         ╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚═════╝    ╚═╝
                                 About {name}
-        '''.format(name=Obevilion.get_name('all')))
+        '''.format(name=get_name(o='all')))
         print('''
 {name} is archive cracker tool, created in pure python.
 {name} will be recreated in C soon for more experience while cracking,
@@ -109,7 +107,7 @@ class Printer:
 {name} Have a gui interface for the user who cant deal with the cli.
 {name} is designed for all Linux distributions.
 with {name} you can crack [7z/zip/rar] files.
-        '''.format(name=Obevilion.get_name('all')))
+        '''.format(name=get_name('all')))
 
     def License(self):
         print('''
@@ -145,5 +143,5 @@ Website: https://bl4ckvghost.github.io
         print("\nStackTrace")
         print('{}\n'.format(exception))
         print(
-            "You can report the error at https://github.com/BL4CKvGHOST/Obevilion/issues/")
+            "You can report the error at https://github.com/BL4CKvGHOST/issues/")
         print('Exiting...')
