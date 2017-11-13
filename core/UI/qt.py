@@ -31,7 +31,7 @@ except AttributeError:
 class Ui_AboutQT(object):
     def setupUi(self, AboutQT):
         AboutQT.setObjectName(_fromUtf8("AboutQT"))
-        AboutQT.resize(611, 436)
+        AboutQT.setFixedSize(611, 436)
         AboutQT.setFrameShape(QtGui.QFrame.StyledPanel)
         AboutQT.setFrameShadow(QtGui.QFrame.Raised)
         self.label = QtGui.QLabel(AboutQT)
