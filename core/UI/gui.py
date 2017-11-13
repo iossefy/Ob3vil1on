@@ -232,6 +232,7 @@ class Ui_MainWindow(object):
 
         self.about_me = QtGui.QAction(MainWindow)
         self.about_me.setObjectName(_fromUtf8("about_me"))
+        self.about_me.triggered.connect(self.do.about_me)
 
         self.about_obevilion = QtGui.QAction(MainWindow)
         self.about_obevilion.setObjectName(_fromUtf8("about_obevilion"))
