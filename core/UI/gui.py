@@ -106,6 +106,7 @@ class Ui_MainWindow(object):
         self.choose_archive = QtGui.QPushButton(self.frame)
         self.choose_archive.setGeometry(QtCore.QRect(610, 80, 94, 32))
         self.choose_archive.setObjectName(_fromUtf8("choose_archive"))
+        self.choose_archive.clicked.connect(self.open_archive)
 
         # settong up label_3
         self.label_3 = QtGui.QLabel(self.frame)
@@ -140,6 +141,7 @@ class Ui_MainWindow(object):
         self.choose_dict = QtGui.QPushButton(self.frame)
         self.choose_dict.setGeometry(QtCore.QRect(610, 120, 94, 32))
         self.choose_dict.setObjectName(_fromUtf8("choose_dict"))
+        self.choose_dict.clicked.connect(self.open_dict)
 
         # use Symboles in cracking
         self.check_Symboles = QtGui.QCheckBox(self.frame)
@@ -251,6 +253,12 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def open_dict(self):
+        self.DictPath.setText(QFileDialog.getOpenFileName())
+
+    def open_archive(self):
+        self.archivePath.setText(QFileDialog.getOpenFileName())
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "Obevilion", None))
