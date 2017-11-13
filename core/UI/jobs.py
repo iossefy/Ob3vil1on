@@ -55,5 +55,13 @@ class DO(object):
     def set_themes(self):
         pass
 
-    def checks(self):
-        pass
+    def radioState(self, radio, field, btn):
+        if radio.isChecked() == True:
+            field.setDisabled(True)
+            btn.setDisabled(True)
+        elif radio.isChecked() == False:
+            field.setDisabled(False)
+            btn.setDisabled(False)
+
+    def open_file(self, field):
+        field.setText(QtGui.QFileDialog.getOpenFileName())
