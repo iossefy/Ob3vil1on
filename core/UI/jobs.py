@@ -11,6 +11,8 @@ from PyQt4 import QtCore, QtGui
 import qt
 import subprocess
 import os
+import tkinter as tk
+import tkinter.messagebox
 
 class DO(object):
     """Just call me and i will do
@@ -26,7 +28,13 @@ class DO(object):
         pass
 
     def quit(self):
-        sys.exit()
+        self.root = tk.Tk()
+        self.root.withdraw()
+        self.answer = tk.messagebox.askquestion("Quit", "Are you sure\nYou want to exit?")
+        if self.answer == 'yes':
+            sys.exit(0)
+        else:
+            pass
 
     def clear_output(self):
         pass
