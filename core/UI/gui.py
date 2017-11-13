@@ -106,7 +106,7 @@ class Ui_MainWindow(object):
         self.choose_archive = QtGui.QPushButton(self.frame)
         self.choose_archive.setGeometry(QtCore.QRect(610, 80, 94, 32))
         self.choose_archive.setObjectName(_fromUtf8("choose_archive"))
-        self.choose_archive.clicked.connect(self.open_archive)
+        self.choose_archive.clicked.connect(lambda:self.do.open_file(self.archivePath))
 
         # settong up label_3
         self.label_3 = QtGui.QLabel(self.frame)
@@ -141,7 +141,7 @@ class Ui_MainWindow(object):
         self.choose_dict = QtGui.QPushButton(self.frame)
         self.choose_dict.setGeometry(QtCore.QRect(610, 120, 94, 32))
         self.choose_dict.setObjectName(_fromUtf8("choose_dict"))
-        self.choose_dict.clicked.connect(self.open_dict)
+        self.choose_dict.clicked.connect(lambda:self.do.open_file(self.DictPath))
 
         # use Symboles in cracking
         self.check_Symboles = QtGui.QCheckBox(self.frame)
@@ -167,6 +167,9 @@ class Ui_MainWindow(object):
         self.check_bruteforce = QtGui.QRadioButton(self.frame)
         self.check_bruteforce.setGeometry(QtCore.QRect(20, 250, 109, 25))
         self.check_bruteforce.setObjectName(_fromUtf8("check_bruteforce"))
+        self.check_bruteforce.toggled.connect(lambda:self.do.radioState(self.check_bruteforce,
+                self.DictPath, self.choose_dict))
+        self.check_bruteforce.setChecked(True)
 
         # Dictionary Attack radio button
         self.check_dict = QtGui.QRadioButton(self.frame)
@@ -254,7 +257,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def open_dict(self):
+    def open_dict(self, field):
         self.DictPath.setText(QFileDialog.getOpenFileName())
 
     def open_archive(self):
