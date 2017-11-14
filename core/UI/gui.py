@@ -197,6 +197,7 @@ class Ui_MainWindow(object):
         self.label_5 = QtGui.QLabel(self.frame)
         self.label_5.setGeometry(QtCore.QRect(470, 180, 151, 51))
 
+        # Setting up the font
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Impact"))
         font.setPointSize(18)
@@ -243,6 +244,7 @@ class Ui_MainWindow(object):
 
         self.about_obevilion = QtGui.QAction(MainWindow)
         self.about_obevilion.setObjectName(_fromUtf8("about_obevilion"))
+        self.about_obevilion.triggered.connect(self.do.about_script)
 
         self.about_qt = QtGui.QAction(MainWindow)
         self.about_qt.setObjectName(_fromUtf8("about_qt"))
