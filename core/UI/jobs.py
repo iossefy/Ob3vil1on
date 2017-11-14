@@ -10,6 +10,7 @@ from PyQt4 import QtCore, QtGui
 import qt
 import os
 import me
+import ascript
 import sys
 import subprocess
 import tkinter as tk
@@ -26,7 +27,7 @@ class DO(object):
         me.main()
 
     def about_script(self):
-        pass
+        ascript.main()
 
     def quit(self):
         root = tk.Tk()
