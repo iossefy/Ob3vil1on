@@ -16,27 +16,38 @@ import subprocess
 import tkinter as tk
 import tkinter.messagebox
 
+
 class DO(object):
     """Just call me and i will do
        what you want me to 'DO'."""
 
     def about_qt(self):
-        subprocess.call('python {}/core/UI/qt.py'.format(os.getcwd()), shell=True)
+        '''
+        Getting the path of the current directory then
+        run qt.py in 'core/UI/qt.py'
+        '''
+        subprocess.call(
+            'python {}/core/UI/qt.py'.format(os.getcwd()), shell=True)
 
     def about_me(self):
-        me.main()
+        me.main() # Call this function
 
     def about_script(self):
-        ascript.main()
+        ascript.main() # Call this function
 
     def quit(self):
+        '''
+        Displaying a dialog window for the user
+        to confirm if the user want to quit.
+        '''
         root = tk.Tk()
         root.withdraw()
-        answer = tk.messagebox.askquestion("Quit", "Are you sure\nYou want to exit?")
+        answer = tk.messagebox.askquestion(
+            "Quit", "Are you sure\nYou want to exit?")
         if answer == 'yes':
             sys.exit(0)
         elif answer == 'no':
-            root.destroy()
+            root.destroy() # Terminating the window
 
     def clear_output(self):
         pass
@@ -57,6 +68,16 @@ class DO(object):
         pass
 
     def radioState(self, radio, field, btn):
+        '''
+        Checking if the BruteForce Attack radio button
+        is Checked, disable the dictionary attack text
+        field and dictionary attack 'choose' button,
+        if not enable them.
+
+        radio: is for the choosen radio button.
+        field: is for the choosen text field.
+        btn: is for the choosen 'choose' button.
+        '''
         if radio.isChecked() == True:
             field.setDisabled(True)
             btn.setDisabled(True)
