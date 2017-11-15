@@ -49,14 +49,6 @@ try:
 except Exception as e:
     pass
 
-def loop_action(action):  # Using the easy loop system
-    if action == '--easy_mode':
-        printer.main_banner
-        looprocess.loop()
-    else:
-        pass
-
-
 def main():
     if action == '':
         printer.main_banner()
