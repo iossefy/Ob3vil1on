@@ -49,6 +49,7 @@ try:
 except Exception as e:
     pass
 
+
 def main():
     if action == '':
         printer.main_banner()

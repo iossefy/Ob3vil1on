@@ -10,6 +10,7 @@ from tkinter import *
 import os
 import sys
 
+
 class Window(Frame):
     def __init__(self, master=None):
         Frame.__init__(self, master)
@@ -22,11 +23,15 @@ class Window(Frame):
 
     def showTxT(self):
         # I dont know what to name the variables so forgive me
-        self.title = Label(self.master, text="Obevilion Archive Cracker Tool", height=2, width=80)
-        self.TxT   = Label(self.master, text='Obevilion is a cracking script created by BL4CKvGHOST')
-        self.decr  = Label(self.master, text="Created in [ Python / C / (Java comming soon)]")
-        self.end   = Label(self.master, text="Obevilion created by Hackers For Hackers")
-        self.boom  = Label(self.master, text="Created By BL4CKvGHOST")
+        self.title = Label(
+            self.master, text="Obevilion Archive Cracker Tool", height=2, width=80)
+        self.TxT = Label(
+            self.master, text='Obevilion is a cracking script created by BL4CKvGHOST')
+        self.decr = Label(
+            self.master, text="Created in [ Python / C / (Java comming soon)]")
+        self.end = Label(
+            self.master, text="Obevilion created by Hackers For Hackers")
+        self.boom = Label(self.master, text="Created By BL4CKvGHOST")
 
         # Packing the variables
         self.title.pack()
@@ -35,11 +40,13 @@ class Window(Frame):
         self.end.pack()
         self.boom.pack()
 
+
 def main():
     root = Tk()
     root.geometry('500x120')
     app = Window(root)
     root.mainloop()
+
 
 if __name__ == '__main__':
     main()
