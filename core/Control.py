@@ -129,18 +129,3 @@ class Attacks:
             printer.unknowen_error(exception=e)
             time.sleep(2)
             sys.exit(1)
-
-
-class ConsoleColor:
-    """Initializing Colors For The Text On The Console."""
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
-    def __init__(self, text=None, color=None):
-        return "{color} {text} {end}".format(color=color, text=text, end=ENDC)
