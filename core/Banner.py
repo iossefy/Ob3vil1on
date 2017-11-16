@@ -62,8 +62,10 @@ class Printer:
         print("+=> BL4CKvGHOST\t\tShow Information About Me")
         print("+=> help\t\tShow This Message")
         print("+=> ifconfig\t\tShow You Local IP")
-        print('+=> IP\t\t\tShow Your External IP')
-        print("+=> License\t\tShow The License\n")
+        print('+=> ip\t\t\tShow Your External IP')
+        print("+=> license\t\tShow The License")
+        print("+=> Clear\t\tClear The Screen")
+        print("+=> Attacks\t\tShow available attacks\n")
         print("How To Use?")
         print("EASY MODE:\tpython %s --easy_mode" % get_name())
         print(
