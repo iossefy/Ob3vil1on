@@ -20,6 +20,9 @@ class LoopControl:
        without breaking the application."""
 
     def loop(self):
+        """
+        Looping throgh user input
+        """
         self.attacks = Attacks()
         choice = ""
         try:
@@ -60,6 +63,9 @@ class LoopControl:
             time.sleep(2)
 
     def main_loop(self, action=None, commands=None):
+        """
+        Script Main Loop
+        """
         self.attacks = Attacks()
         try:
             assert action in commands, "Action is not one of %s" % ', '.join(
@@ -105,6 +111,9 @@ class Attacks:
     """
 
     def cli_bruteforce_attack(self):
+        """
+        Attacking inside [the easy mode]
+        """
         try:
             path = raw_input('path:')
             if path != '':
@@ -118,6 +127,9 @@ class Attacks:
             sys.exit(1)
 
     def cli_bruteforce_attack_outshell(self):
+        """
+        Attacking in the external shell [Terminal Argu]
+        """
         try:
             path = sys.argv[2]
             if path == '' or path == None:
