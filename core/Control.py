@@ -97,6 +97,8 @@ class LoopControl(object):
                 printer.about_me()
             elif action == '--license':
                 printer.License()
+            elif action == '--vault':
+                booker.read()
         except Exception as e:
             try:
                 if sys.argv[1] is not commands:
