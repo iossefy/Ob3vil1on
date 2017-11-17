@@ -59,6 +59,7 @@ class Printer:
         print("--about\t\t\tAbout the app")
         print("--attacks\t\tShow available attacks")
         print("--license\t\tShow license")
+        print("--vault\t\t\tShow File names and password")
         print("--show-database\t\tShow File names and passwords")
         print('--help:\t\t\tShow This Message\n')
         print("Inputing From Inside %s Shell" % get_name(o='all'))
@@ -69,13 +70,13 @@ class Printer:
         print("+=> license\t\tShow The License")
         print("+=> clear\t\tClear The Screen")
         print("+=> attacks\t\tShow available attacks")
-        print("+=> show database\tShow File names and passwords\n")
+        print("+=> vault\t\tShow File names and passwords\n")
         print("How To Use?")
         print("EASY MODE:\t\tpython %s --easy_mode" % get_name())
         print(
-            "CLI Example:\t\tpython %s --cli [Archive Path]" % get_name())
-        print("GUI Example:\t\tpython %s --gui" % get_name())
-        print("HELP EXAMPLE:\t\tpython %s --help\n" % get_name())
+            "CLI MODE:\t\tpython %s --cli [Archive Path]" % get_name())
+        print("GUI MODE:\t\tpython %s --gui" % get_name())
+        print("HELP SCREEN:\t\tpython %s --help\n" % get_name())
 
     def invalid_input(self):
         print('''
