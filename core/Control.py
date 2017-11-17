@@ -11,7 +11,7 @@ import sys
 import Banner
 from UI import gui
 import subprocess
-from writer import Booker
+# from writer import Booker
 
 printer = Banner.Printer()
 
