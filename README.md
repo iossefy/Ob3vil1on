@@ -14,31 +14,26 @@ Accuracy 99% | Accuracy 99% | Accuracy 99%
 
 if you are not familiar with Brute-force attack, try dictionary attacks
 
+## Windows
+
+If you are using windows you must install the [Cygwin](http://www.cygwin.com/).
+
+Now you can run Obevilion with Cygwin
+
+## Mac OS X
+
+If you are using mac os x you must have 'unzip' and 'p7zip' installed in your terminal
+
 ## Run
 
 ```shell
+# Run it by
 python Obevilion.py
-
 # If you want to enter the easy mode type the following command
-
 python Obevilion.py --easy_mode
-
 # Start Cracking
 # To Crack Archive Enter The Following Commands
-
 python Obevilion.py --cli [archive path]
-
-# While in easy mode
-# +=> cli
-# Enter The Path: [enter the archive path here]
-
-# Enter the Graphical User Interface Mode
-python Obevilion.py --gui
-# while in easy mode
-# +=> gui
-
-# Explore the script by typing this command
+# Wanna the help command
 python Obevilion.py --help
-# while in easy mode
-# +=> help
 ```
