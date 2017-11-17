@@ -29,7 +29,7 @@ class Booker(object):
 
     """
 
-    def write(self, fileName, password, output="output.csv"):
+    def write(self, fileName, password):
         """
         fileName: Getting the file name to write it into file_name column.
         password: Getting the Password to write it into password column.
@@ -44,6 +44,6 @@ class Booker(object):
         output: not a required function, you can pass the csv file in there.
         """
         with open(output, 'rb') as csv_file:
-            csv_reader = csv.read(csv_file, delimiter=',')
+            csv_reader = csv.reader(csv_file, delimiter=',')
             for line in csv_reader:
-                print("{filename}:{password}".format(line[0], line[1]))
+                print("{filename}:\t{password}".format(line[0], line[1]))
