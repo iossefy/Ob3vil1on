@@ -18,7 +18,7 @@ if you are not familiar with Brute-force attack, try dictionary attacks
 
 If you are using windows you must install the [Cygwin](http://www.cygwin.com/).
 
-Now you can run Obevilion with Cygwin
+Now you can run Obevilion with [Cygwin](http://www.cygwin.com/).
 
 ## Mac OS X
 
