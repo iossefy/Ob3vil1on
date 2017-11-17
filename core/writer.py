@@ -29,7 +29,7 @@ class Booker(object):
 
     """
 
-    def write(self, fileName, password, output="output.csv"):
+    def write(self, fileName, password, output="core/output.csv"):
         """
         fileName: Getting the file name to write it into file_name column.
         password: Getting the Password to write it into password column.
@@ -38,7 +38,7 @@ class Booker(object):
             write = csv.writer(csv_file, delimiter=',')
             write.writerow([str(fileName), str(password)])
 
-    def read(self, output="output.csv"):
+    def read(self, output="core/output.csv"):
         """
         Reading the Information of the cracked files.
         output: not a required function, you can pass the csv file in there.
@@ -46,4 +46,5 @@ class Booker(object):
         with open(output, 'rb') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             for line in csv_reader:
-                print("{filename}:\t{password}".format(line[0], line[1]))
+                o = "{filename}:\t{password}".format(filename=line[0], password=line[1])
+        print(o)
