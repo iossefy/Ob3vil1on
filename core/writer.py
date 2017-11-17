@@ -29,7 +29,7 @@ class Booker(object):
 
     """
 
-    def write(self, fileName, password):
+    def write(self, fileName, password, output="output.csv"):
         """
         fileName: Getting the file name to write it into file_name column.
         password: Getting the Password to write it into password column.
