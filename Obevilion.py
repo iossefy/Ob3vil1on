@@ -15,7 +15,8 @@ printer = Banner.Printer()
 looprocess = Control.LoopControl()
 action = ''
 commands = ['--gui', '--cli', '--help', '--about',
-            '--easy_mode', '--about_me', '--license']
+            '--easy_mode', '--about_me', '--license',
+            '--vault', '--license', '--attacks']
 
 
 def get_name(arg=''):
