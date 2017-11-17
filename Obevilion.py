@@ -8,9 +8,7 @@
 
 import sys
 import os
-import subprocess
 from core import Banner, Check, Control
-from core.UI import gui
 
 check_req = Check.Check_req()
 printer = Banner.Printer()
@@ -51,11 +49,12 @@ except Exception as e:
 
 
 def main():
+    """Main Function."""
     if action == '':
         printer.main_banner()
     check_req.check_os()  # Checking the required operation system
     check_req.check_py_version()  # Check valid python version
-#    check_req.check_softwares() # Checking if the user have the required softwares
+#   check_req.check_softwares() # Check if the required softwares exists
     looprocess.main_loop(action=action, commands=commands)  # Run
 
 
