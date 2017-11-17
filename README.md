@@ -12,7 +12,7 @@ Accuracy 99% | Accuracy 99% | Accuracy 99%
 
 **_Using BruteForce Attack Method To Crack Archive Files_**
 
-if you are not familiar with Brute-force attack, try dictionary attacks
+if you are not familiar with Brute-force attack, try dictionary attacks (Not Available Yet, Wait For The New Update)
 
 ## Windows
 
