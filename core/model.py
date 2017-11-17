@@ -3,9 +3,10 @@
 import time
 import os
 import sys
-import shutil
 import itertools
+from writer import Booker
 
+booker = Booker()
 
 def rc(rf):
     alphabet = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890!@#*+-"
@@ -24,6 +25,7 @@ def rc(rf):
                         print("Found password:", repr(k))
                         print("Tried combination count:", tryn)
                         print("It took", round(time.time() - start, 3), "seconds")
+                        booker.write(rf, k)
                         print("Exiting...")
                         time.sleep(2)
                         sys.exit(1)
@@ -37,6 +39,7 @@ def rc(rf):
                         print("Found password:", repr(k))
                         print("Tried combination count:", tryn)
                         print("It took", round(time.time() - start, 3), "seconds")
+                        booker.write(k, rf)
                         print("Exiting...")
                         time.sleep(2)
                         sys.exit(1)
