@@ -8,24 +8,26 @@
 
 import time
 import sys
-import Banner
+from Banner import Printer
 from UI import gui
 import subprocess
-# from writer import Booker
+from writer import Booker
 
-printer = Banner.Printer()
+printer = Printer()
+booker = Booker()
 
 
-class LoopControl:
-    """Looping In the terminal to let the user input
-       without breaking the application."""
+class LoopControl(object):
+    """
+    Looping In the terminal to let the user input
+    without breaking the application.
+    """
 
     def loop(self):
         """
         Looping throgh user input
         """
         self.attacks = Attacks()
-        # self.reader = Booker().read()
         choice = ""
         try:
             while choice != "exit":
@@ -49,15 +51,15 @@ class LoopControl:
                 elif choice == 'ifconfig':
                     subprocess.call('sudo ifconfig', shell=True)
                 elif choice == 'ip':
-                    subprocess.call('curl ifconfig.co')
+                    subprocess.call('curl ifconfig.co', shell=True)
                 elif choice == 'license':
                     printer.License()
                 elif choice == 'attacks':
                     print("CRACKING [ZIP, 7Z, RAR] FILES, AND MORE SOON...")
+                elif choice == "vault":
+                    booker.read()
                 elif choice == 'BL4CKvGHOST':
                     printer.about_me()
-                # elif choice == "show database":
-                #     self.reader()
                 else:
                     print("Invalid Input")
         except KeyboardInterrupt as ki:
