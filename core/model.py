@@ -39,7 +39,7 @@ def rc(rf):
                         print("Found password:", repr(k))
                         print("Tried combination count:", tryn)
                         print("It took", round(time.time() - start, 3), "seconds")
-                        booker.write(k, rf)
+                        booker.write(rf, k)
                         print("Exiting...")
                         time.sleep(2)
                         sys.exit(1)
