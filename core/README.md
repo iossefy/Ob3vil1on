@@ -8,13 +8,13 @@
 
 - [ ] Windows support
 
-- [ ] Mac OSX support
+- [ ] Mac OSX support | Checked
 
 - [ ] Graphical user interface window
 
-- [ ] Fix Hardcoded lines
+- [ ] Fix Hardcoded lines | Checked
 
-- [ ] Add bugs to fix later
+- [ ] Add bugs to fix later | Checked
 
 - [ ] Create A Method To Use Dictionary Attack
 
