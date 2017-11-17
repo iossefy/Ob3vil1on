@@ -60,7 +60,6 @@ class Printer:
         print("--attacks\t\tShow available attacks")
         print("--license\t\tShow license")
         print("--vault\t\t\tShow File names and password")
-        print("--show-database\t\tShow File names and passwords")
         print('--help:\t\t\tShow This Message\n')
         print("Inputing From Inside %s Shell" % get_name(o='all'))
         print("+=> BL4CKvGHOST\t\tShow Information About Me")
