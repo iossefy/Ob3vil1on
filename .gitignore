@@ -49,6 +49,9 @@ coverage.xml
 *.out
 *.o
 
+# CSV Files
+*.csv
+
 # Translations
 *.mo
 *.pot
@@ -80,7 +83,9 @@ ENV/
 
 # Folders to ignore
 /build/
-__pycatch__/
+
+# Testing Files
+*.test.py
 
 # Archive Files
 *.zip
