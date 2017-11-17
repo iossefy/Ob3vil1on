@@ -25,7 +25,7 @@ class LoopControl:
         Looping throgh user input
         """
         self.attacks = Attacks()
-        self.reader = Booker().read()
+        # self.reader = Booker().read()
         choice = ""
         try:
             while choice != "exit":
@@ -56,8 +56,8 @@ class LoopControl:
                     print("CRACKING [ZIP, 7Z, RAR] FILES, AND MORE SOON...")
                 elif choice == 'BL4CKvGHOST':
                     printer.about_me()
-                elif choice == "show database":
-                    self.reader()
+                # elif choice == "show database":
+                #     self.reader()
                 else:
                     print("Invalid Input")
         except KeyboardInterrupt as ki:
