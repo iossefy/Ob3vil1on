@@ -132,7 +132,7 @@ class Attacks:
 
     def cli_bruteforce_attack_outshell(self):
         """
-        Attacking in the external shell [Terminal Argu]
+        Attacking in the external shell [Terminal Arguments]
         """
         try:
             path = sys.argv[2]
