@@ -6,7 +6,7 @@
 
 - [ ] Python3 support
 
-- [ ] Windows support
+- [ ] Windows support | Checked
 
 - [ ] Mac OSX support | Checked
 
