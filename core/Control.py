@@ -136,7 +136,7 @@ class Attacks:
         """
         try:
             path = sys.argv[2]
-            if path == '' or path  None:
+            if path == '' or path is None:
                 print("Try Again!")
             else:
                 subprocess.call(
