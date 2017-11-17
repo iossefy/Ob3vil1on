@@ -46,5 +46,4 @@ class Booker(object):
         with open(output, 'rb') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             for line in csv_reader:
-                o = "{filename}:\t{password}".format(filename=line[0], password=line[1])
-        print(o)
+                print("File Path: {filename}:\tPassword: {password}".format(filename=line[0], password=line[1]))
