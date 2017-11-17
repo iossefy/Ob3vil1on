@@ -11,6 +11,7 @@ import sys
 import Banner
 from UI import gui
 import subprocess
+from writer import Booker
 
 printer = Banner.Printer()
 
@@ -24,6 +25,7 @@ class LoopControl:
         Looping throgh user input
         """
         self.attacks = Attacks()
+        self.reader = Booker().read()
         choice = ""
         try:
             while choice != "exit":
@@ -54,6 +56,8 @@ class LoopControl:
                     print("CRACKING [ZIP, 7Z, RAR] FILES, AND MORE SOON...")
                 elif choice == 'BL4CKvGHOST':
                     printer.about_me()
+                elif choice == "show database":
+                    self.reader()
                 else:
                     print("Invalid Input")
         except KeyboardInterrupt as ki:
@@ -132,7 +136,7 @@ class Attacks:
         """
         try:
             path = sys.argv[2]
-            if path == '' or path == None:
+            if path == '' or path  None:
                 print("Try Again!")
             else:
                 subprocess.call(
