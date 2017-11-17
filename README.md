@@ -22,7 +22,7 @@ Now you can run Obevilion with [Cygwin](http://www.cygwin.com/).
 
 ## Mac OS X
 
-If you are using mac os x you must have 'unzip' and 'p7zip' installed in your terminal
+If you are using mac os x you must have 'unzip' and 'p7zip' installed in your terminal.
 
 ## Run
 
