@@ -163,12 +163,8 @@ class Ui_MainWindow(object):
         # Setting up the theme changer
         self.theme_changer = QtGui.QComboBox(self.frame)
         # Setting up the combo box items
-        self.theme_changer.addItem("motif")
-        self.theme_changer.addItem("Windows")
-        self.theme_changer.addItem("cde")
-        self.theme_changer.addItem("Plastique")
-        self.theme_changer.addItem("Cleanlooks")
-        self.theme_changer.addItem("gtk+")
+        self.themes = ["motif", "windows", "cde", "Plastique", "Cleanlooks", "gtk+"]
+        self.theme_changer.addItems(self.themes)
         # self.theme_changer.activated[str].connect(self.do.change_theme)
         self.theme_changer.setGeometry(QtCore.QRect(500, 250, 191, 31))
         self.theme_changer.setObjectName(_fromUtf8("theme_changer"))
@@ -275,7 +271,7 @@ class Ui_MainWindow(object):
         self.archivePath.setStatusTip(_translate(
             "MainWindow", "Enter the archive path to crack", None))
 
-        self.label_2.setText(_translate("MainWindow", "Archive Path", None))
+        self.label_2.setText(_translate("MainWindow", "Archive", None))
         self.choose_archive.setStatusTip(_translate(
             "MainWindow", "Choose archive from file system", None))
         self.choose_archive.setText(_translate("MainWindow", "Browse", None))
