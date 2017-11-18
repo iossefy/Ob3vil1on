@@ -29,11 +29,13 @@ class DO(object):
         subprocess.call(
             'python {}/core/UI/qt.py'.format(os.getcwd()), shell=True)
 
-    def about_me(self):
+    def about_me(self, output):
         me.main()  # Call this function
+        output.append("Open About Window.")
 
-    def about_script(self):
+    def about_script(self, output):
         ascript.main()  # Call this function
+        output.append("Open About Script")
 
     def quit(self):
         '''
@@ -48,12 +50,16 @@ class DO(object):
             sys.exit(0)
         elif answer == 'no':
             root.destroy()  # Terminating the window
+            output.append("Canceled")
 
-    def clear_output(self):
-        pass
+    def clear_output(self, output):
+        output.clear()
 
-    def save_output(self):
-        pass
+    def save_output(self, textField):
+        self.save = QtGui.QFileDialog.getSaveFileName()
+        with open(self.save, 'wb') as file:
+            text = textField.toPlaneText()
+            file.write(text)
 
     def start_cracking(self):
         pass
@@ -61,9 +67,9 @@ class DO(object):
     def attack_method(self):
         pass
 
-    def change_theme(self, theme):
+    def change_theme(self, theme, output):
         QtGui.QApplication.setStyle(QtGui.QStyleFactory.create(theme))
-
+        output.append("Theme Changed")
     def radioState(self, radio, field, btn):
         '''
         Checking if the BruteForce Attack radio button
@@ -82,5 +88,6 @@ class DO(object):
             field.setDisabled(False)
             btn.setDisabled(False)
 
-    def open_file(self, field):
+    def open_file(self, field, output):
         field.setText(QtGui.QFileDialog.getOpenFileName())
+        output.append("Open File Chooser")
