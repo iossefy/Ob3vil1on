@@ -162,6 +162,14 @@ class Ui_MainWindow(object):
 
         # Setting up the theme changer
         self.theme_changer = QtGui.QComboBox(self.frame)
+        # Setting up the combo box items
+        self.theme_changer.addItem("motif")
+        self.theme_changer.addItem("Windows")
+        self.theme_changer.addItem("cde")
+        self.theme_changer.addItem("Plastique")
+        self.theme_changer.addItem("Cleanlooks")
+        self.theme_changer.addItem("gtk+")
+        # self.theme_changer.activated[str].connect(self.do.change_theme)
         self.theme_changer.setGeometry(QtCore.QRect(500, 250, 191, 31))
         self.theme_changer.setObjectName(_fromUtf8("theme_changer"))
 
@@ -192,6 +200,7 @@ class Ui_MainWindow(object):
         self.apply_theme = QtGui.QPushButton(self.frame)
         self.apply_theme.setGeometry(QtCore.QRect(700, 250, 91, 32))
         self.apply_theme.setObjectName(_fromUtf8("apply_theme"))
+        self.apply_theme.clicked.connect(lambda:self.do.change_theme(str(self.theme_changer.currentText())))
 
         # Setting up the label_5
         self.label_5 = QtGui.QLabel(self.frame)
