@@ -30,10 +30,10 @@ class DO(object):
             'python {}/core/UI/qt.py'.format(os.getcwd()), shell=True)
 
     def about_me(self):
-        me.main() # Call this function
+        me.main()  # Call this function
 
     def about_script(self):
-        ascript.main() # Call this function
+        ascript.main()  # Call this function
 
     def quit(self):
         '''
@@ -47,7 +47,7 @@ class DO(object):
         if answer == 'yes':
             sys.exit(0)
         elif answer == 'no':
-            root.destroy() # Terminating the window
+            root.destroy()  # Terminating the window
 
     def clear_output(self):
         pass

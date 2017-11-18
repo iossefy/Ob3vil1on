@@ -10,6 +10,7 @@ from tkinter import *
 import os
 import sys
 
+
 class Window(Frame):
     def __init__(self, master=None):
         Frame.__init__(self, master)
@@ -21,16 +22,19 @@ class Window(Frame):
         self.showTxT()
 
     def showTxT(self):
-        self.TxT  = Label(self.master, text='IAM A PROGRAMMER!', pady=60, padx=60)
+        self.TxT = Label(
+            self.master, text='IAM A PROGRAMMER!', pady=60, padx=60)
         self.decr = Label(self.master, text="Go Back Fool!", pady=70, padx=70)
         self.TxT.pack()
         self.decr.pack()
+
 
 def main():
     root = Tk()
     root.geometry('500x300')
     app = Window(root)
     root.mainloop()
+
 
 if __name__ == '__main__':
     main()
