@@ -107,7 +107,7 @@ class Ui_MainWindow(object):
         self.choose_archive.setGeometry(QtCore.QRect(610, 80, 94, 32))
         self.choose_archive.setObjectName(_fromUtf8("choose_archive"))
         self.choose_archive.clicked.connect(
-            lambda: self.do.open_file(self.archivePath))
+            lambda: self.do.open_file(self.archivePath, self.output))
 
         # settong up label_3
         self.label_3 = QtGui.QLabel(self.frame)
@@ -143,17 +143,17 @@ class Ui_MainWindow(object):
         self.choose_dict.setGeometry(QtCore.QRect(610, 120, 94, 32))
         self.choose_dict.setObjectName(_fromUtf8("choose_dict"))
         self.choose_dict.clicked.connect(
-            lambda: self.do.open_file(self.DictPath))
+            lambda: self.do.open_file(self.DictPath, self.output))
 
-        # use Symboles in cracking
-        self.check_Symboles = QtGui.QCheckBox(self.frame)
-        self.check_Symboles.setGeometry(QtCore.QRect(180, 250, 121, 25))
-        self.check_Symboles.setObjectName(_fromUtf8("check_Symboles"))
-
-        # use kali linux tools
-        self.check_Kali = QtGui.QCheckBox(self.frame)
-        self.check_Kali.setGeometry(QtCore.QRect(180, 290, 161, 25))
-        self.check_Kali.setObjectName(_fromUtf8("check_Kali"))
+        # # use Symboles in cracking
+        # self.check_Symboles = QtGui.QCheckBox(self.frame)
+        # self.check_Symboles.setGeometry(QtCore.QRect(180, 250, 121, 25))
+        # self.check_Symboles.setObjectName(_fromUtf8("check_Symboles"))
+        #
+        # # use kali linux tools
+        # self.check_Kali = QtGui.QCheckBox(self.frame)
+        # self.check_Kali.setGeometry(QtCore.QRect(180, 290, 161, 25))
+        # self.check_Kali.setObjectName(_fromUtf8("check_Kali"))
 
         # Setting up the start cracking button
         self.start_cracking = QtGui.QPushButton(self.frame)
@@ -188,17 +188,19 @@ class Ui_MainWindow(object):
         self.save_output.setGeometry(QtCore.QRect(600, 290, 94, 32))
         self.save_output.setObjectName(_fromUtf8("save_output"))
 
+
         # Clear the output from the output textfield
         self.clear_output = QtGui.QPushButton(self.frame)
         self.clear_output.setGeometry(QtCore.QRect(500, 290, 94, 32))
         self.clear_output.setObjectName(_fromUtf8("clear_output"))
+        self.clear_output.clicked.connect(lambda:self.do.clear_output(self.output))
 
         # Setting up a button to Apply the choosed theme
         self.apply_theme = QtGui.QPushButton(self.frame)
         self.apply_theme.setGeometry(QtCore.QRect(700, 250, 91, 32))
         self.apply_theme.setObjectName(_fromUtf8("apply_theme"))
         self.apply_theme.clicked.connect(
-            lambda: self.do.change_theme(str(self.theme_changer.currentText())))
+            lambda: self.do.change_theme(str(self.theme_changer.currentText()), self.output))
 
         # Setting up the label_5
         self.label_5 = QtGui.QLabel(self.frame)
@@ -223,6 +225,7 @@ class Ui_MainWindow(object):
         self.output.setGeometry(QtCore.QRect(0, 10, 801, 131))
         self.output.setObjectName(_fromUtf8("output"))
         MainWindow.setCentralWidget(self.centralwidget)
+        self.save_output.clicked.connect(lambda:self.do.save_output(self.output))
 
         # Setting up the menubar
         self.menubar = QtGui.QMenuBar(MainWindow)
@@ -243,19 +246,19 @@ class Ui_MainWindow(object):
 
         self.actionQuit = QtGui.QAction(MainWindow)
         self.actionQuit.setObjectName(_fromUtf8("actionQuit"))
-        self.actionQuit.triggered.connect(self.do.quit)
+        self.actionQuit.triggered.connect(lambda:self.do.quit(self.output))
 
         self.about_me = QtGui.QAction(MainWindow)
         self.about_me.setObjectName(_fromUtf8("about_me"))
-        self.about_me.triggered.connect(self.do.about_me)
+        self.about_me.triggered.connect(lambda:self.do.about_me(self.output))
 
         self.about_obevilion = QtGui.QAction(MainWindow)
         self.about_obevilion.setObjectName(_fromUtf8("about_obevilion"))
-        self.about_obevilion.triggered.connect(self.do.about_script)
+        self.about_obevilion.triggered.connect(lambda:self.do.about_script(self.output))
 
         self.about_qt = QtGui.QAction(MainWindow)
         self.about_qt.setObjectName(_fromUtf8("about_qt"))
-        self.about_qt.triggered.connect(self.do.about_qt)
+        self.about_qt.triggered.connect(lambda:self.do.about_qt(self.output))
 
         self.about.addAction(self.about_me)
         self.about.addAction(self.about_obevilion)
@@ -285,16 +288,6 @@ class Ui_MainWindow(object):
         self.choose_dict.setStatusTip(_translate(
             "MainWindow", "Choose password list from file system", None))
         self.choose_dict.setText(_translate("MainWindow", "Browse", None))
-
-        self.check_Symboles.setStatusTip(_translate(
-            "MainWindow", "Use Symboles in the cracking process", None))
-        self.check_Symboles.setText(_translate(
-            "MainWindow", "Use Symboles", None))
-
-        self.check_Kali.setStatusTip(_translate(
-            "MainWindow", "Check if you are using kali linux", None))
-        self.check_Kali.setText(_translate(
-            "MainWindow", "Use External Scripts", None))
 
         self.start_cracking.setStatusTip(_translate(
             "MainWindow", "Begin The Cracking Process", None))
