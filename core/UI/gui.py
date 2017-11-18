@@ -269,7 +269,7 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "Archive Path", None))
         self.choose_archive.setStatusTip(_translate(
             "MainWindow", "Choose archive from file system", None))
-        self.choose_archive.setText(_translate("MainWindow", "Choose", None))
+        self.choose_archive.setText(_translate("MainWindow", "Browse", None))
 
         self.label_4.setText(_translate("MainWindow", "Dictionary", None))
         self.DictPath.setStatusTip(_translate(
@@ -277,7 +277,7 @@ class Ui_MainWindow(object):
 
         self.choose_dict.setStatusTip(_translate(
             "MainWindow", "Choose password list from file system", None))
-        self.choose_dict.setText(_translate("MainWindow", "Choose", None))
+        self.choose_dict.setText(_translate("MainWindow", "Browse", None))
 
         self.check_Symboles.setStatusTip(_translate(
             "MainWindow", "Use Symboles in the cracking process", None))
