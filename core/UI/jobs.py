@@ -61,11 +61,8 @@ class DO(object):
     def attack_method(self):
         pass
 
-    def change_theme(self):
-        pass
-
-    def set_themes(self):
-        pass
+    def change_theme(self, theme):
+        QtGui.QApplication.setStyle(QtGui.QStyleFactory.create(theme))
 
     def radioState(self, radio, field, btn):
         '''
