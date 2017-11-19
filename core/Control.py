@@ -88,7 +88,7 @@ class LoopControl(object):
             if action == '--gui':
                 gui.main()
             elif action == '--cli':
-                self.attacks.cli_bruteforce_attack_outshell()
+                self.attacks.manage_args()
             elif action == '--help':
                 printer.help_banner()
             elif action == '--about':
@@ -138,10 +138,10 @@ class Attacks:
 
     def cli_bruteforce_attack_outshell(self):
         """
-        Attacking in the external shell [Terminal Arguments]
+        BruteForce Attack in the external shell [Terminal Arguments]
         """
         try:
-            path = sys.argv[2]
+            path = sys.argv[3]
             if path == '' or path is None:
                 print("Try Again!")
             else:
@@ -151,3 +151,29 @@ class Attacks:
             printer.unknowen_error(exception=e)
             time.sleep(2)
             sys.exit(1)
+
+    def cli_dictionary_attack_outshell(self):
+        """
+        Dictionary Attack in the external shell [Terminal Arguments]
+        """
+        try:
+            path = sys.argv[3]
+            if path == '' or path is None:
+                print("Try Again!")
+            else:
+                print("Not Available Yet!")
+        except Exception as e:
+            printer.unknowen_error(exception=e)
+            time.sleep(2)
+            sys.exit(1)
+
+    def manage_args(self):
+        try:
+            self.arg = sys.argv[2]
+            if self.arg == "-b":
+                self.cli_bruteforce_attack_outshell()
+            elif self.arg == '-d':
+                print("DEBUG")
+                self.cli_dictionary_attack_outshell()
+        except Exception as e:
+            pass
