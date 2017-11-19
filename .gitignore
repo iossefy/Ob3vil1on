@@ -49,9 +49,6 @@ coverage.xml
 *.out
 *.o
 
-# CSV Files
-*.csv
-
 # Translations
 *.mo
 *.pot
