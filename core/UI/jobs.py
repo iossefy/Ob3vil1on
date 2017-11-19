@@ -55,12 +55,6 @@ class DO(object):
     def clear_output(self, output):
         output.clear()
 
-    def save_output(self, textField):
-        self.save = QtGui.QFileDialog.getSaveFileName()
-        with open(self.save, 'wb') as file:
-            text = textField.toPlaneText()
-            file.write(text)
-
     def start_cracking(self):
         pass
 
