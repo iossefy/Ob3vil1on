@@ -49,3 +49,21 @@ class Booker(object):
                 print("File Path: {filename}:\tPassword: {password}".format(
                     filename=line[0], password=line[1]))
                 print("------------------------------------")
+
+
+    def load_configurations(self, Alphabets=None, Integers=None, wordlist=None, config="core/configuration/Settings.csv"):
+        with open(config, 'rb') as config_file:
+            reader = csv.reader(config)
+            rows   = list(reader)
+
+            ###########################
+            if Alphabets!=None:
+                pass
+            if Integers!=None:        # Not Now!
+                pass
+            if wordlist!=None:
+                pass
+            ###########################
+
+    def write_configurations(self, Alphabets=None, Integers=None, wordlist=None, config="core/configuration/Settings.csv"):
+        pass  # Not Now!
