@@ -99,6 +99,8 @@ class LoopControl(object):
                 printer.License()
             elif action == '--vault':
                 booker.read()
+            elif action == '--set':
+                pass #
             elif action == '--attacks':
                 print("CRACKING [ZIP, 7Z, RAR] FILES AND MORE SOON...")
         except Exception as e:

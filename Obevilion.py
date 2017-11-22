@@ -16,7 +16,7 @@ looprocess = Control.LoopControl()
 action = ''
 commands = ['--gui', '--cli', '--help', '--about',
             '--easy_mode', '--about_me', '--license',
-            '--vault', '--license', '--attacks']
+            '--vault', '--license', '--attacks', '--set']
 
 
 def get_name(arg=''):
