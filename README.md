@@ -24,6 +24,48 @@ Now you can run Obevilion with [Cygwin](http://www.cygwin.com/).
 
 If you are using mac os x you must have 'unzip' and 'p7zip' installed in your terminal.
 
+
+## Requirements
+you must have `Python2` and `Python3` installed on your system (LATEST VERSION PREFERRED)
+
+### Python Dependencies:
+
+```
+Python2 latest version installed
+
+Python3 latest version installed
+
+csv module
+
+PyQt4 module
+
+sys module
+
+os module
+
+subprocess module
+
+time module
+
+tkinter module
+
+shutil module
+
+itertools module
+
+zipfile module
+
+```
+#### Check if you have this dependencies then run
+
+try to import them in your python interpreter
+
+## Report Bugs
+you can submit an issue in the issue section at github
+
+## Contributing
+check [CONTRIBUTE.md](CONTRIBUTE.md)
+
 ## Run
 
 ```shell
