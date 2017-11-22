@@ -55,15 +55,13 @@ class Booker(object):
         with open(config, 'rb') as config_file:
             reader = csv.reader(config)
             rows   = list(reader)
-
-            ###########################
-            if Alphabets!=None:
-                pass
-            if Integers!=None:        # Not Now!
-                pass
-            if wordlist!=None:
-                pass
-            ###########################
+            for clmn in rows:
+                if clmn[0][1] != '' or not None:
+                    pass # Do Something
+                if clmn[1][1] != '' or not None:
+                    pass # Do Something
+                if clmn[2][1] != '' or not None:
+                    pass # Do Something
 
     def write_configurations(self, Alphabets=None, Integers=None, wordlist=None, config="core/configuration/Settings.csv"):
         pass  # Not Now!
