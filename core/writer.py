@@ -51,17 +51,18 @@ class Booker(object):
                 print("------------------------------------")
 
 
-    def load_configurations(self, Alphabets=None, Integers=None, wordlist=None, config="core/configuration/Settings.csv"):
+    def load_configurations(self, Alphabets=None, Integers=None, wordlist=None, input=None, config="core/configuration/Settings.csv"):
         with open(config, 'rb') as config_file:
             reader = csv.reader(config)
             rows   = list(reader)
             for clmn in rows:
                 if clmn[0][1] != '' or not None:
-                    pass # Do Something
+                    return clmn[0][1]
                 if clmn[1][1] != '' or not None:
-                    pass # Do Something
+                    return clmn[1][1]
                 if clmn[2][1] != '' or not None:
-                    pass # Do Something
+                    return clmn[2][1]
+                return None
 
     def write_configurations(self, Alphabets=None, Integers=None, wordlist=None, config="core/configuration/Settings.csv"):
         pass  # Not Now!
