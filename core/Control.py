@@ -161,9 +161,9 @@ class Attacks:
         try:
             path = sys.argv[3]
             if path == '' or path is None:
-                print("Try Again!")
+                print("There Is 1 arg Messing")
             else:
-                print("Not Available Yet!")
+                print("Use BruteForce Attack\nTrust Me Its Better")
         except Exception as e:
             printer.unknowen_error(exception=e)
             time.sleep(2)
@@ -175,7 +175,21 @@ class Attacks:
             if self.arg == "-b":
                 self.cli_bruteforce_attack_outshell()
             elif self.arg == '-d':
-                print("DEBUG")
                 self.cli_dictionary_attack_outshell()
         except Exception as e:
             pass
+
+class Settings(object):
+    """
+    docstring for Settings.
+    Managing The Passwords,
+    inputs and outputs of the configuration folder.
+    """
+    def __init__(self):
+        pass
+
+    def set_command(self, command):
+        try:
+            command = sys.argv[1]
+        except Exception as e:
+            raise
