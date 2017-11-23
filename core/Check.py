@@ -7,8 +7,10 @@
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
 import os
+import sys
 import platform
 import shutil
+import time
 
 
 class Check_req:
@@ -59,3 +61,9 @@ class Check_req:
             print('Exiting...')
             time.sleep(2)
             sys.exit(1)
+
+    def check_user(self):
+        if not os.geteuid() == 0:
+            print("Script must run as root!")
+            time.sleep(0.6)
+            sys.exit(0)
