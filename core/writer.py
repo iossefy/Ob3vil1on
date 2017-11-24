@@ -24,7 +24,6 @@ class Booker(object):
     password: pass the password to write to password column in csv file
 
     read: read the contents of the csv file.
-    read arguments: output
     output: not a required function, you can pass the csv file in there
 
     """
@@ -50,19 +49,24 @@ class Booker(object):
                     filename=line[0], password=line[1]))
                 print("------------------------------------")
 
+    def configuration(self, config='core/configuration/Settings.csv', UInput=None, line=None):
+        """
+        Reading the information in Settings.csv then
+        Configure it with '--set' or 'set' commannd
 
-    def load_configurations(self, Alphabets=None, Integers=None, wordlist=None, input=None, config="core/configuration/Settings.csv"):
-        with open(config, 'rb') as config_file:
-            reader = csv.reader(config)
+        config: Configuration File Path
+        """
+        contents = []
+        with open(config, 'r') as config_file:
+            reader = csv.reader(config_file, delimiter=',')
             rows   = list(reader)
-            for clmn in rows:
-                if clmn[0][1] != '' or not None:
-                    return clmn[0][1]
-                if clmn[1][1] != '' or not None:
-                    return clmn[1][1]
-                if clmn[2][1] != '' or not None:
-                    return clmn[2][1]
-                return None
-
-    def write_configurations(self, Alphabets=None, Integers=None, wordlist=None, config="core/configuration/Settings.csv"):
-        pass  # Not Now!
+            contents.extend(rows)
+        with open(config, 'w') as config_file:
+            writer = csv.writer(contents, delimiter=',')
+            if UInput != None:
+                if line == 1:
+                    contents[0][1] = str(UInput)
+                    writer.writerow([contents[0][0], contents[0][1]])
+                elif line == 2:
+                    contents[1][1] = str(UInput)
+                    writer.writerow([contents[1][0], contents[1][1]])
