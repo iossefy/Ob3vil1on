@@ -67,8 +67,6 @@ class Printer:
         print("Inputing From Inside %s Shell" % get_name(o='all'))
         print("+=> BL4CKvGHOST\t\tShow Information About Me")
         print("+=> help\t\tShow This Message")
-        print("+=> ifconfig\t\tShow You Local IP")
-        print('+=> ip\t\t\tShow Your External IP')
         print("+=> license\t\tShow The License")
         print("+=> clear\t\tClear The Screen")
         print("+=> attacks\t\tShow available attacks")

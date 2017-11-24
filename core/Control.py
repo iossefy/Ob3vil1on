@@ -48,10 +48,6 @@ class LoopControl(object):
                     sys.exit(1)
                 elif choice == 'clear':
                     subprocess.call('clear', shell=True)
-                elif choice == 'ifconfig':
-                    subprocess.call('sudo ifconfig', shell=True)
-                elif choice == 'ip':
-                    subprocess.call('curl ifconfig.co', shell=True)
                 elif choice == 'license':
                     printer.License()
                 elif choice == 'attacks':
