@@ -48,25 +48,3 @@ class Booker(object):
                 print("File Path: {filename}:\tPassword: {password}".format(
                     filename=line[0], password=line[1]))
                 print("------------------------------------")
-
-    def configuration(self, config='core/configuration/Settings.csv', UInput=None, line=None):
-        """
-        Reading the information in Settings.csv then
-        Configure it with '--set' or 'set' commannd
-
-        config: Configuration File Path
-        """
-        contents = []
-        with open(config, 'r') as config_file:
-            reader = csv.reader(config_file, delimiter=',')
-            rows   = list(reader)
-            contents.extend(rows)
-        with open(config, 'w') as config_file:
-            writer = csv.writer(contents, delimiter=',')
-            if UInput != None:
-                if line == 1:
-                    contents[0][1] = str(UInput)
-                    writer.writerow([contents[0][0], contents[0][1]])
-                elif line == 2:
-                    contents[1][1] = str(UInput)
-                    writer.writerow([contents[1][0], contents[1][1]])

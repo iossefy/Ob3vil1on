@@ -99,8 +99,6 @@ class LoopControl(object):
                 printer.License()
             elif action == '--vault':
                 booker.read()
-            elif action == '--set':
-                pass #
             elif action == '--attacks':
                 print("CRACKING [ZIP, 7Z, RAR] FILES AND MORE SOON...")
         except Exception as e:
@@ -178,18 +176,3 @@ class Attacks:
                 self.cli_dictionary_attack_outshell()
         except Exception as e:
             pass
-
-class Settings(object):
-    """
-    docstring for Settings.
-    Managing The Passwords,
-    inputs and outputs of the configuration folder.
-    """
-    def __init__(self):
-        pass
-
-    def set_command(self, command):
-        try:
-            command = sys.argv[1]
-        except Exception as e:
-            raise
