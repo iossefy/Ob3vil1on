@@ -82,7 +82,7 @@ you can submit an issue in the issue section at github
 
 ## Contributing
 
-check <CONTRIBUTE.md>
+check [CONTRIBUTE.md](https://github.com/BL4CKvGHOST/Obevilion/blob/master/CONTRIBUTE.md)
 
 ## Run
 
