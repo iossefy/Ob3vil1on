@@ -7,6 +7,7 @@
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
 import csv
+import time
 
 
 class Booker(object):
@@ -35,7 +36,8 @@ class Booker(object):
         """
         with open(output, 'a') as csv_file:
             write = csv.writer(csv_file, delimiter=',')
-            write.writerow([str(fileName), str(password)])
+            write.writerow([str(fileName), str(password), str(
+                time.strftime('%d/%m/%Y %H:%M:%S'))])
 
     def read(self, output="core/configuration/output.csv"):
         """
@@ -45,6 +47,6 @@ class Booker(object):
         with open(output, 'rb') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             for line in csv_reader:
-                print("File Path: {filename}:\tPassword: {password}".format(
-                    filename=line[0], password=line[1]))
+                print("File Path: {filename}\nPassword: {password}\nTime: {time}".format(
+                    filename=line[0], password=line[1], time=line[2]))
                 print("------------------------------------")
