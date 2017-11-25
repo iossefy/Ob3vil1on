@@ -146,8 +146,12 @@ Website: https://bl4ckvghost.github.io
 
         ''')
 
-    def unknowen_error(self, exception):
+    def unknowen_error(self, exception, whatever=None):
         print("Something went wrong!")
+        if whatever==None:
+            pass
+        else:
+            print('{}'.format(whatever))
         print("\nStackTrace")
         print('{}\n'.format(exception))
         print(

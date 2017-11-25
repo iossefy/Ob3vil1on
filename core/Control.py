@@ -84,7 +84,11 @@ class LoopControl(object):
             if action == '--gui':
                 gui.main()
             elif action == '--cli':
-                self.attacks.manage_args()
+                try:
+                    self.temp = sys.argv[2]
+                    self.attacks.manage_args()
+                except Exception as e:
+                    print('choose another argument\n-b\tfor bruteforce attack\n-d\tfor dictionary attack')
             elif action == '--help':
                 printer.help_banner()
             elif action == '--about':
@@ -170,5 +174,7 @@ class Attacks:
                 self.cli_bruteforce_attack_outshell()
             elif self.arg == '-d':
                 self.cli_dictionary_attack_outshell()
+            else:
+                print("Invalid argument: {}".format(self.arg))
         except Exception as e:
             pass
