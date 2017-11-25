@@ -18,14 +18,16 @@ if you are not familiar with Brute-force attack, try dictionary attacks (Not Ava
 
 If you are using windows you must install the [Cygwin](http://www.cygwin.com/).
 
+Then install the [requirements](#unpythonic-requirements).
+
 Now you can run Obevilion with [Cygwin](http://www.cygwin.com/).
 
 ## Mac OS X
 
-If you are using mac os x you must have 'unzip' and 'p7zip' installed in your terminal.
-
+If you are using mac os x you must have the [requirements](#unpythonic-requirements) installed in your terminal.
 
 ## Requirements
+
 you must have `Python2` and `Python3` installed on your system (LATEST VERSION PREFERRED)
 
 ### Python Dependencies:
@@ -54,17 +56,33 @@ shutil module
 itertools module
 
 zipfile module
+```
+
+#### unpythonic requirements
 
 ```
+p7zip-full
+
+unrar
+
+unzip
+```
+
+**if you are UNIX based system run this command to install all the requirements**
+
+`sudo apt-get install p7zip-full unrar unzip`
+
 #### Check if you have this dependencies then run
 
 try to import them in your python interpreter
 
 ## Report Bugs
+
 you can submit an issue in the issue section at github
 
 ## Contributing
-check [CONTRIBUTE.md](CONTRIBUTE.md)
+
+check <CONTRIBUTE.md>
 
 ## Run
 
