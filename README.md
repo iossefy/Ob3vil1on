@@ -30,43 +30,15 @@ If you are using mac os x you must have the [requirements](#unpythonic-requireme
 
 you must have `Python2` and `Python3` installed on your system (LATEST VERSION PREFERRED)
 
-### Python Dependencies:
+### Linux Installation
 
+```shell
+sudo apt-get install python python3 python3-pip python-pip
+sudo apt-get install unzip unrar p7zip-full
+sudo apt-get install python-pyqt5 python-qt4
 ```
-Python2 latest version installed
-
-Python3 latest version installed
-
-csv module
-
-PyQt4 module
-
-sys module
-
-os module
-
-subprocess module
-
-time module
-
-tkinter module
-
-shutil module
-
-itertools module
-
-zipfile module
-```
-
-#### unpythonic requirements
-
-```
-p7zip-full
-
-unrar
-
-unzip
-```
+##### Other Platfroms
+sorry other platfrom is not supported yet
 
 **if you are UNIX based system run this command to install all the requirements**
 
@@ -86,6 +58,8 @@ check [CONTRIBUTE.md](https://github.com/BL4CKvGHOST/Obevilion/blob/master/CONTR
 
 ## Run
 
+**MAKE SURE TO RUN THE SCRIPT AS ROOT**
+
 ```shell
 # Run it by
 python Obevilion.py
@@ -93,7 +67,7 @@ python Obevilion.py
 python Obevilion.py --easy_mode
 # Start Cracking
 # To Crack Archive Enter The Following Commands
-python Obevilion.py --cli [archive path]
+python Obevilion.py --cli [attack mode] [Archive Path]
 # Wanna the help command
 python Obevilion.py --help
 ```
