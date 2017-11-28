@@ -38,7 +38,7 @@ sudo apt-get install unzip unrar p7zip-full
 sudo apt-get install python-pyqt5 python-qt4
 ```
 ##### Other Platfroms
-sorry other platfrom is not supported yet
+sorry other platfroms is not supported yet
 
 ## Report Bugs
 
