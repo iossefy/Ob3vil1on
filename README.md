@@ -40,21 +40,13 @@ sudo apt-get install python-pyqt5 python-qt4
 ##### Other Platfroms
 sorry other platfrom is not supported yet
 
-**if you are UNIX based system run this command to install all the requirements**
-
-`sudo apt-get install p7zip-full unrar unzip`
-
-#### Check if you have this dependencies then run
-
-try to import them in your python interpreter
-
 ## Report Bugs
 
 you can submit an issue in the issue section at github
 
 ## Contributing
 
-check [CONTRIBUTE.md](https://github.com/BL4CKvGHOST/Obevilion/blob/master/CONTRIBUTE.md)
+You can submit a pull request, i will test it then accept it.
 
 ## Run
 
