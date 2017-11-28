@@ -195,10 +195,13 @@ class Archives(object):
        password: cracked password."""
 
        def extract_zip(path, password):
+           from archives.zip import zip
            pass
 
        def extract_rar(path, password):
+           from archives.rar import rar
            pass
 
        def extract_7z(path, password):
+           from archives.a7z import a7z
            pass
