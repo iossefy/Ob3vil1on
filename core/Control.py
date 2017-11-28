@@ -194,14 +194,17 @@ class Archives(object):
        path: archive file path.
        password: cracked password."""
 
-       def extract_zip(path, password):
+       def arg_manager(self, option):
+           pass
+
+       def extract_zip(self, path, password):
            from archives.zip import zip
            pass
 
-       def extract_rar(path, password):
+       def extract_rar(self, path, password):
            from archives.rar import rar
            pass
 
-       def extract_7z(path, password):
+       def extract_7z(self, path, password):
            from archives.a7z import a7z
            pass
