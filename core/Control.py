@@ -195,16 +195,29 @@ class Archives(object):
        password: cracked password."""
 
        def arg_manager(self, option):
+           """
+           Managing the args.
+           (i.e. Obevilion.py extract zip /path/to/file.zip)
+           """
            pass
 
        def extract_zip(self, path, password):
+           """
+           Extracting zip files.
+           """
            from archives.zip import zip
            pass
 
        def extract_rar(self, path, password):
+           """
+           Extracting rar files.
+           """
            from archives.rar import rar
            pass
 
        def extract_7z(self, path, password):
+           """
+           Extract 7z files.
+           """
            from archives.a7z import a7z
            pass
