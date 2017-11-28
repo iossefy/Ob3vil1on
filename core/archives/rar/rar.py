@@ -10,7 +10,7 @@ from subprocess import call
 from time import sleep
 from sys import exit
 
-def extr_arc(path, password=None, path=None, dist=None):
+def extr_arc(path=None, password=None, dist=None):
     if path==None:
         print("Path argument not exists!")
         sleep(1)
