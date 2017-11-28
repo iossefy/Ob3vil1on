@@ -178,3 +178,27 @@ class Attacks:
                 print("Invalid argument: {}".format(self.arg))
         except Exception as e:
             pass
+
+
+class Archives(object):
+    """docstring for Archives.
+       Managing extarcting archive
+       files.
+
+       Methods:
+       extract_zip: extract zip files.
+       extract_rar: extract rar files.
+       extract_7z: extract 7z files.
+
+       Parameters:
+       path: archive file path.
+       password: cracked password."""
+
+       def extract_zip(path, password):
+           pass
+
+       def extract_rar(path, password):
+           pass
+
+       def extract_7z(path, password):
+           pass
