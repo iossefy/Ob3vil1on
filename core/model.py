@@ -14,6 +14,7 @@ from writer import Booker
 
 booker = Booker()
 
+
 def rc(rf):
     alphabet = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890!@#*+-"
     start = time.time()
@@ -51,6 +52,7 @@ def rc(rf):
                         sys.exit(1)
             else:
                 print("Cracking [zip / 7z / rar] only")
+
 
 # Check That The File Already Exists . Then Run The File
 if len(sys.argv) == 2:
