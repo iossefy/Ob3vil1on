@@ -26,9 +26,9 @@ class Window(Frame):
         self.title = Label(
             self.master, text="Obevilion Archive Cracker Tool", height=2, width=80)
         self.TxT = Label(
-            self.master, text='Obevilion is a cracking script created by BL4CKvGHOST')
+            self.master, text='Obevilion is a cracking script.')
         self.decr = Label(
-            self.master, text="Created in [ Python / C / (Java comming soon)]")
+            self.master, text="Created in Pure Python")
         self.end = Label(
             self.master, text="Obevilion created by Hackers For Hackers")
         self.boom = Label(self.master, text="Created By BL4CKvGHOST")
