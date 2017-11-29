@@ -88,7 +88,8 @@ class LoopControl(object):
                     self.temp = sys.argv[2]
                     self.attacks.manage_args()
                 except Exception as e:
-                    print('choose another argument\n-b\tfor bruteforce attack\n-d\tfor dictionary attack')
+                    print(
+                        'choose another argument\n-b\tfor bruteforce attack\n-d\tfor dictionary attack')
             elif action == '--help':
                 printer.help_banner()
             elif action == '--about':
@@ -168,6 +169,28 @@ class Attacks:
             sys.exit(1)
 
     def manage_args(self):
+        """
+        Managing the args that the user enters
+        if the user enter [obevilion.py --cli (attack type)]
+        this method is managing the (attack type) place in the previews ex.
+
+        Parameters:
+
+            '-d' is for dictionary attack
+            '-b' is for bruteforce attack
+
+        if the user enter '-b'
+        the user will be using bruteforce attack and this method will direct
+        the user to this method 'cli_bruteforce_attack_outshell'.
+
+        if the user enter '-d'
+        the user will be using bruteforce attack and this method will direct
+        the user to this method 'cli_bruteforce_attack_outshell'.
+
+        otherwise, it will print 'Invalid argument: ' and the argument that
+        the user miss typed.
+
+        """
         try:
             self.arg = sys.argv[2]
             if self.arg == "-b":
@@ -189,35 +212,54 @@ class Archives(object):
        extract_zip: extract zip files.
        extract_rar: extract rar files.
        extract_7z: extract 7z files.
+       EXTRACT: the manager."""
 
-       Parameters:
-       path: archive file path.
-       password: cracked password."""
+        def arg_manager(self, option):
+            """
+            Managing the args.
+            (i.e. Obevilion.py extract zip /path/to/file.zip)
+            """
+            pass
 
-       def arg_manager(self, option):
-           """
-           Managing the args.
-           (i.e. Obevilion.py extract zip /path/to/file.zip)
-           """
-           pass
+        def EXTRACT(self, file_type=None, file_name=None, password=None, place=None):
+            if password == '' or password is None:
+                print("Extracting with passwords only!")
+            if distination == '' or distination is None:
+                print("Enter a place to store the extracted files")
+            if path == '' or path is None:
+                print("Enter the archive path")
 
-       def extract_zip(self, path, password):
-           """
-           Extracting zip files.
-           """
-           from archives.zip import zip
-           pass
+            # Initializing the variables to be used in other methods
+            self.file_type = file_type
+            self.file_name = file_name
+            self.password  = password
+            self.place     = place
 
-       def extract_rar(self, path, password):
-           """
-           Extracting rar files.
-           """
-           from archives.rar import rar
-           pass
+            # Checking the file type
+            if file_type == "zip":
+                pass
+            elif file_type == "rar":
+                pass
+            elif file_type == "7z":
+                pass
 
-       def extract_7z(self, path, password):
-           """
-           Extract 7z files.
-           """
-           from archives.a7z import a7z
-           pass
+            # Setting up the variables that will be used in extracting process
+            self.ex_rar = 'unrar x -p{pwd} {name} {distination}'.format(
+                pwd=password, name=file_name, distination=place)
+            self.ex_7z = '7za t -p{pwd} {filename} {distination}'.format(
+                pwd=password, filename=file_name, distination=place)
+            self.ex_zip = 'unzip {filename} -P{pwd} {distination}'.format(
+                pwd=password, filename=file_name, distination=place)
+
+        def extract_zip(self, path=None, password=None, place=None):
+            """Extracting zip files."""
+            pass
+
+
+        def extract_rar(self, path=None, password=None, place=None):
+            """Extracting rar files."""
+            pass
+
+        def extract_7z(self=None, path, password=None, place=None):
+            """Extract 7z files."""
+            pass
