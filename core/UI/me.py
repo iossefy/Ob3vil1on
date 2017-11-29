@@ -22,16 +22,28 @@ class Window(Frame):
         self.showTxT()
 
     def showTxT(self):
+        # I dont know what to name the variables so forgive me
+        self.title = Label(
+            self.master, text="My Name Is Youssef Hesham (BL4CKvGHOST)", height=2, width=80)
         self.TxT = Label(
-            self.master, text='IAM A PROGRAMMER!', pady=60, padx=60)
-        self.decr = Label(self.master, text="Go Back Fool!", pady=70, padx=70)
+            self.master, text='I\'m Machine Learning Specialist.')
+        self.decr = Label(
+            self.master, text="Main Language Is Python")
+        self.end = Label(
+            self.master, text="twitter: https://www.twitter.com/BL4CKvGHOST")
+        self.boom = Label(self.master, text="Website: https://www.bl4ckvghost.github.io")
+
+        # Packing the variables
+        self.title.pack()
         self.TxT.pack()
         self.decr.pack()
+        self.end.pack()
+        self.boom.pack()
 
 
 def main():
     root = Tk()
-    root.geometry('500x300')
+    root.geometry('500x120')
     app = Window(root)
     root.mainloop()
 
