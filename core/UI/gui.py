@@ -249,7 +249,7 @@ class Ui_MainWindow(object):
 
         self.actionQuit = QtGui.QAction(MainWindow)
         self.actionQuit.setObjectName(_fromUtf8("actionQuit"))
-        self.actionQuit.triggered.connect(lambda: self.do.quit(self.output))
+        self.actionQuit.triggered.connect(lambda: self.do.quit(output=self.output))
 
         self.about_me = QtGui.QAction(MainWindow)
         self.about_me.setObjectName(_fromUtf8("about_me"))

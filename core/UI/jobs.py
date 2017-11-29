@@ -37,7 +37,7 @@ class DO(object):
         ascript.main()  # Call this function
         output.append("Open About Script")
 
-    def quit(self):
+    def quit(self, output=None):
         '''
         Displaying a dialog window for the user
         to confirm if the user want to quit.
@@ -50,7 +50,10 @@ class DO(object):
             sys.exit(0)
         elif answer == 'no':
             root.destroy()  # Terminating the window
-            output.append("Canceled")
+            if output!=None:
+                output.append("Quit action canceled by user")
+            else:
+                pass
 
     def clear_output(self, output):
         output.clear()
