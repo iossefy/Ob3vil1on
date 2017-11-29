@@ -214,52 +214,52 @@ class Archives(object):
        extract_7z: extract 7z files.
        EXTRACT: the manager."""
 
-        def arg_manager(self, option):
-            """
-            Managing the args.
-            (i.e. Obevilion.py extract zip /path/to/file.zip)
-            """
+    def arg_manager(self, option):
+        """
+        Managing the args.
+        (i.e. Obevilion.py extract zip /path/to/file.zip)
+        """
+        pass
+
+    def EXTRACT(self, file_type=None, file_name=None, password=None, place=None):
+        if password == '' or password is None:
+            print("Extracting with passwords only!")
+        if distination == '' or distination is None:
+            print("Enter a place to store the extracted files")
+        if path == '' or path is None:
+            print("Enter the archive path")
+
+        # Initializing the variables to be used in other methods
+        self.file_type = file_type
+        self.file_name = file_name
+        self.password  = password
+        self.place     = place
+
+        # Checking the file type
+        if file_type == "zip":
+            pass
+        elif file_type == "rar":
+            pass
+        elif file_type == "7z":
             pass
 
-        def EXTRACT(self, file_type=None, file_name=None, password=None, place=None):
-            if password == '' or password is None:
-                print("Extracting with passwords only!")
-            if distination == '' or distination is None:
-                print("Enter a place to store the extracted files")
-            if path == '' or path is None:
-                print("Enter the archive path")
+        # Setting up the variables that will be used in extracting process
+        self.ex_rar = 'unrar x -p{pwd} {name} {distination}'.format(
+            pwd=password, name=file_name, distination=place)
+        self.ex_7z = '7za t -p{pwd} {filename} {distination}'.format(
+            pwd=password, filename=file_name, distination=place)
+        self.ex_zip = 'unzip {filename} -P{pwd} {distination}'.format(
+            pwd=password, filename=file_name, distination=place)
 
-            # Initializing the variables to be used in other methods
-            self.file_type = file_type
-            self.file_name = file_name
-            self.password  = password
-            self.place     = place
-
-            # Checking the file type
-            if file_type == "zip":
-                pass
-            elif file_type == "rar":
-                pass
-            elif file_type == "7z":
-                pass
-
-            # Setting up the variables that will be used in extracting process
-            self.ex_rar = 'unrar x -p{pwd} {name} {distination}'.format(
-                pwd=password, name=file_name, distination=place)
-            self.ex_7z = '7za t -p{pwd} {filename} {distination}'.format(
-                pwd=password, filename=file_name, distination=place)
-            self.ex_zip = 'unzip {filename} -P{pwd} {distination}'.format(
-                pwd=password, filename=file_name, distination=place)
-
-        def extract_zip(self, path=None, password=None, place=None):
-            """Extracting zip files."""
-            pass
+    def extract_zip(self, path=None, password=None, place=None):
+        """Extracting zip files."""
+        pass
 
 
-        def extract_rar(self, path=None, password=None, place=None):
-            """Extracting rar files."""
-            pass
+    def extract_rar(self, path=None, password=None, place=None):
+        """Extracting rar files."""
+        pass
 
-        def extract_7z(self=None, path, password=None, place=None):
-            """Extract 7z files."""
-            pass
+    def extract_7z(self, path, password=None, place=None):
+        """Extract 7z files."""
+        pass
