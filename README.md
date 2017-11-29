@@ -52,14 +52,31 @@ You can submit a pull request, i will test it then accept it.
 
 **MAKE SURE TO RUN THE SCRIPT AS ROOT**
 
-```shell
-# Run it by
-python Obevilion.py
-# If you want to enter the easy mode type the following command
-python Obevilion.py --easy_mode
-# Start Cracking
-# To Crack Archive Enter The Following Commands
-python Obevilion.py --cli [attack mode] [Archive Path]
-# Wanna the help command
-python Obevilion.py --help
-```
+Run this command to crack any archive file, it will detect its type automatically
+
+for bruteforce attack run this command
+
+`python Obevilion.py --cli -b /path/to/archive.zip`
+
+for dictionary attack run this command
+
+`python Obevilion.py --cli -d /path/to/archive.zip`
+
+if you are not familiar with command line argument you can try **easy_mode**
+
+`python Obevilion.py --easy_mode`
+
+Want to learn more about the Obevilion script and how to use it, just display the help menu with this command
+
+`python Obevilion.py --help`
+
+if you are in the easy_mode
+
+`+=> help`
+
+do not like the UNIX-SHELL?. just try the gui tool, run this command in the unix shell :smile:
+
+`python Obevilion.py --gui`
+
+
+### Copyright (c) 2017 Copyright Youssef Hesham All Rights Reserved.
