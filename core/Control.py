@@ -255,7 +255,6 @@ class Archives(object):
         """Extracting zip files."""
         pass
 
-
     def extract_rar(self, path=None, password=None, place=None):
         """Extracting rar files."""
         pass
