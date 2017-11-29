@@ -50,7 +50,7 @@ class DO(object):
             sys.exit(0)
         elif answer == 'no':
             root.destroy()  # Terminating the window
-            if output!=None:
+            if output != None:
                 output.append("Quit action canceled by user")
             else:
                 pass
@@ -61,12 +61,16 @@ class DO(object):
     def start_cracking(self):
         pass
 
-    def attack_method(self):
+    def bruteforce(self, path, textField):
+        pass
+
+    def dictionary(self, path, textField, dict):
         pass
 
     def change_theme(self, theme, output):
         QtGui.QApplication.setStyle(QtGui.QStyleFactory.create(theme))
         output.append("Theme Changed")
+
     def radioState(self, radio, field, btn):
         '''
         Checking if the BruteForce Attack radio button
