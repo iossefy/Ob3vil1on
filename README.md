@@ -79,4 +79,13 @@ do not like the UNIX-SHELL?. just try the gui tool, run this command in the unix
 `python Obevilion.py --gui`
 
 
+# **_TODO_**
+
+- [ ] Complete The GUI
+
+- [ ] Complete The Extract Command
+
+- [ ] Create a web based UI
+
+
 ### Copyright (c) 2017 Copyright Youssef Hesham All Rights Reserved.
