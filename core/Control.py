@@ -42,6 +42,8 @@ class LoopControl(object):
                     printer.about()
                 elif choice == '':
                     pass
+                elif: choice == 'extract':
+                    print("Not Available Right Now!")
                 elif choice == 'exit':
                     print("Exiting...")
                     time.sleep(2)
@@ -100,6 +102,10 @@ class LoopControl(object):
                 printer.License()
             elif action == '--vault':
                 booker.read()
+            elif action == '--extract':
+                print("Not Available Right Now!")
+            elif action == 'BL4CKvGHOST':
+                printer.about_me()
             elif action == '--attacks':
                 print("CRACKING [ZIP, 7Z, RAR] FILES AND MORE SOON...")
         except Exception as e:
