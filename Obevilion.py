@@ -16,7 +16,8 @@ looprocess = Control.LoopControl()
 action = ''
 commands = ['--gui', '--cli', '--help', '--about',
             '--easy_mode', '--about_me', '--license',
-            '--vault', '--license', '--attacks']
+            '--vault', '--license', '--attacks',
+            '--BL4CKvGHOST', '--extract']
 
 
 def get_name(arg=''):
@@ -51,7 +52,7 @@ except Exception as e:
 
 def main():
     """Main Function."""
-    check_req.check_user() # Check if the user is root or not
+    check_req.check_user()  # Check if the user is root or not
     check_req.check_os()  # Checking the required operation system
     check_req.check_py_version()  # Check valid python version
     if action == '':
