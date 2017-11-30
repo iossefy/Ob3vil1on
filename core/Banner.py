@@ -128,25 +128,6 @@ with {name} you can crack [7z/zip/rar] files.
  of this license document, but changing it is not allowed.
          ''')
 
-    def about_me(self):
-        print('''
-  ____  _    _  _    ____ _  __       ____ _   _  ___  ____ _____
- | __ )| |  | || |  / ___| |/ /_   __/ ___| | | |/ _ \/ ___|_   _|
- |  _ \| |  | || |_| |   | ' /\ \ / / |  _| |_| | | | \___ \ | |
- | |_) | |__|__   _| |___| . \ \ V /| |_| |  _  | |_| |___) || |
- |____/|_____| |_|  \____|_|\_\ \_/  \____|_| |_|\___/|____/ |_|
-
-My real name is Youssef.
-I'm a machine learning specialist and data analyst.
-I’m a professional Python and Java developer with good knowledge and experience in C and Perl.
-
-Twitter: https://twitter.com/BL4CKvGHOST
-GitHub : https://github.com/BL4CKvGHOST
-Reddit : https://reddit.com/u/BL4CKvGHOST
-Website: https://bl4ckvghost.github.io
-
-        ''')
-
     def unknowen_error(self, exception, whatever=None):
         print("Something went wrong!")
         if whatever==None:
