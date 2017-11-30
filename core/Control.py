@@ -42,7 +42,7 @@ class LoopControl(object):
                     printer.about()
                 elif choice == '':
                     pass
-                elif: choice == 'extract':
+                elif choice == 'extract':
                     print("Not Available Right Now!")
                 elif choice == 'exit':
                     print("Exiting...")
