@@ -9,8 +9,9 @@
 import platform
 import sys
 import os
+from Banner import Printer
 
-version = None
+printer = Printer()
 
 if platform.python_version()[0] == '2':
     from urllib import urlopen
@@ -20,23 +21,27 @@ else:
     print("WTF!, unknowen python version!")
     sys.exit(-1)
 
+class VControl(object):
+    """docstring for VControl."""
 
-def check_for_updates():
-    with open(os.path.join('core/configuration', 'version.txt'), 'r') as check_version:
-        data = check_version.read.strip()
+    def check_for_updates(self):
         try:
-            response = urlopen(
-                'https://raw.githubusercontent.com/BL4CKvGHOST/Obevilion/master/core/configuration/version.txt')
+            with open('core/configuration/version.txt', 'r') as check_version:
+                data = check_version.read().strip()
+                response = urlopen(
+                    'https://raw.githubusercontent.com/BL4CKvGHOST/Obevilion/master/core/configuration/version.txt')
+                version = response.read().decode('utf-8').strip()
+                if version != data:
+                    print("{} there is new version available: {}".format(data, version))
+                else:
+                    print("You are using the latest version:{}".format(data))
         except Exception as e:
-            return data
-        version = response.read().decode('utf-8').strip()
-        if version != data:
-            return data + " there is new version available: " + version
-        else:
-            return "You are using the latest version: " + data
+            printer.unknowen_error(e)
 
-
-def current():
-    with open(os.path.join('core/configuration', 'version.txt'), 'r') as current_version:
-        data = current_version.read.strip()
-    return "Version: " + data
+    def current(self):
+        try:
+            with open('core/configuration/version.txt', 'r') as current_version:
+                data = current_version.read().strip()
+            print("Current Version Is: {}".format(data))
+        except Exception as e:
+            printer.unknowen_error(e)
