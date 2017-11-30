@@ -12,6 +12,9 @@ from Banner import Printer
 from UI import gui
 import subprocess
 from writer import Booker
+from version import VControl
+
+version = VControl()
 
 printer = Printer()
 booker = Booker()
@@ -100,6 +103,20 @@ class LoopControl(object):
                 printer.License()
             elif action == '--vault':
                 booker.read()
+            elif action == '--version':
+                try:
+                    self.v = sys.argv[2]
+                except Exception as e:
+                    print("1 required arg missing!")
+                    print("--current to get the current version")
+                    print("--check to check for the latest version")
+                    sys.exit(-1)
+                if self.v == "--check":
+                    version.check_for_updates()
+                elif self.v == '--current':
+                    version.current()
+                else:
+                    print("Invalid Input {}".format(self.v))
             elif action == '--extract':
                 print("Not Available Right Now!")
             elif action == '--attacks':
@@ -234,8 +251,8 @@ class Archives(object):
         # Initializing the variables to be used in other methods
         self.file_type = file_type
         self.file_name = file_name
-        self.password  = password
-        self.place     = place
+        self.password = password
+        self.place = place
 
         # Checking the file type
         if file_type == "zip":
