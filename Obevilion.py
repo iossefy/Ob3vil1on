@@ -17,7 +17,7 @@ action = ''
 commands = ['--gui', '--cli', '--help', '--about',
             '--easy_mode', '--about_me', '--license',
             '--vault', '--license', '--attacks',
-            '--BL4CKvGHOST', '--extract']
+            '--version', '--extract']
 
 
 def get_name(arg=''):
