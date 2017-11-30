@@ -20,15 +20,23 @@ else:
     print("WTF!, unknowen python version!")
     sys.exit(-1)
 
-with open(os.path.join('core/configuration', 'version.txt'), 'r') as check_version:
-    data = check_version.read.strip()
-    try:
-        response = urlopen(
-            'https://raw.githubusercontent.com/BL4CKvGHOST/Obevilion/master/core/configuration/version.txt')
-    except Exception as e:
-        return data
-    version = response.read().decode('utf-8').strip()
-    if version != data:
-        return data + " there is new version available: " + version
-    else:
-        return "You are using the latest version: " + data
+
+def check_for_updates():
+    with open(os.path.join('core/configuration', 'version.txt'), 'r') as check_version:
+        data = check_version.read.strip()
+        try:
+            response = urlopen(
+                'https://raw.githubusercontent.com/BL4CKvGHOST/Obevilion/master/core/configuration/version.txt')
+        except Exception as e:
+            return data
+        version = response.read().decode('utf-8').strip()
+        if version != data:
+            return data + " there is new version available: " + version
+        else:
+            return "You are using the latest version: " + data
+
+
+def current():
+    with open(os.path.join('core/configuration', 'version.txt'), 'r') as current_version:
+        data = current_version.read.strip()
+    return "Version: " + data
