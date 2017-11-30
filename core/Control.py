@@ -56,8 +56,6 @@ class LoopControl(object):
                     print("CRACKING [ZIP, 7Z, RAR] FILES, AND MORE SOON...")
                 elif choice == "vault":
                     booker.read()
-                elif choice == 'BL4CKvGHOST':
-                    printer.about_me()
                 else:
                     print("Invalid Input")
         except KeyboardInterrupt as ki:
@@ -104,8 +102,6 @@ class LoopControl(object):
                 booker.read()
             elif action == '--extract':
                 print("Not Available Right Now!")
-            elif action == 'BL4CKvGHOST':
-                printer.about_me()
             elif action == '--attacks':
                 print("CRACKING [ZIP, 7Z, RAR] FILES AND MORE SOON...")
         except Exception as e:
