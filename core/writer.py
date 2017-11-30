@@ -8,8 +8,9 @@
 
 import csv
 import time
-from Banner.Printer import unknowen_error
+from Banner import Printer
 
+printer = Printer()
 
 class Booker(object):
     """docstring for Booker.
@@ -41,7 +42,7 @@ class Booker(object):
                 write.writerow([str(fileName), str(password), str(
                     time.strftime('%d/%m/%Y %H:%M:%S'))])
         except Exception as e:
-            unknowen_error(e)
+            printer.unknowen_error(e)
 
     def read(self, output="core/configuration/output.csv"):
         """
@@ -56,4 +57,4 @@ class Booker(object):
                         filename=line[0], password=line[1], time=line[2]))
                     print("------------------------------------")
         except Exception as e:
-            unknowen_error(e)
+            printer.unknowen_error(e)
