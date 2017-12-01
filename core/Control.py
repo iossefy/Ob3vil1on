@@ -266,7 +266,7 @@ class Archives(object):
     #         pwd=self.password, filename=self.file_name, distination=self.place)
 
     def extract_zip(self, path=None, password=None, place=None):
-        """Extracting zip files."""
+        """Extracting zip files using subprocess."""
         try:
             subprocess.call("unzip {filename} -p {pwd} {dist}".format(
                 filename=path, pwd=password, place=dist), shell=True)
@@ -274,7 +274,7 @@ class Archives(object):
             printer.unknowen_error(e)
 
     def extract_rar(self, path=None, password=None, place=None):
-        """Extracting rar files."""
+        """Extracting rar files using subprocess."""
         try:
             subprocess.call("unrar x -p{pwd} {filename} {dist}".format(
                 pwd=password, filename=path, dist=place), shell=True)
@@ -282,7 +282,7 @@ class Archives(object):
             printer.unknowen_error(e)
 
     def extract_7z(self, path, password=None, place=None):
-        """Extract 7z files."""
+        """Extract 7z files using subprocess."""
         try:
             subprocess.call("7za t -p{pwd} {filename} {dist}".format(
                 pwd=password, filename=path, dist=place), shell=True)
