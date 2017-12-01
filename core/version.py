@@ -45,3 +45,11 @@ class VControl(object):
             print("Current Version Is: {}".format(data))
         except Exception as e:
             printer.unknowen_error(e)
+
+    def vManage(self, variable):
+        if variable == "--check":
+            self.check_for_updates()
+        elif variable == '--current':
+            self.current()
+        else:
+            print("Invalid Input {}".format(variable))

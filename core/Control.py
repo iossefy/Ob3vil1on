@@ -105,18 +105,13 @@ class LoopControl(object):
                 booker.read()
             elif action == '--version':
                 try:
-                    self.v = sys.argv[2]
+                    var = sys.argv[2]
+                    version.vManage(var)
                 except Exception as e:
                     print("1 required arg missing!")
                     print("--current to get the current version")
                     print("--check to check for the latest version")
                     sys.exit(-1)
-                if self.v == "--check":
-                    version.check_for_updates()
-                elif self.v == '--current':
-                    version.current()
-                else:
-                    print("Invalid Input {}".format(self.v))
             elif action == '--extract':
                 print("Not Available Right Now!")
             elif action == '--attacks':
@@ -239,45 +234,45 @@ class Archives(object):
         (i.e. Obevilion.py extract zip /path/to/file.zip)
         """
         pass
-
-    def EXTRACT(self, file_type=None, file_name=None, password=None, place=None):
-        if password == '' or password is None:
-            print("Extracting with passwords only!")
-        if distination == '' or distination is None:
-            print("Enter a place to store the extracted files")
-        if path == '' or path is None:
-            print("Enter the archive path")
-
-        # Initializing the variables to be used in other methods
-        self.file_type = file_type
-        self.file_name = file_name
-        self.password = password
-        self.place = place
-
-        # Checking the file type
-        if file_type == "zip":
-            pass
-        elif file_type == "rar":
-            pass
-        elif file_type == "7z":
-            pass
-
-        # Setting up the variables that will be used in extracting process
-        self.ex_rar = 'unrar x -p{pwd} {name} {distination}'.format(
-            pwd=password, name=file_name, distination=place)
-        self.ex_7z = '7za t -p{pwd} {filename} {distination}'.format(
-            pwd=password, filename=file_name, distination=place)
-        self.ex_zip = 'unzip {filename} -P{pwd} {distination}'.format(
-            pwd=password, filename=file_name, distination=place)
+    #
+    # def EXTRACT(self, file_type=None, file_name=None, password=None, place=None):
+    #     if password == '' or password is None:
+    #         print("Extracting with passwords only!")
+    #     if distination == '' or distination is None:
+    #         print("Enter a place to store the extracted files")
+    #     if path == '' or path is None:
+    #         print("Enter the archive path")
+    #
+    #     # Initializing the variables to be used in other methods
+    #     self.file_type = file_type
+    #     self.file_name = file_name
+    #     self.password = password
+    #     self.place = place
+    #
+    #     # Checking the file type
+    #     if file_type == "zip":
+    #         pass
+    #     elif file_type == "rar":
+    #         pass
+    #     elif file_type == "7z":
+    #         pass
+    #
+    #     # Setting up the variables that will be used in extracting process
+    #     self.ex_rar = 'unrar x -p{pwd} {name} {distination}'.format(
+    #         pwd=self.password, name=self.file_name, distination=self.place)
+    #     self.ex_7z = '7za t -p{pwd} {filename} {distination}'.format(
+    #         pwd=self.password, filename=self.file_name, distination=self.place)
+    #     self.ex_zip = 'unzip {filename} -P{pwd} {distination}'.format(
+    #         pwd=self.password, filename=self.file_name, distination=self.place)
 
     def extract_zip(self, path=None, password=None, place=None):
         """Extracting zip files."""
-        pass
+        subprocess.call("unzip {filename} -p {pwd} {dist}".format(filename=path, pwd=password, place=dist), shell=True)
 
     def extract_rar(self, path=None, password=None, place=None):
         """Extracting rar files."""
-        pass
+        subprocess.call("unrar x -p{pwd} {filename} {dist}".format(pwd=password, filename=path, dist=place), shell=True)
 
     def extract_7z(self, path, password=None, place=None):
         """Extract 7z files."""
-        pass
+        subprocess.call("7za t -p{}")
