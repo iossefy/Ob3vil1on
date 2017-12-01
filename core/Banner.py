@@ -10,6 +10,7 @@ import os
 import sys
 from name import get_name
 
+name = "Obevilion.py"
 
 class Printer:
     """Just Printing Banners in this class."""
@@ -32,14 +33,12 @@ class Printer:
         ''')
 
         print("Coded By BL4CKvGHOST")
-        print("%s" % get_name(o='all').upper())
-        print("Updates: now officialy %s is the strongest Cracking Script" %
-              get_name(o='all'))
+        print("{}".format(name[:-3]))
+        print("Updates: now officialy {} is the strongest Cracking Script".format(name[:-3]))
         print("GitHub: https://github.com/BL4CKvGHOST")
         print("Twitter: https://twitter.com/BL4CKvGHOST")
-        print("Usage: Python %s [display_mode] [archive path]" %
-              get_name())
-        print("Help!: python %s --help\n" % get_name())
+        print("Usage: Python {} [display_mode] [archive path]".format(name))
+        print("Help!: python {} --help\n".format(name))
 
     def help_banner(self):
         print('''
@@ -56,7 +55,7 @@ class Printer:
                           Need Help?
   ============================================================
         ''')
-        print("Inputing From Outside %s Shell" % get_name(o='all'))
+        print("Inputing From Outside {} Shell".format(name[:-3]))
         print('--gui:\t\t\tStart Graphical User Interface')
         print('--cli:\t\t\tStart Command Line Interface')
         print("--about\t\t\tAbout the app")
@@ -66,7 +65,7 @@ class Printer:
         print('--help:\t\t\tShow This Message\n')
         print("--version\t\tShow The Current Version")
         print("--extract\t\t\tExtract Archive")
-        print("Inputing From Inside %s Shell" % get_name(o='all'))
+        print("Inputing From Inside {} Shell".format(name))
         print("+=> extract\t\t\tExtract Archive")
         print("+=> help\t\tShow This Message")
         print("+=> license\t\tShow The License")
@@ -74,31 +73,18 @@ class Printer:
         print("+=> attacks\t\tShow available attacks")
         print("+=> vault\t\tShow File names and passwords\n")
         print("How To Use?")
-        print("EASY MODE:\t\tpython %s --easy_mode" % get_name())
+        print("EASY MODE:\t\tpython {} --easy_mode".format(name))
         print(
-            "CLI MODE:\t\tpython %s --cli [Archive Path]" % get_name())
-        print("GUI MODE:\t\tpython %s --gui" % get_name())
-        print("HELP SCREEN:\t\tpython %s --help\n" % get_name())
+            "CLI MODE:\t\tpython {} --cli [Archive Path]".format(name))
+        print("GUI MODE:\t\tpython {} --gui".format(name))
+        print("HELP SCREEN:\t\tpython {} --help\n".format(name))
 
-    def invalid_input(self):
-        print('''
-
-       ████▄ ███   ▄███▄      ▄   ▄█ █    ▄█ ████▄    ▄
-       █   █ █  █  █▀   ▀      █  ██ █    ██ █   █     █
-       █   █ █ ▀ ▄ ██▄▄   █     █ ██ █    ██ █   █ ██   █
-       ▀████ █  ▄▀ █▄   ▄▀ █    █ ▐█ ███▄ ▐█ ▀████ █ █  █
-             ███   ▀███▀    █  █   ▐     ▀ ▐       █  █ █
-                             █▐                    █   ██
-                             ▐
-                                  NO ONE WILL GIVE YOU FREEDOM
-                                  YOU TAKE IT!
-       ''')
-
-        print("%s" % get_name(o='all').upper())
-        print("INVALID INPUT")
-        print("Usage: Python %s [display_mode] [archive path]" %
-              get_name())
-        print("Help!: python %s --help" % get_name())
+    def invalid_input(self, uinput=None):
+        if uinput!=None:
+            print("Invalid Input {}".format(uinput))
+        else:
+            print("Invalid Input")
+        print("Help!: python {} --help".format(name))
 
     def about(self):
         print('''
@@ -108,16 +94,16 @@ class Printer:
         ██╔══██║██╔══██╗██║   ██║██║   ██║   ██║
         ██║  ██║██████╔╝╚██████╔╝╚██████╔╝   ██║
         ╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚═════╝    ╚═╝
-                                About {name}
-        '''.format(name=get_name(o='all')))
+                                About Obevilion
+        ''')
         print('''
-{name} is archive cracker tool, created in pure python.
-{name} will be recreated in C soon for more experience while cracking,
-{name} is supporting the latest version in python2 (Python 2.7.14).
-{name} Have a gui interface for the user who cant deal with the cli.
-{name} is designed for all Linux distributions.
-with {name} you can crack [7z/zip/rar] files.
-        '''.format(name=get_name('all')))
+{n} is archive cracker tool, created in pure python.
+{n} will be recreated in C soon for more experience while cracking,
+{n} is supporting the latest version in python2 (Python 2.7.14).
+{n} Have a gui interface for the user who cant deal with the cli.
+{n} is designed for all Linux distributions.
+with Obevilion you can crack [7z/zip/rar] files.
+        '''.format(n=name[:-3]))
 
     def License(self):
         print('''
