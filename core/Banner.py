@@ -64,9 +64,9 @@ class Printer:
         print("--vault\t\t\tShow File names and password")
         print('--help:\t\t\tShow This Message\n')
         print("--version\t\tShow The Current Version")
-        print("--extract\t\t\tExtract Archive")
+        print("--extract\t\tExtract Archive\n")
         print("Inputing From Inside {} Shell".format(name))
-        print("+=> extract\t\t\tExtract Archive")
+        print("+=> extract\t\tExtract Archive")
         print("+=> help\t\tShow This Message")
         print("+=> license\t\tShow The License")
         print("+=> clear\t\tClear The Screen")
@@ -75,7 +75,7 @@ class Printer:
         print("How To Use?")
         print("EASY MODE:\t\tpython {} --easy_mode".format(name))
         print(
-            "CLI MODE:\t\tpython {} --cli [Archive Path]".format(name))
+            "CLI MODE:\t\tpython {} --cli [Attack Mode] [Archive Path]".format(name))
         print("GUI MODE:\t\tpython {} --gui".format(name))
         print("HELP SCREEN:\t\tpython {} --help\n".format(name))
 
