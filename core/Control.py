@@ -267,11 +267,13 @@ class Archives(object):
 
     def extract_zip(self, path=None, password=None, place=None):
         """Extracting zip files."""
-        subprocess.call("unzip {filename} -p {pwd} {dist}".format(filename=path, pwd=password, place=dist), shell=True)
+        subprocess.call("unzip {filename} -p {pwd} {dist}".format(
+            filename=path, pwd=password, place=dist), shell=True)
 
     def extract_rar(self, path=None, password=None, place=None):
         """Extracting rar files."""
-        subprocess.call("unrar x -p{pwd} {filename} {dist}".format(pwd=password, filename=path, dist=place), shell=True)
+        subprocess.call("unrar x -p{pwd} {filename} {dist}".format(
+            pwd=password, filename=path, dist=place), shell=True)
 
     def extract_7z(self, path, password=None, place=None):
         """Extract 7z files."""

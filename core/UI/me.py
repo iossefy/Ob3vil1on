@@ -31,7 +31,8 @@ class Window(Frame):
             self.master, text="Main Language Is Python")
         self.end = Label(
             self.master, text="twitter: https://www.twitter.com/BL4CKvGHOST")
-        self.boom = Label(self.master, text="Website: https://www.bl4ckvghost.github.io")
+        self.boom = Label(
+            self.master, text="Website: https://www.bl4ckvghost.github.io")
 
         # Packing the variables
         self.title.pack()

@@ -21,6 +21,7 @@ else:
     print("WTF!, unknowen python version!")
     sys.exit(-1)
 
+
 class VControl(object):
     """docstring for VControl."""
 
@@ -32,7 +33,8 @@ class VControl(object):
                     'https://raw.githubusercontent.com/BL4CKvGHOST/Obevilion/master/core/configuration/version.txt')
                 version = response.read().decode('utf-8').strip()
                 if version != data:
-                    print("current is {} there is new version available: {}".format(data, version))
+                    print("current is {} there is new version available: {}".format(
+                        data, version))
                 else:
                     print("You are using the latest version:{}".format(data))
         except Exception as e:

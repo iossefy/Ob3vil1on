@@ -12,6 +12,7 @@ from Banner import Printer
 
 printer = Printer()
 
+
 class Booker(object):
     """docstring for Booker.
 

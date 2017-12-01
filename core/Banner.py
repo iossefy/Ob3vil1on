@@ -131,7 +131,7 @@ with {name} you can crack [7z/zip/rar] files.
 
     def unknowen_error(self, exception, whatever=None):
         print("Something went wrong!")
-        if whatever==None:
+        if whatever == None:
             pass
         else:
             print('{}'.format(whatever))
