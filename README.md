@@ -27,7 +27,7 @@ if you are not familiar with Brute-force attack, try dictionary attacks (Not Ava
 
 If you are using windows you must install the [Cygwin](http://www.cygwin.com/).
 
-Then install the [requirements](#unpythonic-requirements).
+Then install the [requirements](#requirements).
 
 Now you can run Obevilion with [Cygwin](http://www.cygwin.com/).
 
