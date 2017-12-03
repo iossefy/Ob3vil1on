@@ -140,7 +140,6 @@ class LoopControl(object):
             except Exception as e:
                 pass
 
-
 class Attacks:
     """
     Managing the attacks from this class.
