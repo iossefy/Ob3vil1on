@@ -169,7 +169,7 @@ class Attacks:
             else:
                 print("Try Again!")
         except Exception as e:
-            printer.unknowen_error(exception=e)
+            printer.unknowen_error(e)
             time.sleep(2)
             sys.exit(1)
 
