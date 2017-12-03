@@ -33,7 +33,7 @@ Now you can run Obevilion with [Cygwin](http://www.cygwin.com/).
 
 ## Mac OS X
 
-If you are using mac os x you must have the [requirements](#unpythonic-requirements) installed in your terminal.
+If you are using mac os x you must have the [requirements](#requirements) installed in your terminal.
 
 ## Requirements
 
