@@ -58,7 +58,7 @@ class LoopControl(object):
                 elif choice == 'license':
                     printer.License() # print the license
                 elif choice == 'attacks':
-                    print("CRACKING [ZIP, 7Z, RAR] FILES, AND MORE SOON...")
+                    printer.attacks()
                 elif choice == "vault":
                     booker.read() # read from the vault
                 else:
@@ -116,9 +116,7 @@ class LoopControl(object):
                     # Run this method
                     version.vManage(var)
                 except Exception as e:
-                    print("1 required arg missing!")
-                    print("--current to get the current version")
-                    print("--check to check for the latest version")
+                    printer.version_err()
                     sys.exit(-1)
             elif action == '--extract':
                 try:
@@ -132,13 +130,10 @@ class LoopControl(object):
                     except Exception as e:
                         printer.unknowen_error(e)
                 except Exception as e:
-                    print("Something went wrong!")
-                    print("Try: python Obevilion.py [option] [path] [password] [place]")
-                    print("i.e python Obevilion.py --zip /path/to/archive.zip S3CR3T /place/to/extract")
-                    print("try in order!")
+                    printer.extract_err()
                     sys.exit(-1)
             elif action == '--attacks':
-                print("CRACKING [ZIP, 7Z, RAR] FILES AND MORE SOON...")
+                printer.attacks()
         except Exception as e:
             try:
                 # If the user input invalid command
@@ -203,7 +198,7 @@ class Attacks:
             else:
                 print("Use BruteForce Attack\nTrust Me Its Better")
         except Exception as e:
-            printer.unknowen_error(exception=e)
+            printer.unknowen_error(e)
             time.sleep(2)
             sys.exit(1)
 

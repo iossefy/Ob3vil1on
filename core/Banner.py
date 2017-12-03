@@ -132,3 +132,19 @@ with Obevilion you can crack [7z/zip/rar] files.
         print(
             "You can report the error at https://github.com/BL4CKvGHOST/issues/")
         print('Exiting...')
+
+    def extract_err(self):
+        print("Something went wrong!")
+        print("Try: python Obevilion.py [option] [path] [password] [place]")
+        print("i.e python Obevilion.py --zip /path/to/archive.zip S3CR3T /place/to/extract")
+        print("try in order!")
+
+    def version_err(self):
+        print("1 required arg missing!")
+        print("--current to get the current version")
+        print("--check to check for the latest version")
+
+    def attacks(self):
+        print("CRACKING [ZIP, 7Z, RAR] FILES...")
+        print("CLI AND GUI ATTACKS AVAILABLE TO YOU!")
+        print("BRUTEFORCE/DICTIONARY ATTACKS")
