@@ -8,11 +8,10 @@
 
 import os
 import sys
-from name import get_name
 
 name = "Obevilion.py"
 
-class Printer:
+class Printer(object):
     """Just Printing Banners in this class."""
 
     def main_banner(self):
