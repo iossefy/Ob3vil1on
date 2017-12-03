@@ -44,7 +44,7 @@ class Check_req:
            [Information]p7zip and unrar is created to create archives and unpack it
            with the extension of zip, 7z and rar.'''
 
-        for which in ["unrar", "p7zip"]:
+        for which in ["unrar", "p7zip", "7z"]:
             if not shutil.which(which):
                 print("ERROR: %s isn't installed." % which)
                 print("Exiting...")
