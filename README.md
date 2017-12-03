@@ -6,7 +6,6 @@ Obevilion is archive cracker created in python.
 
 Name           | Obevilion
 :------------- | :----------------------------------------------------------------------------------------------
-Version        | 1.9
 Python Version | Python2.7.14 / python3 soon...
 Author         | [@BL4CKvGHOST](https://twitter.com/BL4CKvGHOST) (Youssef Hesham)
 Project GitHub | <https://github.com/BL4CKvGHOST/Obevilion>
@@ -94,8 +93,6 @@ do not like the UNIX-SHELL?. just try the gui tool, run this command in the unix
 # **_TODO_**
 
 - [ ] Complete The GUI
-
-- [ ] Complete The Extract Command
 
 - [ ] Create a web based UI
 
