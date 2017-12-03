@@ -7,3 +7,5 @@ __pycache__/
 *.7z
 *.csv
 *.pyc
+
+NATIVE/
