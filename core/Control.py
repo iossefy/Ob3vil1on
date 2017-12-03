@@ -14,8 +14,8 @@ import subprocess
 from writer import Booker
 from version import VControl
 
+# Creating instances for classes
 version = VControl()
-
 printer = Printer()
 booker = Booker()
 
@@ -33,6 +33,7 @@ class LoopControl(object):
         self.attacks = Attacks()
         choice = ""
         try:
+            # While loop to loop in user input
             while choice != "exit":
                 choice = raw_input("+=> ")
                 if choice == 'gui':
@@ -71,12 +72,14 @@ class LoopControl(object):
         """
         Script Main Loop
         """
+        # Creating instances
         self.attacks = Attacks()
         self.arc = Archives()
         try:
             assert action in commands, "Action is not one of %s" % ', '.join(
                 map(str, commands))
             try:
+                # Setting up --easy_mode
                 if action == '--easy_mode':
                     subprocess.call('clear', shell=True)
                     printer.main_banner()
@@ -89,6 +92,7 @@ class LoopControl(object):
                 gui.main()
             elif action == '--cli':
                 try:
+                    # Setting up the args
                     self.temp = sys.argv[2]
                     self.attacks.manage_args()
                 except Exception as e:
@@ -106,7 +110,9 @@ class LoopControl(object):
                 booker.read()
             elif action == '--version':
                 try:
+                    # Setting up args
                     var = sys.argv[2]
+                    # Run this method
                     version.vManage(var)
                 except Exception as e:
                     print("1 required arg missing!")
@@ -115,6 +121,7 @@ class LoopControl(object):
                     sys.exit(-1)
             elif action == '--extract':
                 try:
+                    # Required Arguments for --extract command
                     self.option = sys.argv[2]
                     self.path = sys.argv[3]
                     self.password = sys.argv[4]
@@ -133,6 +140,7 @@ class LoopControl(object):
                 print("CRACKING [ZIP, 7Z, RAR] FILES AND MORE SOON...")
         except Exception as e:
             try:
+                # If the user input invalid command
                 if sys.argv[1] is not commands:
                     printer.invalid_input()
                 else:
@@ -155,7 +163,7 @@ class Attacks:
         """
         try:
             path = raw_input('path:')
-            if path != '':
+            if path != '':# if path not equal blank
                 subprocess.call(
                     'python3 core/model.py {file}'.format(file=path), shell=True)
             else:

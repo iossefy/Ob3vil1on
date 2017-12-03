@@ -10,6 +10,7 @@ import csv
 import time
 from Banner import Printer
 
+# Creating instance
 printer = Printer()
 
 
@@ -38,8 +39,11 @@ class Booker(object):
         password: Getting the Password to write it into password column.
         """
         try:
+            # Append to the file
             with open(output, 'a') as csv_file:
                 write = csv.writer(csv_file, delimiter=',')
+                # Write filename then password then its time
+                # Write the time in this format (Day/Month/Year Hour:Menute:Seconds)
                 write.writerow([str(fileName), str(password), str(
                     time.strftime('%d/%m/%Y %H:%M:%S'))])
         except Exception as e:
@@ -54,6 +58,8 @@ class Booker(object):
             with open(output, 'rb') as csv_file:
                 csv_reader = csv.reader(csv_file, delimiter=',')
                 for line in csv_reader:
+                    # Read this columns
+                    # Filename      Password        Time
                     print("File Path: {filename}\nPassword: {password}\nTime: {time}".format(
                         filename=line[0], password=line[1], time=line[2]))
                     print("------------------------------------")

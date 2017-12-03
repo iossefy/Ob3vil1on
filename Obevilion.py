@@ -10,9 +10,13 @@ import sys
 import os
 from core import Check, Control
 
+# Creating instances
 check_req = Check.Check_req()
 looprocess = Control.LoopControl()
+
+# Initializing Variables
 action = ''
+# Commands for the user to input
 commands = ['--gui', '--cli', '--help', '--about',
             '--easy_mode', '--about_me', '--license',
             '--vault', '--license', '--attacks',
