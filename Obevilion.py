@@ -8,41 +8,15 @@
 
 import sys
 import os
-from core import Banner, Check, Control
+from core import Check, Control
 
 check_req = Check.Check_req()
-printer = Banner.Printer()
 looprocess = Control.LoopControl()
 action = ''
 commands = ['--gui', '--cli', '--help', '--about',
             '--easy_mode', '--about_me', '--license',
             '--vault', '--license', '--attacks',
             '--version', '--extract']
-
-
-def get_name(arg=''):
-    '''
-    Managing the file name
-    '''
-    name = os.path.basename(__file__)
-    if arg == 'noPy':
-        return name.replace('.py', '')
-    elif arg == 'all':
-        if 'pyc' not in name:
-            return name
-        elif 'pyc' in name:
-            return name.replace('.pyc', '')
-        elif 'py' in name:
-            return name.replace('.py', '')
-        else:
-            return None
-    elif arg == '':
-        if "pyc" not in name:
-            return name
-        else:
-            return name.replace('pyc', 'py')
-        return None
-
 
 try:
     action = sys.argv[1]
@@ -56,6 +30,8 @@ def main():
     check_req.check_os()  # Checking the required operation system
     check_req.check_py_version()  # Check valid python version
     if action == '':
+        from core.Banner import Printer
+        printer = Printer()
         printer.main_banner()
 #   check_req.check_softwares()
     looprocess.main_loop(action=action, commands=commands)  # Run
