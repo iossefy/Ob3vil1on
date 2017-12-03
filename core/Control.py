@@ -35,31 +35,32 @@ class LoopControl(object):
         try:
             # While loop to loop in user input
             while choice != "exit":
-                choice = raw_input("+=> ")
+                choice = raw_input("+=> ") # Pointer XD
                 if choice == 'gui':
-                    gui.main()
+                    gui.main() # Start GUI Window
                 elif choice == 'cli':
-                    self.attacks.cli_bruteforce_attack()
-                elif choice == 'help':
+                    self.attacks.cli_bruteforce_attack() # Start cli attack
+                elif choice == 'help': # print help
                     printer.help_banner()
                 elif choice == 'about':
-                    printer.about()
-                elif choice == '':
+                    printer.about() # print about
+                elif choice == '': # Just Pass :)
                     pass
                 elif choice == 'extract':
                     print("Not Available Right Now!")
                 elif choice == 'exit':
+                    # Exit From easy_mode
                     print("Exiting...")
                     time.sleep(2)
                     sys.exit(1)
                 elif choice == 'clear':
-                    subprocess.call('clear', shell=True)
+                    subprocess.call('clear', shell=True) # Clear the terminal
                 elif choice == 'license':
-                    printer.License()
+                    printer.License() # print the license
                 elif choice == 'attacks':
                     print("CRACKING [ZIP, 7Z, RAR] FILES, AND MORE SOON...")
                 elif choice == "vault":
-                    booker.read()
+                    booker.read() # read from the vault
                 else:
                     print("Invalid Input")
         except KeyboardInterrupt as ki:
@@ -82,14 +83,14 @@ class LoopControl(object):
                 # Setting up --easy_mode
                 if action == '--easy_mode':
                     subprocess.call('clear', shell=True)
-                    printer.main_banner()
-                    self.loop()
+                    printer.main_banner() # print the main banner
+                    self.loop() # loop in terminal
                 else:
                     pass
             except Exception as e:
                 pass
             if action == '--gui':
-                gui.main()
+                gui.main() # Open GUI Window
             elif action == '--cli':
                 try:
                     # Setting up the args
@@ -99,15 +100,15 @@ class LoopControl(object):
                     print(
                         'choose another argument\n-b\tfor bruteforce attack\n-d\tfor dictionary attack')
             elif action == '--help':
-                printer.help_banner()
+                printer.help_banner() # print help banner
             elif action == '--about':
-                printer.about()
+                printer.about() # Print about
             elif action == '--about_me':
-                printer.about_me()
+                printer.about_me() # Print about me
             elif action == '--license':
-                printer.License()
+                printer.License() # print the license
             elif action == '--vault':
-                booker.read()
+                booker.read() # Read from the vault
             elif action == '--version':
                 try:
                     # Setting up args
@@ -122,10 +123,10 @@ class LoopControl(object):
             elif action == '--extract':
                 try:
                     # Required Arguments for --extract command
-                    self.option = sys.argv[2]
-                    self.path = sys.argv[3]
-                    self.password = sys.argv[4]
-                    self.place = sys.argv[5]
+                    self.option = sys.argv[2]       # File Type
+                    self.path = sys.argv[3]         # file path
+                    self.password = sys.argv[4]     # file password
+                    self.place = sys.argv[5]        # extract place
                     try:
                         self.arc.arg_manager(option=self.option, path=self.path, password=self.password, place=self.place)
                     except Exception as e:
@@ -178,8 +179,9 @@ class Attacks:
         BruteForce Attack in the external shell [Terminal Arguments]
         """
         try:
+            # path is set to user input at the third arg
             path = sys.argv[3]
-            if path == '' or path is None:
+            if path == '' or path is None: # if the user enter nothing
                 print("Try Again!")
             else:
                 subprocess.call(
@@ -194,8 +196,9 @@ class Attacks:
         Dictionary Attack in the external shell [Terminal Arguments]
         """
         try:
+            # path is set to user input at the third arg
             path = sys.argv[3]
-            if path == '' or path is None:
+            if path == '' or path is None: # if the user enter nothing
                 print("There Is 1 arg Messing")
             else:
                 print("Use BruteForce Attack\nTrust Me Its Better")
@@ -212,8 +215,8 @@ class Attacks:
 
         Parameters:
 
-            '-d' is for dictionary attack
-            '-b' is for bruteforce attack
+            '-d' '--dictionary' is for dictionary attack
+            '-b' '--bruteforce' is for bruteforce attack
 
         if the user enter '-b'
         the user will be using bruteforce attack and this method will direct
@@ -228,10 +231,13 @@ class Attacks:
 
         """
         try:
+            # Set attack type to the second arg in terminal
             self.arg = sys.argv[2]
-            if self.arg == "-b":
+            # if second arg = '-b' or '--bruteforce' start bruteforce attack
+            if self.arg == "-b" or self.arg == '--bruteforce':
                 self.cli_bruteforce_attack_outshell()
-            elif self.arg == '-d':
+            elif self.arg == '-d' or self.arg == '--dictionary':
+            # if second arg = 'd' or '--dictionary' start dictionary attack
                 self.cli_dictionary_attack_outshell()
             else:
                 print("Invalid argument: {}".format(self.arg))
@@ -245,23 +251,23 @@ class Archives(object):
        files.
 
        Methods:
-       extract_zip: extract zip files.
        extract_rar: extract rar files.
-       extract_7z: extract 7z files.
-       EXTRACT: the manager."""
+       extract_7z: extract 7z and zip files.."""
 
     def arg_manager(self, option=None, path=None, password=None, place=None):
-        if option == '--zip' or '--7z':
+        if option == '--zip' or '--7z': # if the file type equal zip or 7z
             try:
+                # Start extracting file
                 self.extract_7z(path=path, password=password, place=place)
             except Exception as e:
-                printer.unknowen_error(e)
+                printer.unknowen_error(e) # print the error
                 sys.exit(-1)
-        if option == '--rar':
+        if option == '--rar': # if the file type equal zip or 7z
             try:
+                # Start extracting file
                 self.extract_rar(path=path, password=password, place=place)
             except Exception as e:
-                printer.unknowen_error(e)
+                printer.unknowen_error(e) # print the error
                 sys.exit(-1)
 
     def extract_rar(self, path=None, password=None, place=None):
