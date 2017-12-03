@@ -4,6 +4,16 @@
 
 Obevilion is archive cracker created in python.
 
+Name           | Obevilion
+:------------- | :----------------------------------------------------------------------------------------------
+Version        | 1.9
+Python Version | Python2.7.14 / python3 soon...
+Author         | [@BL4CKvGHOST](https://twitter.com/BL4CKvGHOST) (Youssef Hesham)
+Project GitHub | <https://github.com/BL4CKvGHOST/Obevilion>
+Author GitHub  | <https://github.com/BL4CKvGHOST/>
+License        | [GNU General Public License v3.0](https://github.com/BL4CKvGHOST/Obevilion/blob/master/COPYING)
+Copyleft       | Youssef Hesham
+
 ## What Obevilion Crack
 
 ZIP Files    | 7Z Files     | RAR Files
@@ -33,12 +43,15 @@ you must have `Python2` and `Python3` installed on your system (LATEST VERSION P
 ### Linux Installation
 
 ```shell
+sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install python python3 python3-pip python-pip
 sudo apt-get install unzip unrar p7zip-full
 sudo apt-get install python-pyqt5 python-qt4
 ```
-##### Other Platfroms
-sorry other platfroms is not supported yet
+
+#### Other Platfroms
+
+other platforms is not supported yet
 
 ## Report Bugs
 
@@ -78,7 +91,6 @@ do not like the UNIX-SHELL?. just try the gui tool, run this command in the unix
 
 `python Obevilion.py --gui`
 
-
 # **_TODO_**
 
 - [ ] Complete The GUI
@@ -87,5 +99,4 @@ do not like the UNIX-SHELL?. just try the gui tool, run this command in the unix
 
 - [ ] Create a web based UI
 
-
-### Copyright (c) 2017 Copyright Youssef Hesham All Rights Reserved.
+## Copyright (c) 2017 Copyright Youssef Hesham All Rights Reserved.
