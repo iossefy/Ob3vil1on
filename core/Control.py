@@ -72,6 +72,7 @@ class LoopControl(object):
         Script Main Loop
         """
         self.attacks = Attacks()
+        self.arc = Archives()
         try:
             assert action in commands, "Action is not one of %s" % ', '.join(
                 map(str, commands))
@@ -113,7 +114,21 @@ class LoopControl(object):
                     print("--check to check for the latest version")
                     sys.exit(-1)
             elif action == '--extract':
-                print("Not Available Right Now!")
+                try:
+                    self.option = sys.argv[2]
+                    self.path = sys.argv[3]
+                    self.password = sys.argv[4]
+                    self.place = sys.argv[5]
+                    try:
+                        self.arc.arg_manager(option=self.option, path=self.path, password=self.password, place=self.place)
+                    except Exception as e:
+                        printer.unknowen_error(e)
+                except Exception as e:
+                    print("Something went wrong!")
+                    print("Try: python Obevilion.py [option] [path] [password] [place]")
+                    print("i.e python Obevilion.py --zip /path/to/archive.zip S3CR3T /place/to/extract")
+                    print("try in order!")
+                    sys.exit(-1)
             elif action == '--attacks':
                 print("CRACKING [ZIP, 7Z, RAR] FILES AND MORE SOON...")
         except Exception as e:
@@ -228,50 +243,19 @@ class Archives(object):
        extract_7z: extract 7z files.
        EXTRACT: the manager."""
 
-    def arg_manager(self, option):
-        """
-        Managing the args.
-        (i.e. Obevilion.py extract zip /path/to/file.zip)
-        """
-        pass
-    #
-    # def EXTRACT(self, file_type=None, file_name=None, password=None, place=None):
-    #     if password == '' or password is None:
-    #         print("Extracting with passwords only!")
-    #     if distination == '' or distination is None:
-    #         print("Enter a place to store the extracted files")
-    #     if path == '' or path is None:
-    #         print("Enter the archive path")
-    #
-    #     # Initializing the variables to be used in other methods
-    #     self.file_type = file_type
-    #     self.file_name = file_name
-    #     self.password = password
-    #     self.place = place
-    #
-    #     # Checking the file type
-    #     if file_type == "zip":
-    #         pass
-    #     elif file_type == "rar":
-    #         pass
-    #     elif file_type == "7z":
-    #         pass
-    #
-    #     # Setting up the variables that will be used in extracting process
-    #     self.ex_rar = 'unrar x -p{pwd} {name} {distination}'.format(
-    #         pwd=self.password, name=self.file_name, distination=self.place)
-    #     self.ex_7z = '7za t -p{pwd} {filename} {distination}'.format(
-    #         pwd=self.password, filename=self.file_name, distination=self.place)
-    #     self.ex_zip = 'unzip {filename} -P{pwd} {distination}'.format(
-    #         pwd=self.password, filename=self.file_name, distination=self.place)
-
-    def extract_zip(self, path=None, password=None, place=None):
-        """Extracting zip files using subprocess."""
-        try:
-            subprocess.call("unzip {filename} -p {pwd} {dist}".format(
-                filename=path, pwd=password, place=dist), shell=True)
-        except Exception as e:
-            printer.unknowen_error(e)
+    def arg_manager(self, option=None, path=None, password=None, place=None):
+        if option == '--zip' or '--7z':
+            try:
+                self.extract_7z(path=path, password=password, place=place)
+            except Exception as e:
+                printer.unknowen_error(e)
+                sys.exit(-1)
+        if option == '--rar':
+            try:
+                self.extract_rar(path=path, password=password, place=place)
+            except Exception as e:
+                printer.unknowen_error(e)
+                sys.exit(-1)
 
     def extract_rar(self, path=None, password=None, place=None):
         """Extracting rar files using subprocess."""
@@ -281,10 +265,10 @@ class Archives(object):
         except Exception as e:
             printer.unknowen_error(e)
 
-    def extract_7z(self, path, password=None, place=None):
+    def extract_7z(self, path=None, password=None, place=None):
         """Extract 7z files using subprocess."""
         try:
-            subprocess.call("7za t -p{pwd} {filename} {dist}".format(
+            subprocess.call("7z x {filename} -o{dist} -p{pwd}".format(
                 pwd=password, filename=path, dist=place), shell=True)
         except Exception as e:
             printer.unknowen_error(e)
