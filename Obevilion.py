@@ -16,10 +16,10 @@ looprocess = Control.LoopControl()
 # Initializing Variables
 action = ''
 # Commands for the user to input
-commands = ['--gui', '--cli', '--help', '--about',
+commands = ['--gui'      , '--cli'     , '--help',
             '--easy_mode', '--about_me', '--license',
-            '--vault', '--license', '--attacks',
-            '--version', '--extract']
+            '--vault'    , '--license' , '--attacks',
+            '--version'  , '--extract' , '--about']
 
 try:
     action = sys.argv[1]
