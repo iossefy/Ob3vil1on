@@ -6,6 +6,15 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
+"""
+***WHAT IS THIS ALL ABOUT?***
+its the main script for the graphical user interface.
+this script use 'jobs.py' to do its jobs, thats mean there
+is no methods in this file to do anything about attacks and output console.
+The script use pyqt to create the graphical user interface.
+"""
+
+
 import sys
 from PyQt4 import QtCore, QtGui
 from PyQt4.QtGui import *

@@ -6,6 +6,12 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
+"""
+***WHAT IS THIS ALL ABOUT?***
+This script is like 'core/model.py' but
+created to be used in GUI console.
+"""
+
 import time
 import os
 import sys

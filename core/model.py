@@ -6,6 +6,15 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
+"""
+***WHAT IS THIS ALL ABOUT?***
+This is the main attacking script.
+this file will loop with the 'alphabet' (alphabet variable)
+then try it all to get the correct password, this type of attacks
+called BruteForce Attack.
+then write file path and file password to the vault.
+"""
+
 import time
 import os
 import sys

@@ -6,6 +6,11 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
+"""
+***WHAT IS THIS ALL ABOUT?***
+BAAAANNNNNERS!
+"""
+
 name = "Obevilion.py"
 
 class Printer(object):

@@ -6,6 +6,14 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
+"""
+***WHAT IS THIS ALL ABOUT?***
+Writing to the vault and reading to the vault.
+it write file path, password, time to the vault.
+where is the vault located?
+its located at core/configuration/output.csv
+"""
+
 import csv
 import time
 from Banner import Printer

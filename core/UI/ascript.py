@@ -10,6 +10,13 @@ from tkinter import *
 import os
 import sys
 
+"""
+***WHAT IS THIS ALL ABOUT?***
+this creates a window in tkinter to show information
+about the script like who created it and what language
+used to Implement Ob3vil1on
+"""
+
 
 class Window(Frame):
     def __init__(self, master=None):

@@ -6,6 +6,12 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
+"""
+***WHAT IS THIS ALL ABOUT?***
+Getting Ob3vil1on version from this script.
+it scrap version file from github then compare it
+with the local version.
+"""
 import platform
 import sys
 import os

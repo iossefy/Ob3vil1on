@@ -6,6 +6,11 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
+"""
+***WHAT IS THIS ALL ABOUT?***
+Checking all is ok before starting the script
+"""
+
 import os
 import sys
 import platform
