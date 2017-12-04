@@ -172,12 +172,24 @@ class Ui_MainWindow(object):
         self.theme_changer.setGeometry(QtCore.QRect(500, 250, 191, 31))
         self.theme_changer.setObjectName(_fromUtf8("theme_changer"))
 
+        # Setting up the output widget
+        self.widget = QtGui.QWidget(self.centralwidget)
+        self.widget.setGeometry(QtCore.QRect(-1, 319, 801, 181))
+        self.widget.setObjectName(_fromUtf8("widget"))
+
+        self.output = QtGui.QTextEdit(self.widget)
+        self.output.setGeometry(QtCore.QRect(0, 10, 801, 131))
+        self.output.setObjectName(_fromUtf8("output"))
+        MainWindow.setCentralWidget(self.centralwidget)
+
         # BruteForce Attack radio button
         self.check_bruteforce = QtGui.QRadioButton(self.frame)
         self.check_bruteforce.setGeometry(QtCore.QRect(20, 250, 109, 25))
         self.check_bruteforce.setObjectName(_fromUtf8("check_bruteforce"))
         self.check_bruteforce.toggled.connect(lambda: self.do.radioState(self.check_bruteforce,
-                                                                         self.DictPath, self.choose_dict))
+                                                                         self.DictPath,
+                                                                         self.choose_dict,
+                                                                         self.output))
         self.check_bruteforce.setChecked(True)
 
         # Dictionary Attack radio button
@@ -218,15 +230,6 @@ class Ui_MainWindow(object):
         self.label_5.setText(_fromUtf8("Options"))
         self.label_5.setObjectName(_fromUtf8("label_5"))
 
-        # Setting up the output widget
-        self.widget = QtGui.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(-1, 319, 801, 181))
-        self.widget.setObjectName(_fromUtf8("widget"))
-
-        self.output = QtGui.QTextEdit(self.widget)
-        self.output.setGeometry(QtCore.QRect(0, 10, 801, 131))
-        self.output.setObjectName(_fromUtf8("output"))
-        MainWindow.setCentralWidget(self.centralwidget)
         # self.save_output.clicked.connect(
         #     lambda: self.do.save_output(self.output))
 
