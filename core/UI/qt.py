@@ -6,11 +6,6 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
-"""
-***WHAT IS THIS ALL ABOUT?***
-About Qt GUI Window
-"""
-
 from PyQt4 import QtCore, QtGui
 from PyQt4.QtGui import *
 import sys

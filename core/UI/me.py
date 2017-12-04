@@ -6,11 +6,6 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
-"""
-***WHAT IS THIS ALL ABOUT?***
-Display graphical user interface window about me!
-"""
-
 from tkinter import *
 import os
 import sys

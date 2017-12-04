@@ -6,12 +6,6 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
-"""
-***WHAT IS THIS ALL ABOUT?***
-controlls every thing in this script including
-all loops and all commands the user enters.
-"""
-
 import time
 import sys
 from Banner import Printer

@@ -15,12 +15,8 @@ import sys
 import subprocess
 import tkinter as tk
 import tkinter.messagebox
+sys.path.append("../")
 
-"""
-***WHAT IS THIS ALL ABOUT?***
-This script handle what to do and what to happen
-in Graphical User Interface window (gui.py).
-"""
 
 class DO(object):
     """Just call me and i will do
