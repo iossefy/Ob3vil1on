@@ -59,7 +59,7 @@ you can submit an issue in the issue section at GitHub
 
 ## Contributing
 
-You can submit a pull request, i will test it then accept it.
+Just submit a pull request.
 
 ## Run
 
