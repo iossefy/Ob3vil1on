@@ -28,8 +28,8 @@ class DO(object):
         '''
         try:
             subprocess.call(
-                'python {}/core/UI/qt.py'.format(os.getcwd()), shell=True)
-            output.append("Open About Qt")
+                'python {}/core/UI/qt.py'.format(os.getcwd()), shell=True) # Call qt.py script
+            output.append("Open About Qt") # Logging to the console
         except Exception as e:
             output.append(e)
 
@@ -41,6 +41,10 @@ class DO(object):
             output.append(e)
 
     def about_script(self, output):
+        """
+        Calling about the script.
+        this script runs ascript.py
+        """
         try:
             ascript.main()  # Call this function
             output.append("Open About Script")
@@ -53,24 +57,26 @@ class DO(object):
         to confirm if the user want to quit.
         '''
         try:
-            root = tk.Tk()
+            root = tk.Tk() # root window
             root.withdraw()
+            # Ask a question
             answer = tk.messagebox.askquestion(
                 "Quit", "Are you sure\nYou want to exit?")
-            if answer == 'yes':
+            if answer == 'yes': # if the user said yes
                 sys.exit(0)
-            elif answer == 'no':
+            elif answer == 'no': # if the user said no
                 root.destroy()  # Terminating the window
                 if output != None:
-                    output.append("Quit action canceled by user")
+                    output.append("Quit action canceled by user") # Logging to the console
                 else:
                     pass
         except Exception as e:
             output.append(e)
 
     def clear_output(self, output):
+        """Clear the output"""
         try:
-            output.clear()
+            output.clear() # Clear output console
         except Exception as e:
             output.append(e)
 
@@ -84,9 +90,16 @@ class DO(object):
         pass
 
     def change_theme(self, theme, output):
+        """
+        Changing The Theme.
+        The user can choose from the following themes,
+
+        ["motif", "windows", "cde",
+        "Plastique", "Cleanlooks", "gtk+"]
+        """
         try:
-            QtGui.QApplication.setStyle(QtGui.QStyleFactory.create(theme))
-            output.append("Theme Changed")
+            QtGui.QApplication.setStyle(QtGui.QStyleFactory.create(theme)) # Changing the theme
+            output.append("Theme Changed") # Logging to the console
         except Exception as e:
             output.append(e)
 
@@ -102,16 +115,14 @@ class DO(object):
         btn: is for the choosen 'choose' button.
         '''
         try:
-            if radio.isChecked() == True:
-                field.setDisabled(True)
-                output.append("dictionary text field is now disabled")
-                btn.setDisabled(True)
-                output.append("dictionary choose button is now disabled")
-            elif radio.isChecked() == False:
-                field.setDisabled(False)
-                output.append("dictionary text field is now enabled")
-                btn.setDisabled(False)
-                output.append("dictionary choose button is now enabled")
+            if radio.isChecked() == True: # if the radio button is checked
+                field.setDisabled(True) # disable text field
+                btn.setDisabled(True) # disable button
+                output.append("Bruteforce attack enabled")
+            elif radio.isChecked() == False: # if the radio button is not checked
+                field.setDisabled(False) # enable text field
+                btn.setDisabled(False) # enable button
+                output.append("Dictionary attack enabled") # Logging to the console
         except Exception as e:
             output.append(e)
 
