@@ -29,9 +29,9 @@ except Exception as e:
 
 def main():
     """Main Function."""
-    check_req.check_user()  # Check if the user is root or not
-    check_req.check_os()  # Checking the required operation system
     check_req.check_py_version()  # Check valid python version
+    check_req.check_os()  # Checking the required operation system
+    check_req.check_user()  # Check if the user is root or not
     if action == '':
         from core.Banner import Printer
         printer = Printer()
