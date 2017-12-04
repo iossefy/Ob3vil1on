@@ -21,13 +21,14 @@ class DO(object):
     """Just call me and i will do
        what you want me to 'DO'."""
 
-    def about_qt(self):
+    def about_qt(self, output):
         '''
         Getting the path of the current directory then
         run qt.py in 'core/UI/qt.py'
         '''
         subprocess.call(
             'python {}/core/UI/qt.py'.format(os.getcwd()), shell=True)
+        output.append("Open About Qt")
 
     def about_me(self, output):
         me.main()  # Call this function
