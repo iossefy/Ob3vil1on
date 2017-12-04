@@ -26,38 +26,53 @@ class DO(object):
         Getting the path of the current directory then
         run qt.py in 'core/UI/qt.py'
         '''
-        subprocess.call(
-            'python {}/core/UI/qt.py'.format(os.getcwd()), shell=True)
-        output.append("Open About Qt")
+        try:
+            subprocess.call(
+                'python {}/core/UI/qt.py'.format(os.getcwd()), shell=True)
+            output.append("Open About Qt")
+        except Exception as e:
+            output.append(e)
 
     def about_me(self, output):
-        me.main()  # Call this function
-        output.append("Open About Window.")
+        try:
+            me.main()  # Call this function
+            output.append("Open About Window.")
+        except Exception as e:
+            output.append(e)
 
     def about_script(self, output):
-        ascript.main()  # Call this function
-        output.append("Open About Script")
+        try:
+            ascript.main()  # Call this function
+            output.append("Open About Script")
+        except Exception as e:
+            output.append(e)
 
     def quit(self, output=None):
         '''
         Displaying a dialog window for the user
         to confirm if the user want to quit.
         '''
-        root = tk.Tk()
-        root.withdraw()
-        answer = tk.messagebox.askquestion(
-            "Quit", "Are you sure\nYou want to exit?")
-        if answer == 'yes':
-            sys.exit(0)
-        elif answer == 'no':
-            root.destroy()  # Terminating the window
-            if output != None:
-                output.append("Quit action canceled by user")
-            else:
-                pass
+        try:
+            root = tk.Tk()
+            root.withdraw()
+            answer = tk.messagebox.askquestion(
+                "Quit", "Are you sure\nYou want to exit?")
+            if answer == 'yes':
+                sys.exit(0)
+            elif answer == 'no':
+                root.destroy()  # Terminating the window
+                if output != None:
+                    output.append("Quit action canceled by user")
+                else:
+                    pass
+        except Exception as e:
+            output.append(e)
 
     def clear_output(self, output):
-        output.clear()
+        try:
+            output.clear()
+        except Exception as e:
+            output.append(e)
 
     def start_cracking(self):
         pass
@@ -69,8 +84,11 @@ class DO(object):
         pass
 
     def change_theme(self, theme, output):
-        QtGui.QApplication.setStyle(QtGui.QStyleFactory.create(theme))
-        output.append("Theme Changed")
+        try:
+            QtGui.QApplication.setStyle(QtGui.QStyleFactory.create(theme))
+            output.append("Theme Changed")
+        except Exception as e:
+            output.append(e)
 
     def radioState(self, radio, field, btn):
         '''
@@ -83,13 +101,19 @@ class DO(object):
         field: is for the choosen text field.
         btn: is for the choosen 'choose' button.
         '''
-        if radio.isChecked() == True:
-            field.setDisabled(True)
-            btn.setDisabled(True)
-        elif radio.isChecked() == False:
-            field.setDisabled(False)
-            btn.setDisabled(False)
+        try:
+            if radio.isChecked() == True:
+                field.setDisabled(True)
+                btn.setDisabled(True)
+            elif radio.isChecked() == False:
+                field.setDisabled(False)
+                btn.setDisabled(False)
+        except Exception as e:
+            output.append(e)
 
     def open_file(self, field, output):
-        field.setText(QtGui.QFileDialog.getOpenFileName())
-        output.append("Open File Chooser")
+        try:
+            field.setText(QtGui.QFileDialog.getOpenFileName())
+            output.append("Open File Chooser")
+        except Exception as e:
+            output.append(e)
