@@ -6,7 +6,6 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
-
 import sys
 from PyQt4 import QtCore, QtGui
 from PyQt4.QtGui import *
