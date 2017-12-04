@@ -90,7 +90,7 @@ class DO(object):
         except Exception as e:
             output.append(e)
 
-    def radioState(self, radio, field, btn):
+    def radioState(self, radio, field, btn, output):
         '''
         Checking if the BruteForce Attack radio button
         is Checked, disable the dictionary attack text
@@ -104,10 +104,14 @@ class DO(object):
         try:
             if radio.isChecked() == True:
                 field.setDisabled(True)
+                output.append("dictionary text field is now disabled")
                 btn.setDisabled(True)
+                output.append("dictionary choose button is now disabled")
             elif radio.isChecked() == False:
                 field.setDisabled(False)
+                output.append("dictionary text field is now enabled")
                 btn.setDisabled(False)
+                output.append("dictionary choose button is now enabled")
         except Exception as e:
             output.append(e)
 
