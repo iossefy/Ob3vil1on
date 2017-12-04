@@ -15,8 +15,6 @@ import sys
 import subprocess
 import tkinter as tk
 import tkinter.messagebox
-sys.path.append("../")
-
 
 class DO(object):
     """Just call me and i will do
