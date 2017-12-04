@@ -118,12 +118,8 @@ with Obevilion you can crack [7z/zip/rar] files.
  of this license document, but changing it is not allowed.
          ''')
 
-    def unknowen_error(self, exception, whatever=None):
+    def unknowen_error(self, exception):
         print("Something went wrong!")
-        if whatever == None:
-            pass
-        else:
-            print('{}'.format(whatever))
         print("\nStackTrace")
         print('{}\n'.format(exception))
         print(
