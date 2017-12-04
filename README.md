@@ -55,7 +55,7 @@ other platforms is not supported yet
 
 ## Report Bugs
 
-you can submit an issue in the issue section at github
+you can submit an issue in the issue section at GitHub
 
 ## Contributing
 
@@ -87,7 +87,7 @@ if you are in the easy_mode
 
 `+=> help`
 
-do not like the UNIX-SHELL?. just try the gui tool, run this command in the unix shell :smile:
+do not like the UNIX-SHELL?. just try the GUI tool, run this command in the unix shell :smile:
 
 `python Obevilion.py --gui`
 
