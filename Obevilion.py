@@ -7,7 +7,6 @@
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
 import sys
-import os
 from core import Check, Control
 
 # Creating instances
