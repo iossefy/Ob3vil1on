@@ -28,7 +28,13 @@ print("Ob3vil1on Updater!\n")
 print("Choosing the wrong branch will end with error or will break Ob3vil1on version")
 print("Its Case Sensitive")
 print("What Branch You Are Working On [master / Beta / development]")
-branch = input("Default [master] +=> ")
+
+try:
+    branch = input("Default [master] +=> ")
+except KeyboardInterrupt as e: # Detect Ctrl+c
+    print("Ctrl+C detected")
+    print("Exiting...")
+    sys.exit(-1)
 
 if branch != "":
     subprocess.call("git pull origin {}".format(branch), shell=True)
