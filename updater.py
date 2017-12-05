@@ -19,8 +19,8 @@ for which in ["git"]:
 subprocess.call("clear")
 
 print("Ob3vil1on Updater!\n")
-print("Choosing the wrong branch will end with error or will break Ob3vil1on version\n")
-print("What Branch You Are Working On [master / Beta / development]\n")
+print("Choosing the wrong branch will end with error or will break Ob3vil1on version")
+print("What Branch You Are Working On [master / Beta / development]")
 branch = input("Default [master] +=> ")
 
 if branch!="":
