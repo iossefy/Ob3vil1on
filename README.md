@@ -91,6 +91,9 @@ do not like the UNIX-SHELL?. just try the GUI tool, run this command in the unix
 
 `python Obevilion.py --gui`
 
+want to update Ob3vil1on script, run `updater.py` with `python3`
+`python3 updater.py`
+
 # **_TODO_**
 
 - [ ] Complete The GUI
