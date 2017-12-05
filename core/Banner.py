@@ -25,7 +25,7 @@ class Printer(object):
                                    YOU TAKE IT!
 
             Created By: BL4CKvGHOST<youssefheshamhassan@gmail.com>
-            Code Name: CoXZ
+            Code Name: VOXZ
         ''')
 
         print("Coded By BL4CKvGHOST")
