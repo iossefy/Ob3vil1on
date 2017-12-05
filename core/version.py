@@ -36,7 +36,7 @@ class VControl(object):
             with open('core/configuration/version.txt', 'r') as check_version:
                 data = check_version.read().strip() # Reading the file content
                 response = urlopen( # Updated version of the file
-                    'https://raw.githubusercontent.com/BL4CKvGHOST/Obevilion/master/core/configuration/version.txt')
+                    'https://raw.githubusercontent.com/BL4CKvGHOST/Ob3vil1on/master/core/configuration/version.txt')
                 version = response.read().decode('utf-8').strip()
                 if version != data: # if the online version not equal the local version
                     print("current is {} there is new version available: {}".format(
