@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python3
 
+# @author bl4ckvghost
+#
+# Copyright (C) 2017 Youssef Hesham
+#
+# License <http://www.gnu.org/licenses/gpl-3.0.html>
+
 """
 This file is just pulling the changes from github
 """
@@ -23,10 +29,10 @@ print("Choosing the wrong branch will end with error or will break Ob3vil1on ver
 print("What Branch You Are Working On [master / Beta / development]")
 branch = input("Default [master] +=> ")
 
-if branch!="":
+if branch != "":
     subprocess.call("git pull origin {}".format(branch), shell=True)
 else:
     pass
 
-if branch=="":
+if branch == "":
     subprocess.call("git pull origin master", shell=True)
