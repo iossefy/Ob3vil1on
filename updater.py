@@ -26,6 +26,7 @@ subprocess.call("clear")
 
 print("Ob3vil1on Updater!\n")
 print("Choosing the wrong branch will end with error or will break Ob3vil1on version")
+print("Its Case Sensitive")
 print("What Branch You Are Working On [master / Beta / development]")
 branch = input("Default [master] +=> ")
 
