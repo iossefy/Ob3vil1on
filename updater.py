@@ -18,7 +18,7 @@ import subprocess
 # Check if the user have git installed on his system
 for which in ["git"]:
     if not shutil.which(which):
-        print("ERROR: %s isn't installed." % which)
+        print("ERROR: {} isn't installed.".format(which))
         print("Exiting...")
         sys.exit(-1)
 
