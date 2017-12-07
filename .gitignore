@@ -7,5 +7,5 @@ __pycache__/
 *.7z
 *.csv
 *.pyc
-
+*.bak
 NATIVE/
