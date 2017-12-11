@@ -1,15 +1,8 @@
 language:       python
-sudo:           false
+sudo:           enabled
 dist:           trusty
 deploy:
   skip_cleanup: true
-addons:
-  7z:           '16.02'
-  apt:
-    packages:
-      - python-pip
-      - python3
-      - python
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get --yes install python python3 python-pip python-qt4 p7zip-full unzip
