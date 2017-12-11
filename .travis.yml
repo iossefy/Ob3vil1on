@@ -8,11 +8,6 @@ python:
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get --yes install python python3 python-qt4 p7zip-full unzip
-install:
-  - brew install pyqt
-  - brew install sip
-  - brew install sip --with-python3
-  - brew install pyqt --with-python3
 branches:
   only:
   - master
