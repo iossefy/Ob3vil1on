@@ -10,9 +10,6 @@ addons:
       - python-pip
       - python3
       - python
-python:
-  - '2.7'
-  - '3.6'
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get --yes install python python3 python-pip python-qt4 p7zip-full unzip
