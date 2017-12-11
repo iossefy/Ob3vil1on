@@ -1,8 +1,10 @@
 language:       python
-sudo:           enabled
+sudo:           required
 dist:           trusty
 deploy:
   skip_cleanup: true
+python:
+- "2.7"
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get --yes install python python3 python-qt4 p7zip-full unzip
