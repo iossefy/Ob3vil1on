@@ -22,7 +22,7 @@ matrix:
 script:         env $EXTRA_TESTS ./test.py $TEST_SUITE
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get --yes install python python3 python-pip python-qt4 7z
+  - sudo apt-get --yes install python python3 python-pip python-qt4 p7zip-full unzip
   - echo -e "machine github.com\n  login $GITHUB_TOKEN" >> ~/.netrc
   - git lfs pull
 branches:
