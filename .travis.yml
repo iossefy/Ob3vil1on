@@ -13,13 +13,6 @@ addons:
 python:
   - '2.7'
   - '3.6'
-matrix:
-  include:
-    - python:   '3.6'
-      env:      EXTRA_TESTS=true
-    - python:   '2.7'
-      env:      EXTRA_TESTS=true
-script:         env $EXTRA_TESTS ./test.py $TEST_SUITE
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get --yes install python python3 python-pip python-qt4 p7zip-full unzip
