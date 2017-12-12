@@ -12,7 +12,7 @@ branches:
   only:
   - master
 script:
-  - python Ob3vil1on.py
+  - python Obevilion.py
 notifications:
   email:
     on_success: alyays
