@@ -55,7 +55,7 @@ def rc(rf, output):
 
 
 # Check That The File Already Exists . Then Run The File
-if os.path.exists(sys.argv[1]):
-    rc(sys.argv[1], sys.argv[2])
-else:
-    output.append("Check The File Again! , The File Not Exist.\nExiting...")
+# if os.path.exists(sys.argv[1]):
+#     rc(sys.argv[1], sys.argv[2])
+# else:
+#     output.append("Check The File Again! , The File Not Exist.\nExiting...")
