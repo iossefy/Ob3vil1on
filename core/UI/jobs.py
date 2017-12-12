@@ -32,14 +32,14 @@ class DO(object):
                 'python {}/core/UI/qt.py'.format(os.getcwd()), shell=True)  # Call qt.py script
             output.append("Open About Qt")  # Logging to the console
         except Exception as e:
-            output.append(e)
+            output.append(str(e))
 
     def about_me(self, output):
         try:
             me.main()  # Call this function
             output.append("Open About Window.")
         except Exception as e:
-            output.append(e)
+            output.append(str(e))
 
     def about_script(self, output):
         """
@@ -50,7 +50,7 @@ class DO(object):
             ascript.main()  # Call this function
             output.append("Open About Script")
         except Exception as e:
-            output.append(e)
+            output.append(str(e))
 
     def quit(self, output=None):
         '''
@@ -73,14 +73,14 @@ class DO(object):
                 else:
                     pass
         except Exception as e:
-            output.append(e)
+            output.append(str(e))
 
     def clear_output(self, output):
         """Clear the output"""
         try:
             output.clear()  # Clear output console
         except Exception as e:
-            output.append(e)
+            output.append(str(e))
 
     def start_cracking(self, radio, textField, path=None, passlist=None):
         """
@@ -122,9 +122,9 @@ class DO(object):
                             textField.append(
                                 "File is not supported. Cracking [zip/rar/7z] only")
                 except Exception as e:
-                    textField.append(e)
+                    textField.append(str(e))
         except Exception as e:
-            textField.append(e)
+            textField.append(str(e))
 
     def bruteforce(self, path, textField):
         """
@@ -135,7 +135,7 @@ class DO(object):
         try:
             attack.rc(path, textField)
         except Exception as e:
-            textField.append(e)
+            textField.append(str(e))
 
     def dictionary(self, path, textField, passlist):
         """
@@ -147,7 +147,7 @@ class DO(object):
         try:
             textField.append("Not Available Right Now!")
         except Exception as e:
-            textField.append(e)
+            textField.append(str(e))
 
     def change_theme(self, theme, output):
         """
@@ -162,7 +162,7 @@ class DO(object):
                 QtGui.QStyleFactory.create(theme))  # Changing the theme
             output.append("Theme Changed")  # Logging to the console
         except Exception as e:
-            output.append(e)
+            output.append(str(e))
 
     def radioState(self, radio, field, btn, output):
         '''
@@ -186,7 +186,7 @@ class DO(object):
                 # Logging to the console
                 output.append("Dictionary attack enabled")
         except Exception as e:
-            output.append(e)
+            output.append(str(e))
 
     def open_file(self, field, output):
         """
@@ -195,6 +195,6 @@ class DO(object):
         """
         try:
             field.setText(QtGui.QFileDialog.getOpenFileName())
-            output.append("Open File Chooser")
+            output.append("choosed: {}".format(field.toPlainText()))
         except Exception as e:
-            output.append(e)
+            output.append(str(e))
