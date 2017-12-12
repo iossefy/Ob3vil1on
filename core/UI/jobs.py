@@ -11,6 +11,7 @@ import qt
 import os
 import me
 import ascript
+import attack
 import sys
 import subprocess
 import tkinter as tk
@@ -81,19 +82,72 @@ class DO(object):
         except Exception as e:
             output.append(e)
 
-    def start_cracking(self):
-        pass
+    def start_cracking(self, radio, textField, path=None, passlist=None):
+        """
+        The main function to manage cracking methods (BruteForce / Dictionary) Attacks.
 
-    def bruteforce(self, path, textField):
+        Parameters:
+        radio: this will be the bruteforce radio by default.
+        textField: the output textfield that the password display on.
+        path: the path of archive file.
+        passlist: (optional) for dictionary attack.
+        """
         try:
-            subprocess.call(
-                "python {cudir}/core/UI/attack.py {arg1} {arg2}".format(
-                    cudir=os.getcwd(), arg1=path, arg2=textField), shell=True)
+            if path == '' or path is None:
+                textField.append("Path messing!")
+            if radio.isChecked() == True:
+                if os.path.exists(path):
+                    if path[-4:] == '.zip' or path[-4:] == '.rar' or path[-3:] == '.7z':
+                        self.bruteforce(path, textField)
+                    else:
+                        textField.append(
+                            "File is not supported. Cracking [zip/rar/7z] only")
+                else:
+                    textField.append(
+                        "File Not Found!, check if the path exist")
+            else:
+                try:
+                    if path == '' or path is None:
+                        textField.append("Path messing!")
+                    elif passlist == '' or passlist is None:
+                        textField.append("passlist messing!")
+                    else:
+                        if path[-4:] == '.zip' or path[-4:] == '.rar' or path[-3:] == '.7z':
+                            if os.path.exists(path):
+                                self.dictionary(path, textField, passlist)
+                            else:
+                                textField.append(
+                                    "File Not Found!, check if the path exist")
+                        else:
+                            textField.append(
+                                "File is not supported. Cracking [zip/rar/7z] only")
+                except Exception as e:
+                    textField.append(e)
         except Exception as e:
             textField.append(e)
 
-    def dictionary(self, path, textField, dict):
-        pass
+    def bruteforce(self, path, textField):
+        """
+        Bruteforce attack code goes here.
+        path: path of the target Archive File.
+        textField: the output textfield.
+        """
+        try:
+            attack.rc(path, textField)
+        except Exception as e:
+            textField.append(e)
+
+    def dictionary(self, path, textField, passlist):
+        """
+        Dictionary attack code goes here.
+        path: path of the target Archive File.
+        textField: the output textfield.
+        passlist: password list to iterate on.
+        """
+        try:
+            textField.append("Not Available Right Now!")
+        except Exception as e:
+            textField.append(e)
 
     def change_theme(self, theme, output):
         """
@@ -135,6 +189,10 @@ class DO(object):
             output.append(e)
 
     def open_file(self, field, output):
+        """
+        Open file dialog to let the user choose the
+        file easily without entering it manualy.
+        """
         try:
             field.setText(QtGui.QFileDialog.getOpenFileName())
             output.append("Open File Chooser")

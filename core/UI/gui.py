@@ -7,14 +7,8 @@
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
 import sys
-try:
-
-    from PyQt4 import QtCore, QtGui
-    from PyQt4.QtGui import *
-except Exception as e:
-    print(e)
-    sys.exit(1)
-
+from PyQt4 import QtCore, QtGui
+from PyQt4.QtGui import *
 from jobs import DO
 
 try:
@@ -163,11 +157,6 @@ class Ui_MainWindow(object):
         # self.check_Kali.setObjectName(_fromUtf8("check_Kali"))              #
         #######################################################################
 
-        # Setting up the start cracking button
-        self.start_cracking = QtGui.QPushButton(self.frame)
-        self.start_cracking.setGeometry(QtCore.QRect(600, 290, 190, 32))
-        self.start_cracking.setObjectName(_fromUtf8("start_cracking"))
-
         # Setting up the theme changer
         self.theme_changer = QtGui.QComboBox(self.frame)
         # Setting up the combo box items
@@ -221,6 +210,15 @@ class Ui_MainWindow(object):
         self.apply_theme.setObjectName(_fromUtf8("apply_theme"))
         self.apply_theme.clicked.connect(
             lambda: self.do.change_theme(str(self.theme_changer.currentText()), self.output))
+
+        # Setting up the start cracking button
+        self.start_cracking = QtGui.QPushButton(self.frame)
+        self.start_cracking.setGeometry(QtCore.QRect(600, 290, 190, 32))
+        self.start_cracking.setObjectName(_fromUtf8("start_cracking"))
+        self.start_cracking.clicked.connect(lambda: self.do.start_cracking(self.check_bruteforce,
+                                                                           self.output,
+                                                                           path=self.archivePath.toPlainText(),
+                                                                           passlist=self.DictPath.toPlainText()))
 
         # Setting up the label_5
         self.label_5 = QtGui.QLabel(self.frame)
