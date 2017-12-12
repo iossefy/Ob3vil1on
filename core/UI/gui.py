@@ -13,6 +13,7 @@ try:
     from PyQt4.QtGui import *
 except Exception as e:
     print("Python PyQt4 Not Found!")
+    sys.exit(0)
 from jobs import DO
 
 try:
