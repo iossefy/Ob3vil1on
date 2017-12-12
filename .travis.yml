@@ -11,7 +11,8 @@ before_install:
 branches:
   only:
   - master
-  - development
+script:
+  - python Ob3vil1on.py
 notifications:
   email:
     on_success: alyays
