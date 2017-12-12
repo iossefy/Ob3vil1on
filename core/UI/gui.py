@@ -7,8 +7,12 @@
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
 import sys
-from PyQt4 import QtCore, QtGui
-from PyQt4.QtGui import *
+try:
+
+    from PyQt4 import QtCore, QtGui
+    from PyQt4.QtGui import *
+except Exception as e:
+    print("Python PyQt4 Not Found!")
 from jobs import DO
 
 try:
