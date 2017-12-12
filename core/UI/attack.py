@@ -30,7 +30,7 @@ def rc(rf, output):
                 tryn += 1
                 for rkf in kf.readlines():
                     if rkf == "All OK\n":
-                        output.append("Found password: {}".format(repr(k)))
+                        output.append("Found password: {}".format(str(k)))
                         output.append(
                             "Tried combination count: {}".format(tryn))
                         output.append("It took {} seconds".format(
@@ -44,7 +44,7 @@ def rc(rf, output):
                 tryn += 1
                 for rkf in kf.readlines():
                     if rkf == "Everything is Ok\n":
-                        output.append("Found password:", repr(k))
+                        output.append("Found password:", str(k))
                         output.append("Tried combination count:", tryn)
                         output.append("It took {} seconds".format(
                             round(time.time() - start, 3)))
