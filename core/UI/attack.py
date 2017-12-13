@@ -10,7 +10,7 @@ import time
 import os
 import sys
 import itertools
-sys.path.append("../")
+sys.path.append("{cur}/core".format(cur=os.getcwd()))
 from writer import Booker
 
 booker = Booker()
@@ -30,13 +30,13 @@ def rc(rf, output):
                 tryn += 1
                 for rkf in kf.readlines():
                     if rkf == "All OK\n":
-                        output.append("Found password: {}".format(str(k)))
-                        output.append(
-                            "Tried combination count: {}".format(tryn))
-                        output.append("It took {} seconds".format(
-                            round(time.time() - start, 3)))
+                        try:
+                            output.append(
+                                "Found password {pwd}\nTried combination count {num}\nIt toook {time} seconds\nTerminating...".format(
+                                    pwd=str(k), num=str(tryn), time=round(time.time() - start, 3)))
+                        except Exception as e:
+                            output.append(str(e))
                         booker.write(rf, k)
-                        output.append("Exiting...")
             elif rf[-4:] == ".zip" or rf[-3:] == ".7z":
                 output.append("Trying: {}".format(k))
                 kf = os.popen(
@@ -44,12 +44,15 @@ def rc(rf, output):
                 tryn += 1
                 for rkf in kf.readlines():
                     if rkf == "Everything is Ok\n":
-                        output.append("Found password:", str(k))
-                        output.append("Tried combination count:", tryn)
-                        output.append("It took {} seconds".format(
-                            round(time.time() - start, 3)))
-                        booker.write(rf, k)
-                        output.append("Exiting...")
+                        output.append(str(k))
+                        try:
+                            output.append(
+                                "Found password {pwd}\nTried combination count {num}\nIt toook {time} seconds\nTerminating...".format(
+                                    pwd=str(k), num=str(tryn), time=round(time.time() - start, 3)))
+                            booker.write(rf, k)
+                            return
+                        except Exception as e:
+                            output.append(str(e))
             else:
                 output.append("Cracking [zip / 7z / rar] only")
 
