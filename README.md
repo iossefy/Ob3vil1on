@@ -99,7 +99,7 @@ want to update Ob3vil1on script, run `updater.py` with `python3`
 
 # **_TODO_**
 
-- [ ] Complete The GUI
+- [x] Complete The GUI
 
 - [ ] Create a web based UI
 
