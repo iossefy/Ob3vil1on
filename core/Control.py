@@ -13,6 +13,7 @@ from UI import gui
 import subprocess
 from writer import Booker
 from version import VControl
+from configuration import settings
 
 # Creating instances for classes
 version = VControl()
@@ -26,26 +27,31 @@ class LoopControl(object):
     without breaking the application.
     """
 
+    def __init__(self):
+        self.attacks = Attacks()
+        self.arc = Archives()
+
     def loop(self):
         """
         Looping throgh user input
         """
-        self.attacks = Attacks()
         choice = ""
         try:
             # While loop to loop in user input
             while choice != "exit":
-                choice = raw_input("+=> ") # Pointer XD
+                choice = raw_input("+=> ")  # Pointer
                 if choice == 'gui':
-                    gui.main() # Start GUI Window
+                    gui.main()  # Start GUI Window
                 elif choice == 'cli':
-                    self.attacks.cli_bruteforce_attack() # Start cli attack
-                elif choice == 'help': # print help
+                    self.attacks.cli_bruteforce_attack()  # Start cli attack
+                elif choice == 'help':  # print help
                     printer.help_banner()
                 elif choice == 'about':
-                    printer.about() # print about
-                elif choice == '': # Just Pass :)
+                    printer.about()  # print about
+                elif choice == '':  # Just Pass :)
                     pass
+                elif choice == 'set':
+                    self.noob_conf()
                 elif choice == 'extract':
                     print("Not Available Right Now!")
                 elif choice == 'exit':
@@ -54,13 +60,13 @@ class LoopControl(object):
                     time.sleep(2)
                     sys.exit(1)
                 elif choice == 'clear':
-                    subprocess.call('clear', shell=True) # Clear the terminal
+                    subprocess.call('clear', shell=True)  # Clear the terminal
                 elif choice == 'license':
-                    printer.License() # print the license
+                    printer.License()  # print the license
                 elif choice == 'attacks':
                     printer.attacks()
                 elif choice == "vault":
-                    booker.read() # read from the vault
+                    booker.read()  # read from the vault
                 else:
                     print("Invalid Input")
         except KeyboardInterrupt as ki:
@@ -69,13 +75,64 @@ class LoopControl(object):
             print("Exiting...")
             time.sleep(2)
 
+    def noob_conf(self):
+        """
+        Edit settings from easy mode.
+        """
+        try:
+            pass
+        except Exception as e:
+            printer.unknowen_error(e)
+
+    def pro_conf(self):
+        """
+        Edit settings from terminal arguments mode.
+        """
+        try:
+            try:
+                self.index = sys.argv[2]
+                self.value = sys.argv[3]
+                self.configfile = 'core/configuration/options.conf'
+                self.rdata = settings.readOptions(self.configfile)
+            except Exception as e:
+                print("There is 2 required arguemnts!")
+                print("python Obevilion.py --set [index] [value]")
+                sys.exit(1)
+            if self.index == 'uid' or self.index == 'guid':
+                if self.value == 'user' or self.value  == 'root':
+                    if self.index == 'uid':
+                        settings.modifyLine(self.rdata, 1, self.value)
+                        settings.setLine(self.configfile, self.rdata)
+                    elif self.index == 'guid':
+                        settings.modifyLine(self.rdata, 3, self.value)
+                        settings.setLine(self.configfile, self.rdata)
+                    else:
+                        printer.seterr()
+                        sys.exit(1)
+                else:
+                    printer.seterr()
+                    sys.exit(1)
+            if self.index == 'fm' or self.index == 'em':
+                if self.value == 'True' or self.value == 'False':
+                    if self.index == 'fm':
+                        settings.modifyLine(self.rdata, 5, self.value)
+                        settings.setLine(self.configfile, self.rdata)
+                    elif self.index == 'em':
+                        settings.modifyLine(self.rdata, 7, self.value)
+                        settings.setLine(self.configfile, self.rdata)
+                    else:
+                        printer.seterr()
+                        sys.exit(1)
+                else:
+                    printer.seterr()
+                    sys.exit(1)
+        except Exception as e:
+            printer.unknowen_error(e)
+
     def main_loop(self, action=None, commands=None):
         """
         Script Main Loop
         """
-        # Creating instances
-        self.attacks = Attacks()
-        self.arc = Archives()
         try:
             assert action in commands, "Action is not one of %s" % ', '.join(
                 map(str, commands))
@@ -83,14 +140,14 @@ class LoopControl(object):
                 # Setting up --easy_mode
                 if action == '--easy_mode':
                     subprocess.call('clear', shell=True)
-                    printer.main_banner() # print the main banner
-                    self.loop() # loop in terminal
+                    printer.main_banner()  # print the main banner
+                    self.loop()  # loop in terminal
                 else:
                     pass
             except Exception as e:
                 pass
             if action == '--gui':
-                gui.main() # Open GUI Window
+                gui.main()  # Open GUI Window
             elif action == '--cli':
                 try:
                     # Setting up the args
@@ -100,15 +157,17 @@ class LoopControl(object):
                     print(
                         'choose another argument\n-b\tfor bruteforce attack\n-d\tfor dictionary attack')
             elif action == '--help':
-                printer.help_banner() # print help banner
+                printer.help_banner()  # print help banner
             elif action == '--about':
-                printer.about() # Print about
+                printer.about()  # Print about
             elif action == '--about_me':
-                printer.about_me() # Print about me
+                printer.about_me()  # Print about me
             elif action == '--license':
-                printer.License() # print the license
+                printer.License()  # print the license
+            elif action == '--set':
+                self.pro_conf()
             elif action == '--vault':
-                booker.read() # Read from the vault
+                booker.read()  # Read from the vault
             elif action == '--version':
                 try:
                     # Setting up args
@@ -126,7 +185,8 @@ class LoopControl(object):
                     self.password = sys.argv[4]     # file password
                     self.place = sys.argv[5]        # extract place
                     try:
-                        self.arc.arg_manager(option=self.option, path=self.path, password=self.password, place=self.place)
+                        self.arc.arg_manager(
+                            option=self.option, path=self.path, password=self.password, place=self.place)
                     except Exception as e:
                         printer.unknowen_error(e)
                 except Exception as e:
@@ -144,6 +204,7 @@ class LoopControl(object):
             except Exception as e:
                 pass
 
+
 class Attacks:
     """
     Managing the attacks from this class.
@@ -159,7 +220,7 @@ class Attacks:
         """
         try:
             path = raw_input('path:')
-            if path != '':# if path not equal blank
+            if path != '':  # if path not equal blank
                 subprocess.call(
                     'python3 core/model.py {file}'.format(file=path), shell=True)
             else:
@@ -176,7 +237,7 @@ class Attacks:
         try:
             # path is set to user input at the third arg
             path = sys.argv[3]
-            if path == '' or path is None: # if the user enter nothing
+            if path == '' or path is None:  # if the user enter nothing
                 print("Try Again!")
             else:
                 subprocess.call(
@@ -193,8 +254,8 @@ class Attacks:
         try:
             # path is set to user input at the third arg
             path = sys.argv[3]
-            if path == '' or path is None: # if the user enter nothing
-                print("There Is 1 arg Messing")
+            if path == '' or path is None:  # if the user enter nothing
+                print("There Is 1 argument Messing!")
             else:
                 print("Use BruteForce Attack\nTrust Me Its Better")
         except Exception as e:
@@ -232,7 +293,7 @@ class Attacks:
             if self.arg == "-b" or self.arg == '--bruteforce':
                 self.cli_bruteforce_attack_outshell()
             elif self.arg == '-d' or self.arg == '--dictionary':
-            # if second arg = 'd' or '--dictionary' start dictionary attack
+                # if second arg = 'd' or '--dictionary' start dictionary attack
                 self.cli_dictionary_attack_outshell()
             else:
                 print("Invalid argument: {}".format(self.arg))
@@ -250,19 +311,19 @@ class Archives(object):
        extract_7z: extract 7z and zip files.."""
 
     def arg_manager(self, option=None, path=None, password=None, place=None):
-        if option == '--zip' or '--7z': # if the file type equal zip or 7z
+        if option == '--zip' or '--7z':  # if the file type equal zip or 7z
             try:
                 # Start extracting file
                 self.extract_7z(path=path, password=password, place=place)
             except Exception as e:
-                printer.unknowen_error(e) # print the error
+                printer.unknowen_error(e)  # print the error
                 sys.exit(-1)
-        if option == '--rar': # if the file type equal zip or 7z
+        if option == '--rar':  # if the file type equal zip or 7z
             try:
                 # Start extracting file
                 self.extract_rar(path=path, password=password, place=place)
             except Exception as e:
-                printer.unknowen_error(e) # print the error
+                printer.unknowen_error(e)  # print the error
                 sys.exit(-1)
 
     def extract_rar(self, path=None, password=None, place=None):

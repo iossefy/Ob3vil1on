@@ -18,7 +18,7 @@ action = ''
 # Commands for the user to input
 commands = ['--gui'      , '--cli'     , '--help',
             '--easy_mode', '--about_me', '--license',
-            '--vault'    , '--license' , '--attacks',
+            '--vault'    , '--set'     , '--attacks',
             '--version'  , '--extract' , '--about']
 
 try:

@@ -141,3 +141,11 @@ with Obevilion you can crack [7z/zip/rar] files.
         print("CRACKING [ZIP, 7Z, RAR] FILES...")
         print("CLI AND GUI ATTACKS AVAILABLE TO YOU!")
         print("BRUTEFORCE/DICTIONARY ATTACKS")
+
+    def seterr(self):
+        print("Please Choose from the F list")
+        print("'fm'\tFramework mode (True/False) Default=True")
+        print("'em'\tenable easy_mode (True/False) Default=False")
+        print("'uid'\t[user/root] enable and disable user login")
+        print("'guid'\t[user/root] enable and disable user login")
+        print("NOTHING MORE!")
