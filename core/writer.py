@@ -6,13 +6,6 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
-"""
-Writing to the vault and reading to the vault.
-it write file path, password, time to the vault.
-where is the vault located?
-its located at core/configuration/output.csv
-"""
-
 import csv
 import time
 from Banner import Printer
@@ -22,22 +15,27 @@ printer = Printer()
 
 
 class Booker(object):
-    """docstring for Booker.
-
+    """
     ======================================
     |CREATING CSV FILES|READING CSV FILES |
     | :-------------   | :-------------   |
     |WRITING CSV FILES |DELETING CSV FILES|
     =======================================
 
+    This class read and write to the vault.
+
+    whenever any password cracked it will be stored in the vault.
+    the vault is located in {$PROJECT}/core/configuration/output.csv.
+
+    Methods
+    read: read the contents of the csv file.
+    output: not a required function, you can pass the csv file in there
+
+    Methods Parameters
     write: write to csv file.
     write argument:filename, password
     filename: pass the file name to write to file_name column in csv file
     password: pass the password to write to password column in csv file
-
-    read: read the contents of the csv file.
-    output: not a required function, you can pass the csv file in there
-
     """
 
     def write(self, fileName, password, output="core/configuration/output.csv"):
@@ -58,6 +56,16 @@ class Booker(object):
 
     def read(self, output="core/configuration/output.csv"):
         """
+        Reading output file.
+        reading this in this format
+
+        ######################
+        File Path: {$filepath}
+        Password: {$pwd}
+        Time: {$time}
+        ######################
+
+        Methods:
         Reading the Information of the cracked files.
         output: not a required function, you can pass the csv file in there.
         """
