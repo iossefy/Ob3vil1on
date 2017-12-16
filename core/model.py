@@ -30,31 +30,30 @@ def rc(rf):
                 # Rar Cracing
                 print("Trying:", k)
                 kf = os.popen(
-                    "unrar t -y -p%s %s 2>&1|grep 'All OK'" % (k, rf))
+                    "unrar t -y -p{} {} 2>&1|grep 'All OK'".format(k, rf))
                 tryn += 1
                 for rkf in kf.readlines():
                     if rkf == "All OK\n":
                         # if all is 'OK', Print The Password
-                        print("Found password:", repr(k))
-                        print("Tried combination count:", tryn)
-                        print("It took", round(time.time() - start, 3), "seconds")
-                        booker.write(rf, k) # Write To The Vault
-                        # Then Exit
+                        print("Found password: {}".format(str(k)))
+                        print("Tried combination count: {}".format(tryn))
+                        print("It took {} seconds".format(round(time.time() - start, 3)))
+                        booker.write(rf, k)
                         print("Exiting...")
                         time.sleep(2)
                         sys.exit(1)
             elif rf[-4:] == ".zip" or rf[-3:] == ".7z":
                 # Cracing zip and 7z files
-                print("Trying:", k)
+                print("Trying: {}".format(k))
                 kf = os.popen(
-                    "7za t -p%s %s 2>&1|grep 'Everything is Ok'" % (k, rf))
+                    "7za t -p{} {} 2>&1|grep 'Everything is Ok'".format(k, rf))
                 tryn += 1
                 for rkf in kf.readlines():
                     if rkf == "Everything is Ok\n":
                         # if all is 'OK', Print The Password
-                        print("Found password:", repr(k))
-                        print("Tried combination count:", tryn)
-                        print("It took", round(time.time() - start, 3), "seconds")
+                        print("Found password: {}".format(str(k)))
+                        print("Tried combination count: {}".format(tryn))
+                        print("It took {} seconds".format(round(time.time() - start, 3)))
                         booker.write(rf, k)
                         print("Exiting...")
                         time.sleep(2)
