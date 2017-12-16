@@ -145,18 +145,6 @@ class Ui_MainWindow(object):
         self.choose_dict.clicked.connect(
             lambda: self.do.open_file(self.DictPath, self.output))
 
-        #######################################################################
-        # # use Symboles in cracking ######################### OLD CODE #######
-        # self.check_Symboles = QtGui.QCheckBox(self.frame)  ##################
-        # self.check_Symboles.setGeometry(QtCore.QRect(180, 250, 121, 25))    #
-        # self.check_Symboles.setObjectName(_fromUtf8("check_Symboles"))      #
-        #                                                                     #
-        # # use kali linux tools                                              #
-        # self.check_Kali = QtGui.QCheckBox(self.frame)                       #
-        # self.check_Kali.setGeometry(QtCore.QRect(180, 290, 161, 25))        #
-        # self.check_Kali.setObjectName(_fromUtf8("check_Kali"))              #
-        #######################################################################
-
         # Setting up the theme changer
         self.theme_changer = QtGui.QComboBox(self.frame)
         # Setting up the combo box items
@@ -192,11 +180,6 @@ class Ui_MainWindow(object):
         self.check_dict.setGeometry(QtCore.QRect(20, 290, 109, 25))
         self.check_dict.setObjectName(_fromUtf8("check_dict"))
 
-        # Button to save the output in a txt file
-        # self.save_output = QtGui.QPushButton(self.frame)
-        # self.save_output.setGeometry(QtCore.QRect(600, 290, 94, 32))
-        # self.save_output.setObjectName(_fromUtf8("save_output"))
-
         # Clear the output from the output textfield
         self.clear_output = QtGui.QPushButton(self.frame)
         self.clear_output.setGeometry(QtCore.QRect(500, 290, 94, 32))
@@ -209,7 +192,8 @@ class Ui_MainWindow(object):
         self.apply_theme.setGeometry(QtCore.QRect(700, 250, 91, 32))
         self.apply_theme.setObjectName(_fromUtf8("apply_theme"))
         self.apply_theme.clicked.connect(
-            lambda: self.do.change_theme(str(self.theme_changer.currentText()), self.output))
+            lambda: self.do.change_theme(str(
+                self.theme_changer.currentText()), self.output))
 
         # Setting up the start cracking button
         self.start_cracking = QtGui.QPushButton(self.frame)
@@ -233,9 +217,6 @@ class Ui_MainWindow(object):
         self.label_5.setFont(font)
         self.label_5.setText(_fromUtf8("Options"))
         self.label_5.setObjectName(_fromUtf8("label_5"))
-
-        # self.save_output.clicked.connect(
-        #     lambda: self.do.save_output(self.output))
 
         # Setting up the menubar
         self.menubar = QtGui.QMenuBar(MainWindow)
@@ -316,10 +297,6 @@ class Ui_MainWindow(object):
         self.check_dict.setStatusTip(_translate(
             "MainWindow", "Use dictionary attack", None))
         self.check_dict.setText(_translate("MainWindow", "Dictionary", None))
-
-        # self.save_output.setStatusTip(_translate(
-        #     "MainWindow", "Save the output to a text file", None))
-        # self.save_output.setText(_translate("MainWindow", "Save output", None))
 
         self.clear_output.setStatusTip(_translate(
             "MainWindow", "Clear the output from the screen", None))
