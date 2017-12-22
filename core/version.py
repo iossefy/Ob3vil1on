@@ -34,11 +34,11 @@ class VControl(object):
     def check_for_updates(self):
         try:
             with open('core/configuration/version.txt', 'r') as check_version:
-                data = check_version.read().strip() # Reading the file content
-                response = urlopen( # Updated version of the file
+                data = check_version.read().strip()  # Reading the file content
+                response = urlopen(  # Updated version of the file
                     'https://raw.githubusercontent.com/BL4CKvGHOST/Ob3vil1on/master/core/configuration/version.txt')
                 version = response.read().decode('utf-8').strip()
-                if version != data: # if the online version not equal the local version
+                if version != data:  # if the online version not equal the local version
                     print("current is {} there is new version available: {}".format(
                         data, version))
                 else:
@@ -53,8 +53,8 @@ class VControl(object):
         """
         try:
             with open('core/configuration/version.txt', 'r') as current_version:
-                data = current_version.read().strip() # Read the current version
-            print("Current Version Is: {}".format(data)) # Print Version
+                data = current_version.read().strip()  # Read the current version
+            print("Current Version Is: {}".format(data))  # Print Version
         except Exception as e:
             printer.unknowen_error(e)
 
@@ -63,8 +63,9 @@ class VControl(object):
         Managing User Input Terminal Args
         """
         if variable == "--check":
-            self.check_for_updates() # Run This Method
+            self.check_for_updates()  # Run This Method
         elif variable == '--current':
-            self.current() # Run This Method
+            self.current()  # Run This Method
         else:
-            print("Invalid Input {}".format(variable)) # print invalid input + {variable}
+            # print invalid input + {variable}
+            print("Invalid Input {}".format(variable))

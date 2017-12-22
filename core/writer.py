@@ -14,6 +14,29 @@ from Banner import Printer
 printer = Printer()
 
 
+class OpenFile():
+    """
+    Setting up the context manager
+    """
+
+    def __init__(self, filename, mode):
+        """
+        filename: path of the file
+        mode: mode to open the file with
+        """
+        self.filename = filename
+        self.mode = mode
+
+    def __enter__(self):
+        """Open the file"""
+        self.file = open(self.filename, self.mode)
+        return self.file
+
+    def __exit__(self, exc_type, exc_val, traceback):
+        """Close the file"""
+        self.file.close()
+
+
 class Booker(object):
     """
     ======================================
@@ -45,7 +68,7 @@ class Booker(object):
         """
         try:
             # Append to the file
-            with open(output, 'a') as csv_file:
+            with OpenFile(output, 'a') as csv_file:
                 write = csv.writer(csv_file, delimiter=',')
                 # Write filename then password then its time
                 # Write the time in this format (Day/Month/Year Hour:Menute:Seconds)
@@ -70,7 +93,7 @@ class Booker(object):
         output: not a required function, you can pass the csv file in there.
         """
         try:
-            with open(output, 'rb') as csv_file:
+            with OpenFile(output, 'rb') as csv_file:
                 csv_reader = csv.reader(csv_file, delimiter=',')
                 for line in csv_reader:
                     # Read this columns

@@ -11,7 +11,7 @@ from core import Check, Control
 
 # Creating instances
 check_req = Check.Check_req()
-looprocess = Control.LoopControl()
+run = Control.LoopControl()
 
 # Initializing Variables
 action = ''
@@ -29,15 +29,15 @@ except Exception as e:
 
 def main():
     """Main Function."""
-    check_req.check_py_version()  # Check valid python version
-    check_req.check_os()  # Checking the required operation system
-    check_req.check_user()  # Check if the user is root or not
+    check_req.check_py_version()
+    check_req.check_os()
+    check_req.check_user()
+#   check_req.check_softwares()
     if action == '':
         from core.Banner import Printer
         printer = Printer()
         printer.main_banner()
-#   check_req.check_softwares()
-    looprocess.main_loop(action=action, commands=commands)  # Run
+    run.main_loop(action=action, commands=commands)  # Run
 
 
 if __name__ == '__main__':

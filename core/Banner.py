@@ -8,6 +8,7 @@
 
 name = "Obevilion.py"
 
+
 class Printer(object):
     """Just Printing Banners in this class."""
 
@@ -30,7 +31,8 @@ class Printer(object):
 
         print("Coded By BL4CKvGHOST")
         print("{}".format(name[:-3]))
-        print("Updates: now officialy {} is the strongest Cracking Script".format(name[:-3]))
+        print(
+            "Updates: now officialy {} is the strongest Cracking Script".format(name[:-3]))
         print("GitHub: https://github.com/BL4CKvGHOST")
         print("Twitter: https://twitter.com/BL4CKvGHOST")
         print("Usage: Python {} [display_mode] [archive path]".format(name))
@@ -60,6 +62,13 @@ class Printer(object):
         print("--about\t\t\tAbout the app")
         print("--attacks\t\tShow available attacks")
         print("--license\t\tShow license")
+        print("--set\t\t\tChange script configuration")
+        print("\t\t\tUSAGE: --set [OPTION] [VALUE]")
+        print("\t\t\tOPTION: field to change")
+        print(
+            "\t\t\tVALUE: change from the old value to the new value in the choosed field")
+        print(
+            "\t\t\tshow: you can use --show to see the configuration file as a python list")
         print("--vault\t\t\tShow Cracked Files names and password")
         print('--help:\t\t\tShow This Message\n')
         print("--version\t\tShow The Current Version")
@@ -67,7 +76,8 @@ class Printer(object):
         print("\t\t\t--current\tget the current version")
         print("\t\t\t--check\t\tcheck for updates")
         print("--extract\t\tExtract Archive")
-        print("\t\t\tUSAGE: --extract [file type] [file path] [file password] [place to store]\n")
+        print(
+            "\t\t\tUSAGE: --extract [file type] [file path] [file password] [place to store]\n")
         print("Inputing From Inside {} Shell".format(name))
         print("+=> extract\t\tExtract Archive")
         print("+=> help\t\tShow This Message")
@@ -76,6 +86,7 @@ class Printer(object):
         print("+=> attacks\t\tShow available attacks")
         print("+=> vault\t\tShow File names and passwords\n")
         print("How To Use?")
+        print("CONFIGURATION:\t\tpython {} --set uid user".format(name))
         print("EASY MODE:\t\tpython {} --easy_mode".format(name))
         print(
             "CLI MODE:\t\tpython {} --cli [Attack Mode] [Archive Path]".format(name))
@@ -83,7 +94,7 @@ class Printer(object):
         print("HELP SCREEN:\t\tpython {} --help\n".format(name))
 
     def invalid_input(self, uinput=None):
-        if uinput!=None:
+        if uinput != None:
             print("Invalid Input {}".format(uinput))
         else:
             print("Invalid Input")
@@ -144,8 +155,13 @@ with Obevilion you can crack [7z/zip/rar] files.
 
     def seterr(self):
         print("Please Choose from the F list")
-        print("'fm'\tFramework mode (True/False) Default=True")
-        print("'em'\tenable easy_mode (True/False) Default=False")
-        print("'uid'\t[user/root] enable and disable user login")
-        print("'guid'\t[user/root] enable and disable user login")
-        print("NOTHING MORE!")
+        print("fm\tFramework mode (True/False) Default=True")
+        print("em\tenable easy_mode (True/False) Default=False")
+        print("uid\t[user/root] enable and disable user login")
+        print("guid\t[user/root] enable and disable user login")
+
+    def noob_set(self):
+        print("[1] Users settings")
+        print("[2] Framework settings")
+        print("[3] Show settings as a python list")
+        print("[4] Go back")

@@ -25,15 +25,45 @@ class LoopControl(object):
     """
     Looping In the terminal to let the user input
     without breaking the application.
-    """
 
+    Methods:
+    __init__: Initializing Variables
+    loop: easy_mode loop
+    main_loop: the main loop of the scripts
+    show_set: show the configuration as a python list
+    noob_conf: settings configuration in easy_mode
+    pro_conf: settings configuration in command line arguments mode
+    framework_settings: setting up the framework settings
+    uid_settings: setting up the uid settings
+    """
     def __init__(self):
+        """
+        Creating some instances and Initializing some variables
+        """
         self.attacks = Attacks()
         self.arc = Archives()
 
     def loop(self):
         """
-        Looping throgh user input
+        Looping throgh user input.
+        Console will be somthing like that
+
+        ====================================
+        = Obevilion                        =
+        = Version                          =
+        = Startup commands                 =
+        = +=>                              =
+        ====================================
+
+        this is the loop for easy mode prompt
+        easy mode prompt is [easy] for noob users
+        easy mode is a simple mode to use instead of
+        entering command line arguments.
+        it will loop with this prompt '+=>' until the user
+        enters a valid command; if the command is valid,
+        go execute what in it.
+        if not just print("Invalid Input").
+        if the user press 'CTRL+C' exit.
         """
         choice = ""
         try:
@@ -70,27 +100,65 @@ class LoopControl(object):
                 else:
                     print("Invalid Input")
         except KeyboardInterrupt as ki:
+            """If the user enters 'Ctrl+C' exit"""
             print('\nCtrl+C detected!')
             time.sleep(1)
             print("Exiting...")
             time.sleep(2)
 
     def noob_conf(self):
+        """Edit settings from easy mode."""
+        try:
+            print("-- Settings --")
+            printer.noob_set()
+            self.setC = input("[Settings]> ").__int__()
+            if self.setC == 1:
+                self.uid_settings()
+            elif self.setC == 2:
+                self.framework_settings()
+            elif self.setC == 3:
+                self.show_set()
+            elif self.setC == 4:
+                pass
+            else:
+                print("[{}] no such input\n".format(self.setC))
+                printer.noob_set()
+        except Exception as e:
+            printer.unknowen_error(e)
+
+    def show_set(self):
         """
-        Edit settings from easy mode.
+        Show configuration file content as a python list
         """
         try:
-            pass
+            return settings.readOptions(self.confile)
+        except Exception as e:
+            printer.unknowen_error(e)
+        else:
+            return None
+
+    def framework_settings(self):
+        """Writing to framework settings from here"""
+        try:
+            print("Use Command Line Arguments\nSetings not available")
+        except Exception as e:
+            printer.unknowen_error(e)
+
+    def uid_settings(self):
+        """Writing to uid settings from here"""
+        try:
+            print("Use Command Line Arguments\nSetings not available")
         except Exception as e:
             printer.unknowen_error(e)
 
     def pro_conf(self):
-        """
-        Edit settings from terminal arguments mode.
-        """
+        """Edit settings from terminal arguments mode."""
         try:
             try:
                 self.index = sys.argv[2]
+                if self.index == 'show':
+                    print(self.show_set())
+                    return
                 self.value = sys.argv[3]
                 self.configfile = 'core/configuration/options.conf'
                 self.rdata = settings.readOptions(self.configfile)
@@ -98,34 +166,19 @@ class LoopControl(object):
                 print("There is 2 required arguemnts!")
                 print("python Obevilion.py --set [index] [value]")
                 sys.exit(1)
-            if self.index == 'uid' or self.index == 'guid':
-                if self.value == 'user' or self.value  == 'root':
+            if self.index == 'uid':
+                if self.value == 'user' or self.value == 'root':
                     if self.index == 'uid':
                         settings.modifyLine(self.rdata, 1, self.value)
                         settings.setLine(self.configfile, self.rdata)
-                    elif self.index == 'guid':
-                        settings.modifyLine(self.rdata, 3, self.value)
-                        settings.setLine(self.configfile, self.rdata)
                     else:
                         printer.seterr()
                         sys.exit(1)
                 else:
                     printer.seterr()
                     sys.exit(1)
-            if self.index == 'fm' or self.index == 'em':
-                if self.value == 'True' or self.value == 'False':
-                    if self.index == 'fm':
-                        settings.modifyLine(self.rdata, 5, self.value)
-                        settings.setLine(self.configfile, self.rdata)
-                    elif self.index == 'em':
-                        settings.modifyLine(self.rdata, 7, self.value)
-                        settings.setLine(self.configfile, self.rdata)
-                    else:
-                        printer.seterr()
-                        sys.exit(1)
-                else:
-                    printer.seterr()
-                    sys.exit(1)
+            else:
+                print("[{}] this is not an available option".format(self.index))
         except Exception as e:
             printer.unknowen_error(e)
 
@@ -186,7 +239,8 @@ class LoopControl(object):
                     self.place = sys.argv[5]        # extract place
                     try:
                         self.arc.arg_manager(
-                            option=self.option, path=self.path, password=self.password, place=self.place)
+                            option=self.option, path=self.path,
+                                password=self.password, place=self.place)
                     except Exception as e:
                         printer.unknowen_error(e)
                 except Exception as e:
@@ -197,7 +251,7 @@ class LoopControl(object):
         except Exception as e:
             try:
                 # If the user input invalid command
-                if sys.argv[1] is not commands:
+                if sys.argv[1] != commands:
                     printer.invalid_input()
                 else:
                     pass
@@ -212,6 +266,12 @@ class Attacks:
     attacks including bruteforce attack and
     dictionary attack. this class will manage both
     [Command Line Interface / Graphical User Interface] Attacks.
+
+    Methods:
+    cli_bruteforce_attack_outshell: attack files in command line arguments mode
+    cli_bruteforce_attack: attack files in easy_mode
+    cli_dictionary_attack_outshell: dictionary attack in command arguemnts mode
+    manage_args: the manager that take arguemnts to execute it
     """
 
     def cli_bruteforce_attack(self):
@@ -302,15 +362,19 @@ class Attacks:
 
 
 class Archives(object):
-    """docstring for Archives.
-       Managing extarcting archive
-       files.
+    """Managing extarcting archive files.
 
        Methods:
        extract_rar: extract rar files.
        extract_7z: extract 7z and zip files.."""
 
     def arg_manager(self, option=None, path=None, password=None, place=None):
+        """
+        Arguments Manager.
+        if the user enters a file ending in [.zip / .7z] execute the extract_7z method
+        if the user enters a file ending in [.rar] execute the extract_rar method
+        else do noting
+        """
         if option == '--zip' or '--7z':  # if the file type equal zip or 7z
             try:
                 # Start extracting file
@@ -318,7 +382,7 @@ class Archives(object):
             except Exception as e:
                 printer.unknowen_error(e)  # print the error
                 sys.exit(-1)
-        if option == '--rar':  # if the file type equal zip or 7z
+        elif option == '--rar':  # if the file type equal zip or 7z
             try:
                 # Start extracting file
                 self.extract_rar(path=path, password=password, place=place)

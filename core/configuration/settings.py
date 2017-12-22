@@ -43,6 +43,7 @@ def readOptions(config):
         line = config.readlines()
         return line
 
+
 def getLine(data, index):
     """
     Getting specific line.
@@ -51,6 +52,7 @@ def getLine(data, index):
     index: target index to change
     """
     return data[index].replace('\n', '')
+
 
 def modifyLine(txt, cell, value):
     """
@@ -61,6 +63,7 @@ def modifyLine(txt, cell, value):
     value: text to replace the old with
     """
     txt[cell] = '{}\n'.format(value)
+
 
 def setLine(conf, data):
     """
