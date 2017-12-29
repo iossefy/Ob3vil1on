@@ -16,6 +16,7 @@ import platform
 import sys
 import os
 from Banner import Printer
+import writer
 
 printer = Printer()
 
@@ -39,11 +40,11 @@ class VControl(object):
                     'https://raw.githubusercontent.com/BL4CKvGHOST/Ob3vil1on/master/core/configuration/version.txt')
                 version = response.read().decode('utf-8').strip()
                 if version != data:  # if the online version not equal the local version
-                    print("current is {} there is new version available: {}".format(
-                        data, version))
+                    print(writer.red("current is {} there is new version available: {}".format(
+                        data, version), bold=True))
                 else:
                      # if the online version equal the local version
-                    print("You are using the latest version:{}".format(data))
+                    print(writer.green("You are using the latest version:{}".format(data), bold=True))
         except Exception as e:
             printer.unknowen_error(e)
 
@@ -54,7 +55,7 @@ class VControl(object):
         try:
             with open('core/configuration/version.txt', 'r') as current_version:
                 data = current_version.read().strip()  # Read the current version
-            print("Current Version Is: {}".format(data))  # Print Version
+            print(writer.green("Current Version Is: {}".format(data), bold=True))  # Print Version
         except Exception as e:
             printer.unknowen_error(e)
 

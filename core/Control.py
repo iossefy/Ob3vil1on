@@ -11,6 +11,7 @@ import sys
 from Banner import Printer
 from UI import gui
 import subprocess
+import writer
 from writer import Booker
 from version import VControl
 from configuration import settings
@@ -69,7 +70,7 @@ class LoopControl(object):
         try:
             # While loop to loop in user input
             while choice != "exit":
-                choice = raw_input("+=> ")  # Pointer
+                choice = raw_input(writer.blue("+=> ", bold=True))  # Pointer
                 if choice == 'gui':
                     gui.main()  # Start GUI Window
                 elif choice == 'cli':
@@ -98,10 +99,10 @@ class LoopControl(object):
                 elif choice == "vault":
                     booker.read()  # read from the vault
                 else:
-                    print("Invalid Input")
+                    print(writer.red("Invalid Input"))
         except KeyboardInterrupt as ki:
             """If the user enters 'Ctrl+C' exit"""
-            print('\nCtrl+C detected!')
+            print(writer.red('\nCtrl+C detected!', bold=True))
             time.sleep(1)
             print("Exiting...")
             time.sleep(2)
@@ -284,7 +285,7 @@ class Attacks:
                 subprocess.call(
                     'python3 core/model.py {file}'.format(file=path), shell=True)
             else:
-                print("Try Again!")
+                print(writer.red("Try Again!"))
         except Exception as e:
             printer.unknowen_error(e)
             time.sleep(2)
@@ -298,7 +299,7 @@ class Attacks:
             # path is set to user input at the third arg
             path = sys.argv[3]
             if path == '' or path is None:  # if the user enter nothing
-                print("Try Again!")
+                print(writer.red("Try Again!"))
             else:
                 subprocess.call(
                     'python3 core/model.py {file}'.format(file=path), shell=True)
@@ -315,9 +316,9 @@ class Attacks:
             # path is set to user input at the third arg
             path = sys.argv[3]
             if path == '' or path is None:  # if the user enter nothing
-                print("There Is 1 argument Messing!")
+                print(writer.red("There Is 1 argument Messing!"))
             else:
-                print("Use BruteForce Attack\nTrust Me Its Better")
+                print(writer.yellow("Use BruteForce Attack\nTrust Me Its Better"))
         except Exception as e:
             printer.unknowen_error(e)
             time.sleep(2)
@@ -356,7 +357,7 @@ class Attacks:
                 # if second arg = 'd' or '--dictionary' start dictionary attack
                 self.cli_dictionary_attack_outshell()
             else:
-                print("Invalid argument: {}".format(self.arg))
+                print(writer.red("Invalid argument: {}".format(self.arg)))
         except Exception as e:
             pass
 

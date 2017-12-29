@@ -13,6 +13,7 @@ import shutil
 import time
 from Banner import Printer
 from writer import OpenFile
+import writer
 
 class Check_req:
     """Checking The Requirments to run the app."""
@@ -31,8 +32,8 @@ class Check_req:
         if platform.python_version() >= req_version:
             pass
         elif platform.python_version() >= not_valid_version:
-            print("python {} is not supported yet\nTry the latest version of python2".format(
-                platform.python_version()))
+            print(writer.red("python {} is not supported yet\nTry the latest version of python2".format(
+                platform.python_version())))
             print('Exiting...')
             time.sleep(2)
             sys.exit(1)
@@ -60,8 +61,8 @@ class Check_req:
 
         req_os = 'posix'
         if os.name != req_os:
-            print("{} {} is not supported yet".format(
-                platform.system(), platform.release()))
+            print(writer.red("{} {} is not supported yet".format(
+                platform.system(), platform.release())))
             print('Exiting...')
             time.sleep(2)
             sys.exit(1)
@@ -76,14 +77,14 @@ class Check_req:
 
     def login_root(self):
         if os.geteuid() != 0:
-            print("Script must run as root!")
+            print(writer.yellow("Script must run as root!"))
             time.sleep(0.6)
             sys.exit(0)
         else:pass
 
     def login_user(self):
         if os.geteuid() == 0:
-            print("Script must run as user!")
+            print(writer.yellow("Script must run as user!"))
             time.sleep(0.6)
             sys.exit(0)
         else:pass

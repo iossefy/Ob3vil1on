@@ -10,6 +10,7 @@ import time
 import os
 import sys
 import itertools
+import writer
 from writer import Booker
 
 # Creating instance
@@ -35,9 +36,9 @@ def rc(rf):
                 for rkf in kf.readlines():
                     if rkf == "All OK\n":
                         # if all is 'OK', Print The Password
-                        print("Found password: {}".format(str(k)))
-                        print("Tried combination count: {}".format(tryn))
-                        print("It took {} seconds".format(round(time.time() - start, 3)))
+                        print(writer.green("Found password: {}".format(str(k)), bold=True))
+                        print(writer.green("Tried combination count: {}".format(tryn)))
+                        print(writer.green("It took {} seconds".format(round(time.time() - start, 3))))
                         booker.write(rf, k)
                         print("Exiting...")
                         time.sleep(2)
@@ -51,16 +52,16 @@ def rc(rf):
                 for rkf in kf.readlines():
                     if rkf == "Everything is Ok\n":
                         # if all is 'OK', Print The Password
-                        print("Found password: {}".format(str(k)))
-                        print("Tried combination count: {}".format(tryn))
-                        print("It took {} seconds".format(round(time.time() - start, 3)))
+                        print(writer.green("Found password: {}".format(str(k)), bold=True))
+                        print(writer.green("Tried combination count: {}".format(tryn)))
+                        print(writer.green("It took {} seconds".format(round(time.time() - start, 3))))
                         booker.write(rf, k)
                         print("Exiting...")
                         time.sleep(2)
                         sys.exit(1)
             else:
                 # If the user enters invalid file type
-                print("Cracking [zip / 7z / rar] only")
+                print(writer.red("Cracking [zip / 7z / rar] only"))
 
 
 # Check That The File Already Exists . Then Run The File
@@ -69,6 +70,6 @@ if len(sys.argv) == 2:
         rc(sys.argv[1])
     else:
         # if the file is not exist
-        print("Check The File Again! , The File Not Exist.\nExiting...")
+        print(writer.red("Check The File Again! , The File Not Exist.\nExiting..."))
 else:
     pass
