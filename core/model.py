@@ -24,7 +24,8 @@ def rc(rf):
     start = time.time()
     # Begin with 0 tries
     tryn = 0
-    for a in range(1, len(alphabet) + 1): # for every letter in {alphabet} increase tryn with 1
+    # for every letter in {alphabet} increase tryn with 1
+    for a in range(1, len(alphabet) + 1):
         for b in itertools.product(alphabet, repeat=a):
             k = "".join(b)
             if rf[-4:] == ".rar":
@@ -36,9 +37,12 @@ def rc(rf):
                 for rkf in kf.readlines():
                     if rkf == "All OK\n":
                         # if all is 'OK', Print The Password
-                        print(writer.green("Found password: {}".format(str(k)), bold=True))
-                        print(writer.green("Tried combination count: {}".format(tryn)))
-                        print(writer.green("It took {} seconds".format(round(time.time() - start, 3))))
+                        print(writer.green(
+                            "Found password: {}".format(str(k)), bold=True))
+                        print(writer.green(
+                            "Tried combination count: {}".format(tryn)))
+                        print(writer.green("It took {} seconds".format(
+                            round(time.time() - start, 3))))
                         booker.write(rf, k)
                         print("Exiting...")
                         time.sleep(2)
@@ -52,9 +56,12 @@ def rc(rf):
                 for rkf in kf.readlines():
                     if rkf == "Everything is Ok\n":
                         # if all is 'OK', Print The Password
-                        print(writer.green("Found password: {}".format(str(k)), bold=True))
-                        print(writer.green("Tried combination count: {}".format(tryn)))
-                        print(writer.green("It took {} seconds".format(round(time.time() - start, 3))))
+                        print(writer.green(
+                            "Found password: {}".format(str(k)), bold=True))
+                        print(writer.green(
+                            "Tried combination count: {}".format(tryn)))
+                        print(writer.green("It took {} seconds".format(
+                            round(time.time() - start, 3))))
                         booker.write(rf, k)
                         print("Exiting...")
                         time.sleep(2)
