@@ -108,6 +108,7 @@ class Booker(object):
         except Exception as e:
             printer.unknowen_error(e)
 
+
 PY3 = sys.version_info[0] >= 3
 
 __all__ = (
