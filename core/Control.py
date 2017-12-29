@@ -37,6 +37,7 @@ class LoopControl(object):
     framework_settings: setting up the framework settings
     uid_settings: setting up the uid settings
     """
+
     def __init__(self):
         """
         Creating some instances and Initializing some variables
@@ -338,10 +339,14 @@ class Attacks:
         if the user enter '-b'
         the user will be using bruteforce attack and this method will direct
         the user to this method 'cli_bruteforce_attack_outshell'.
+        'cli_bruteforce_attack_outshell' will take argument[3] for the archive path
 
         if the user enter '-d'
         the user will be using bruteforce attack and this method will direct
         the user to this method 'cli_bruteforce_attack_outshell'.
+        'cli_bruteforce_attack_outshell' will take argument[3]
+        but it will not do anything cause the dictionary attack not implemented yet.
+
 
         otherwise, it will print 'Invalid argument: ' and the argument that
         the user miss typed.
@@ -352,10 +357,18 @@ class Attacks:
             self.arg = sys.argv[2]
             # if second arg = '-b' or '--bruteforce' start bruteforce attack
             if self.arg == "-b" or self.arg == '--bruteforce':
-                self.cli_bruteforce_attack_outshell()
+                    try:
+                        self.tempArgument = sys.argv[3]
+                        self.cli_bruteforce_attack_outshell()
+                    except Exception as e:
+                        print(writer.red("Path argument missing!"))
             elif self.arg == '-d' or self.arg == '--dictionary':
                 # if second arg = 'd' or '--dictionary' start dictionary attack
-                self.cli_dictionary_attack_outshell()
+                try:
+                    self.tempArgument = sys.argv[3]
+                    self.cli_dictionary_attack_outshell()
+                except Exception as e:
+                    print(writer.red("Path argument missing!"))
             else:
                 print(writer.red("Invalid argument: {}".format(self.arg)))
         except Exception as e:
