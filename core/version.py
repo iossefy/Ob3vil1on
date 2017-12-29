@@ -44,7 +44,8 @@ class VControl(object):
                         data, version), bold=True))
                 else:
                      # if the online version equal the local version
-                    print(writer.green("You are using the latest version:{}".format(data), bold=True))
+                    print(writer.green(
+                        "You are using the latest version:{}".format(data), bold=True))
         except Exception as e:
             printer.unknowen_error(e)
 
@@ -55,7 +56,8 @@ class VControl(object):
         try:
             with open('core/configuration/version.txt', 'r') as current_version:
                 data = current_version.read().strip()  # Read the current version
-            print(writer.green("Current Version Is: {}".format(data), bold=True))  # Print Version
+            print(writer.green("Current Version Is: {}".format(
+                data), bold=True))  # Print Version
         except Exception as e:
             printer.unknowen_error(e)
 
