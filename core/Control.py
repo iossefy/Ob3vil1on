@@ -99,6 +99,8 @@ class LoopControl(object):
                     printer.attacks()
                 elif choice == "vault":
                     booker.read()  # read from the vault
+                elif choice == 'install':
+                    subprocess.call("pip install colorama", shell=True)
                 else:
                     print(writer.red("Invalid Input"))
         except KeyboardInterrupt as ki:
@@ -221,6 +223,9 @@ class LoopControl(object):
                 printer.License()  # print the license
             elif action == '--set':
                 self.pro_conf()
+            elif action == '--install':
+                import pip
+                pip.main(['install', 'colorama'])
             elif action == '--vault':
                 booker.read()  # Read from the vault
             elif action == '--version':
