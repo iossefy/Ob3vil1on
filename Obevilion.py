@@ -19,7 +19,8 @@ action = ''
 commands = ['--gui'      , '--cli'     , '--help',
             '--easy_mode', '--about_me', '--license',
             '--vault'    , '--set'     , '--attacks',
-            '--version'  , '--extract' , '--about']
+            '--version'  , '--extract' , '--about',
+            '--install']
 
 try:
     action = sys.argv[1]
