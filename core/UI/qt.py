@@ -34,58 +34,77 @@ class Ui_AboutQT(object):
         AboutQT.setFixedSize(611, 436)
         AboutQT.setFrameShape(QtGui.QFrame.StyledPanel)
         AboutQT.setFrameShadow(QtGui.QFrame.Raised)
+
         self.label = QtGui.QLabel(AboutQT)
         self.label.setGeometry(QtCore.QRect(8, 0, 71, 31))
+
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
+
         self.label.setFont(font)
         self.label.setObjectName(_fromUtf8("label"))
+
         self.label_2 = QtGui.QLabel(AboutQT)
         self.label_2.setGeometry(QtCore.QRect(10, 30, 201, 20))
         self.label_2.setObjectName(_fromUtf8("label_2"))
+
         self.label_3 = QtGui.QLabel(AboutQT)
         self.label_3.setGeometry(QtCore.QRect(10, 60, 461, 20))
         self.label_3.setObjectName(_fromUtf8("label_3"))
+
         self.label_4 = QtGui.QLabel(AboutQT)
         self.label_4.setGeometry(QtCore.QRect(10, 80, 581, 31))
         self.label_4.setObjectName(_fromUtf8("label_4"))
+
         self.label_5 = QtGui.QLabel(AboutQT)
         self.label_5.setGeometry(QtCore.QRect(10, 110, 521, 20))
         self.label_5.setObjectName(_fromUtf8("label_5"))
+
         self.label_6 = QtGui.QLabel(AboutQT)
         self.label_6.setGeometry(QtCore.QRect(10, 140, 581, 20))
         self.label_6.setObjectName(_fromUtf8("label_6"))
+
         self.label_7 = QtGui.QLabel(AboutQT)
         self.label_7.setGeometry(QtCore.QRect(10, 160, 131, 20))
         self.label_7.setObjectName(_fromUtf8("label_7"))
+
         self.label_8 = QtGui.QLabel(AboutQT)
         self.label_8.setGeometry(QtCore.QRect(10, 190, 561, 20))
         self.label_8.setObjectName(_fromUtf8("label_8"))
+
         self.label_9 = QtGui.QLabel(AboutQT)
         self.label_9.setGeometry(QtCore.QRect(10, 210, 601, 20))
         self.label_9.setObjectName(_fromUtf8("label_9"))
+
         self.label_10 = QtGui.QLabel(AboutQT)
         self.label_10.setGeometry(QtCore.QRect(10, 230, 511, 20))
         self.label_10.setObjectName(_fromUtf8("label_10"))
+
         self.label_11 = QtGui.QLabel(AboutQT)
         self.label_11.setGeometry(QtCore.QRect(10, 260, 521, 20))
         self.label_11.setObjectName(_fromUtf8("label_11"))
+
         self.label_12 = QtGui.QLabel(AboutQT)
         self.label_12.setGeometry(QtCore.QRect(10, 280, 571, 20))
         self.label_12.setObjectName(_fromUtf8("label_12"))
+
         self.label_13 = QtGui.QLabel(AboutQT)
         self.label_13.setGeometry(QtCore.QRect(10, 300, 71, 20))
         self.label_13.setObjectName(_fromUtf8("label_13"))
+
         self.label_14 = QtGui.QLabel(AboutQT)
         self.label_14.setGeometry(QtCore.QRect(10, 330, 411, 20))
         self.label_14.setObjectName(_fromUtf8("label_14"))
+
         self.label_15 = QtGui.QLabel(AboutQT)
         self.label_15.setGeometry(QtCore.QRect(10, 350, 391, 20))
         self.label_15.setObjectName(_fromUtf8("label_15"))
+
         self.label_16 = QtGui.QLabel(AboutQT)
         self.label_16.setGeometry(QtCore.QRect(10, 380, 591, 20))
         self.label_16.setObjectName(_fromUtf8("label_16"))
+
         self.label_17 = QtGui.QLabel(AboutQT)
         self.label_17.setGeometry(QtCore.QRect(10, 400, 81, 20))
         self.label_17.setObjectName(_fromUtf8("label_17"))
