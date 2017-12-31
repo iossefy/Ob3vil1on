@@ -46,7 +46,7 @@ def main():
     root = Tk()
     root.geometry('500x120')
     app = Window(root)
-    root.mainloop()
+    app.mainloop()
 
 
 if __name__ == '__main__':
