@@ -44,8 +44,8 @@ class Window(Frame):
 
 def main():
     root = Tk()
-    root.geometry('500x120')
     app = Window(root)
+    app.geometry('500x120')
     app.mainloop()
 
 
