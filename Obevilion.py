@@ -8,13 +8,13 @@
 
 import sys
 from core import Check, Control
+from core.Banner import Printer
 
 # Creating instances
 check_req = Check.Check_req()
 run = Control.LoopControl()
 
-# Initializing Variables
-action = ''
+
 # Commands for the user to input
 commands = ['--gui'      , '--cli'     , '--help',
             '--easy_mode', '--about_me', '--license',
@@ -25,7 +25,7 @@ commands = ['--gui'      , '--cli'     , '--help',
 try:
     action = sys.argv[1]
 except Exception as e:
-    pass
+    action = None
 
 
 def main():
@@ -34,10 +34,8 @@ def main():
     check_req.check_os()
     check_req.check_user()
 #   check_req.check_softwares()
-    if action == '':
-        from core.Banner import Printer
-        printer = Printer()
-        printer.main_banner()
+    if action == None:
+        Printer().main_banner()
     run.main_loop(action=action, commands=commands)  # Run
 
 
