@@ -12,11 +12,6 @@
 """
 Reading and writing to the configuration file.
 configuration file is located in {$PROJECT}/core/configuration/options.conf.
-in this file reading the uid in options.conf to let the user choose how he execute
-the application with root or without.
-and the configuration file will provide the ALPHA OLD CODE for the user without
-the whole framework and the gui.
-
 
 What is this class do?
 this is the configuration manager.

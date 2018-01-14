@@ -6,8 +6,12 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
-from PyQt4 import QtCore, QtGui
-from PyQt4.QtGui import *
+try:
+    from PyQt4 import QtCore, QtGui
+    from PyQt4.QtGui import *
+except Exception as e:
+    print("Install PyQt4 first")
+
 import sys
 import os
 import jobs

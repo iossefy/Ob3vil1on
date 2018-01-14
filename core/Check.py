@@ -9,7 +9,6 @@
 import os
 import sys
 import platform
-import shutil
 import time
 from Banner import Printer
 from writer import OpenFile
@@ -39,7 +38,7 @@ class Check_req:
             time.sleep(2)
             sys.exit(1)
 
-    def check_softwares(self):
+    def SoftwaresExists(self):
         '''Check if the user installed all the required packages.
 
            Python: Required to run the main script.
@@ -50,10 +49,10 @@ class Check_req:
            [Information]p7zip and unrar is created to create archives and unpack it
            with the extension of zip, 7z and rar.'''
 
-        for which in ["unrar", "p7zip", "7z"]:
-            if not shutil.which(which):
-                print("ERROR: {} isn't installed.".format(which))
-                print("Exiting...")
+        self.softwares = ['/usr/bin/unrar', '/usr/bin/unzip', '/usr/bin/7z']
+        for missing in self.softwares:
+            if not os.path.isfile(missing):
+                print("Missing file {0}".format(missing))
                 sys.exit(1)
 
     def check_os(self):
@@ -81,11 +80,9 @@ class Check_req:
             print(writer.yellow("Script must run as root!"))
             time.sleep(0.6)
             sys.exit(0)
-        else:pass
 
     def login_user(self):
         if os.geteuid() == 0:
             print(writer.yellow("Script must run as user!"))
             time.sleep(0.6)
             sys.exit(0)
-        else:pass

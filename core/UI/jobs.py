@@ -6,7 +6,7 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
-from PyQt4 import QtCore, QtGui
+from PyQt4 import QtGui
 import qt
 import os
 import me
@@ -14,8 +14,12 @@ import ascript
 import attack
 import sys
 import subprocess
-import tkinter as tk
-import tkinter.messagebox
+try:
+    import tkinter as tk
+    from tkinter import messagebox
+except ImportError as e:
+    import Tkinter as tk
+    import tkMessageBox as messagebox
 
 
 class DO(object):

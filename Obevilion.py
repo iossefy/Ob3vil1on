@@ -33,7 +33,7 @@ def main():
     check_req.check_py_version()
     check_req.check_os()
     check_req.check_user()
-#   check_req.check_softwares()
+    check_req.SoftwaresExists()
     if action == None:
         Printer().main_banner()
     run.main_loop(action=action, commands=commands)  # Run

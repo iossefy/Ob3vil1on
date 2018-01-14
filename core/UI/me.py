@@ -6,7 +6,11 @@
 #
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
-from tkinter import *
+try:
+    from tkinter import *
+except ImportError as e:
+    from Tkinter import *
+
 import os
 import sys
 

@@ -7,8 +7,11 @@
 # License <http://www.gnu.org/licenses/gpl-3.0.html>
 
 import sys
-from PyQt4 import QtCore, QtGui
-from PyQt4.QtGui import *
+try:
+    from PyQt4 import QtCore, QtGui
+    from PyQt4.QtGui import *
+except ImportError as e:
+    print("Install PyQt4 first")
 from jobs import DO
 
 try:
@@ -78,7 +81,7 @@ class Ui_MainWindow(object):
 
         # setting up the font
         font = QtGui.QFont()
-        font.setFamily(_fromUtf8("Impact"))
+        font.setFamily(_fromUtf8("Sedgwick Ave Display"))
         font.setPointSize(28)
         font.setItalic(True)
 
@@ -115,7 +118,7 @@ class Ui_MainWindow(object):
 
         # Setting up the font
         font = QtGui.QFont()
-        font.setFamily(_fromUtf8("Impact"))
+        font.setFamily(_fromUtf8("Sedgwick Ave Display"))
         font.setPointSize(18)
         font.setItalic(True)
 
@@ -210,7 +213,7 @@ class Ui_MainWindow(object):
 
         # Setting up the font
         font = QtGui.QFont()
-        font.setFamily(_fromUtf8("Impact"))
+        font.setFamily(_fromUtf8("Sedgwick Ave Display"))
         font.setPointSize(18)
         font.setItalic(True)
 
