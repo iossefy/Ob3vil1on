@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# @author bl4ckvghost
+# @author MaliciouSSymbol
 #
 # Copyright (C) 2017 Youssef Hesham
 #
@@ -25,7 +25,7 @@ if platform.python_version()[0] == '2':
 elif platform.python_version()[0] == '3':
     from urllib.request import urlopen
 else:
-    print("WTF!, unknowen python version!")
+    print("WTF!, unknown python version!")
     sys.exit(-1)
 
 

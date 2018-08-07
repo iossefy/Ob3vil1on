@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# @author bl4ckvghost
+# @author MaliciouSSymbol
 #
 # Copyright (C) 2017 Youssef Hesham
 #
@@ -25,16 +25,14 @@ class Printer(object):
                                    NO ONE WILL GIVE YOU FREEDOM
                                    YOU TAKE IT!
 
-            Created By: BL4CKvGHOST<youssefheshamhassan@gmail.com>
+            Created By: MaliciouSSymbol
             Code Name: Ze0xFF
         ''')
 
-        print("Coded By BL4CKvGHOST")
+        print("Coded By MaliciouSSymbol")
         print("{}".format(name[:-3]))
-        print(
-            "Updates: now officialy {} is the strongest Cracking Script".format(name[:-3]))
-        print("GitHub: https://github.com/BL4CKvGHOST")
-        print("Twitter: https://twitter.com/BL4CKvGHOST")
+        print("GitHub: https://github.com/MaliciouSSymbol")
+        print("Twitter: https://twitter.com/MaliciouSSymbol")
         print("Usage: Python {} [display_mode] [archive path]".format(name))
         print("Help!: python {} --help\n".format(name))
 

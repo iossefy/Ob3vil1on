@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# @author bl4ckvghost
+# @author MaliciouSSymbol
 #
 # Copyright (C) 2017 Youssef Hesham
 #
@@ -35,7 +35,7 @@ class Window(Frame):
             self.master, text="Created in Pure Python")
         self.end = Label(
             self.master, text="Obevilion created by Hackers For Hackers")
-        self.boom = Label(self.master, text="Created By BL4CKvGHOST")
+        self.boom = Label(self.master, text="Created By MaliciouSSymbol")
 
         # Packing the variables
         self.title.pack()

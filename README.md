@@ -8,12 +8,10 @@ Name           | Obevilion
 :------------- | :----------------------------------------------------------------------------------------------
 Python Version | Python2.7.14 / python3 soon...
 Languages      | Pure Python
-Author         | [@BL4CKvGHOST](https://twitter.com/BL4CKvGHOST) (Youssef Hesham)
-Project GitHub | <https://github.com/BL4CKvGHOST/Ob3vil1on>
-Project Website| <https://bl4ckvghost.github.io/Ob3vil1on>
-Author GitHub  | <https://github.com/BL4CKvGHOST/>
-Author Website | <https://bl4ckvghost.github.io>
-License        | [GNU General Public License v3.0](https://github.com/BL4CKvGHOST/Ob3vil1on/blob/master/COPYING)
+Author         | [@MaliciouSSymbol](https://twitter.com/MaliciouSSymbol)
+Project GitHub | <https://github.com/MaliciouSSymbol/Ob3vil1on>
+Author GitHub  | <https://github.com/MaliciouSSymbol/>
+License        | [GNU General Public License v3.0](https://github.com/MaliciouSSymbol/Ob3vil1on/blob/master/COPYING)
 Copyleft       | Youssef Hesham
 
 ## What Obevilion Crack
@@ -28,32 +26,13 @@ if you are not familiar with Brute-force attack, try dictionary attacks (Not Ava
 
 ## Windows
 
-If you are using windows you must install the [Cygwin](http://www.cygwin.com/).
-
-Then install the [requirements](#requirements).
-
-Now you can run Obevilion with [Cygwin](http://www.cygwin.com/).
-
-## Mac OS X
-
-If you are using mac os x you must have the [requirements](#requirements) installed in your terminal.
+**THERE IS NO WINDOWS SUPPORT**
 
 ## Requirements
 
-you must have `Python2` and `Python3` installed on your system (LATEST VERSION PREFERRED)
+you must have `Python2` and `Python3` **BOTH** installed on your system (LATEST VERSION PREFERRED)
 
-### Linux Installation
-
-```shell
-sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install python python3 python3-pip python-pip
-sudo apt-get install unzip unrar p7zip-full
-sudo apt-get install python-pyqt5 python-qt4
-```
-
-#### Other Platfroms
-
-other platforms is not supported yet
+install pyqt4 for the GUI
 
 ## Report Bugs
 
@@ -101,6 +80,6 @@ want to update Ob3vil1on script, run `updater.py` with `python3`
 
 - [x] Complete The GUI
 
-- [ ] Create a web based UI
+- [ ] Create a web based UI (will never happen)
 
 ## Copyright (c) 2017 Copyright Youssef Hesham All Rights Reserved.

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# @author bl4ckvghost
+# @author MaliciouSSymbol
 #
 # Copyright (C) 2017 Youssef Hesham
 #
